@@ -14,7 +14,7 @@ The goal of our project is to create an efficient, scalable, and flexible servic
 
 ### Deployment
 
-**Vercel?**: We've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
+**Vercel?**: I've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
 
 ## Upcoming Improvements
 
