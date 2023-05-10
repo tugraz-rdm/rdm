@@ -6,11 +6,15 @@ The goal of our project is to create an efficient, scalable, and flexible servic
 
 ## Technology Stack
 
-### Frontend
+### Full-Stack Web 
 
 **Next.js**: We've selected Next.js as our frontend framework. It's based on React and supports both server-side rendering and static site generation, providing a great balance between performance and SEO.
 
 **Tailwind CSS**: For styling, we could be using Tailwind CSS. It provides pre-defined CSS classes that make it quick and easy to style our application without having to write custom CSS.
+
+### Backend
+
+**Node.js ?**: Based on the complexity of the web application, we may integrate additional backend frameworks or platforms as necessary.
 
 ### Deployment
 
