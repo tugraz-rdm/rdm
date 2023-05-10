@@ -14,11 +14,11 @@ The goal of our project is to create an efficient, scalable, and flexible servic
 
 ### Backend
 
-**Node.js ?**: Based on the complexity of the web application, we may integrate additional backend frameworks or platforms as necessary.
+**Node.js**: Based on the complexity of the web application, we may integrate additional backend frameworks or platforms as necessary.
 
 ### Deployment
 
-**Vercel?**: I've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
+**Vercel**: I've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
 
 ## Upcoming Improvements
 
