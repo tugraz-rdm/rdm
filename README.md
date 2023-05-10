@@ -12,13 +12,11 @@ The goal of our project is to create an efficient, scalable, and flexible servic
 
 **Tailwind CSS**: For styling, we could be using Tailwind CSS. It provides pre-defined CSS classes that make it quick and easy to style our application without having to write custom CSS.
 
-### Backend
-
 **Node.js**: Based on the complexity of the web application, we may integrate additional backend frameworks or platforms as necessary.
 
 ### Deployment
 
-**Vercel**: I've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
+**Vercel**: We've selected Vercel for deployment due to its one-click deployment process and excellent support for Next.js applications.
 
 ## Upcoming Improvements
 
