@@ -1,4 +1,4 @@
-# Project RDM - Services
+# RDM - Services
 
 ## Overview
 
