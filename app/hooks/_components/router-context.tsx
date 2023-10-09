@@ -31,7 +31,7 @@ export function HooksClient() {
               useSelectedLayoutSegments: selectedLayoutSegments,
             },
             null,
-            2,
+            2
           )}
         </pre>
       </div>

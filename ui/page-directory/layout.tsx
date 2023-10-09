@@ -2,7 +2,7 @@ import { SearchIcon, ShoppingCartIcon } from '@heroicons/react/solid';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from "react";
+import React from 'react';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,10 +12,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="space-y-12 lg:space-y-16">
             <div className="flex items-center justify-between space-x-3 rounded-lg bg-gray-800 px-3 py-3 lg:px-5 lg:py-4">
               <div className="flex space-x-3">
-                <Link href="/"> 
-                  <div className="h-10 w-10">
-                    {/* <NextLogo /> */}
-                  </div>
+                <Link href="/">
+                  <div className="h-10 w-10">{/* <NextLogo /> */}</div>
                 </Link>
                 <div className="relative flex-1">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

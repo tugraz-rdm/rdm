@@ -2,10 +2,10 @@ import { Category } from "./category";
 
 export const runtime = 'edge';
 
-export const GET = async (request: Request) => {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
-  // We sometimes artificially delay a response for demo purposes.
+  // We sometimes artificially delay a reponse for demo purposes.
   // Don't do this in real life :)
   const delay = searchParams.get('delay');
   if (delay) {

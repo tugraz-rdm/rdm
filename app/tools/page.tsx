@@ -1,7 +1,7 @@
 import { ExternalLink } from '#/ui/external-link';
 import { FC } from 'react';
 
-export const Page: FC = () => {
+const Page: FC = () => {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
       <ul className="p-0 font-thin text-gray-700">
@@ -26,3 +26,5 @@ export const Page: FC = () => {
     </div>
   );
 };
+
+export default Page;

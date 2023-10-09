@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { getContentConsultingAndTitleById } from "../c-paragraph-by-id";
+import { getContentConsultingAndTitleById } from '../c-paragraph-by-id';
 
 interface PageProps {
   params: {
@@ -8,7 +8,7 @@ interface PageProps {
   };
 }
 
-export const Page: FC<PageProps> = ({ params }) => {
+const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentConsultingAndTitleById(params.id);
 
   return (
@@ -21,4 +21,6 @@ export const Page: FC<PageProps> = ({ params }) => {
       </div>
     </div>
   );
-}
+};
+
+export default Page;

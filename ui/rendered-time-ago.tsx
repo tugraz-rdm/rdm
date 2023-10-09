@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 import ms from 'ms';
 
@@ -38,15 +38,13 @@ export function RenderedTimeAgo({ timestamp }: { timestamp: number }) {
   return (
     <div
       className="h-6 w-20 items-center rounded-full bg-gray-100 px-2 text-center text-sm leading-6"
-      title={new Date(timestamp).toISOString()}
-    >
+      title={new Date(timestamp).toISOString()}>
       {msAgo ? (
         <>
           <span
             // https://react.dev/reference/react-dom/hydrate#suppressing-unavoidable-hydration-mismatch-errors
             suppressHydrationWarning={true}
-            className="font-thin tabular-nums text-gray-900"
-          >
+            className="font-thin tabular-nums text-gray-900">
             {msAgo >= 1000 ? ms(msAgo) : '0s'}
           </span>{' '}
           <span className="text-gray-600">ago</span>

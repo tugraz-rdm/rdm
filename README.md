@@ -26,4 +26,3 @@ pnpm dev
 ## Documentation
 
 https://nextjs.org/docs
-

@@ -32,4 +32,4 @@ export const Page: FC = () => {
       </div>
     </div>
   );
-}
+};

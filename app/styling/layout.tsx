@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { TabGroup } from '#/ui/tab-group';
 
 export const metadata = {

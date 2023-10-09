@@ -1,5 +1,5 @@
 import { Boundary } from '#/ui/boundary';
-import React from "react";
+import React from 'react';
 import { TabNavItem } from '#/ui/tab-nav-item';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -7,8 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <Boundary
       labels={['checkout layout']}
       color="blue"
-      animateRerendering={false}
-    >
+      animateRerendering={false}>
       <div className="space-y-9">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-x-4">

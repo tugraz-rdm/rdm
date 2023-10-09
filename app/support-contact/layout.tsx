@@ -1,5 +1,5 @@
 import { ClickCounter } from '#/ui/click-counter';
-import React from "react";
+import React from 'react';
 import { TabGroup } from '#/ui/tab-group';
 import { getCategories } from '#/app/api/categories/getCategories';
 
@@ -23,7 +23,7 @@ export default async function Layout({
             {
               text: 'SUPPORT CONTACT',
             },
-            ...categories.map((x) => ({
+            ...categories.map(x => ({
               text: x.name,
               slug: x.slug,
             })),

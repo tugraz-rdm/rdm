@@ -1,5 +1,4 @@
 import { Boundary } from '#/ui/boundary';
-import { Counter } from '../../context-click-counter';
 import { getCategory } from '#/app/api/categories/getCategories';
 
 export default async function Page({
@@ -15,8 +14,6 @@ export default async function Page({
         <h1 className="text-xl font-medium text-gray-400/80">
           {category.name}
         </h1>
-
-        <Counter />
       </div>
     </Boundary>
   );

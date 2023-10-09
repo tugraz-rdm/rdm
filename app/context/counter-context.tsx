@@ -1,6 +1,15 @@
-import React, { Dispatch, FC, SetStateAction, createContext, useContext, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from 'react';
 
-type CounterContextType = [number, Dispatch<SetStateAction<number>>] | undefined;
+type CounterContextType =
+  | [number, Dispatch<SetStateAction<number>>]
+  | undefined;
 
 const CounterContext = createContext<CounterContextType>(undefined);
 
@@ -16,7 +25,7 @@ export const CounterProvider: FC<CounterProviderProps> = ({ children }) => {
       {children}
     </CounterContext.Provider>
   );
-}
+};
 
 export function useCounter(): CounterContextType {
   const context = useContext(CounterContext);

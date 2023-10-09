@@ -13,7 +13,7 @@ export default function RootLayout({
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   const toggleDrawer = () => {
-    setIsDrawerOpen((prev) => !prev);
+    setIsDrawerOpen(prev => !prev);
   };
 
   return (
@@ -29,8 +29,7 @@ export default function RootLayout({
               style={{
                 marginTop: '6rem',
                 width: isDrawerOpen ? 'calc(100% - 20rem)' : '100%',
-              }}
-            >
+              }}>
               {children}
             </div>
           </div>

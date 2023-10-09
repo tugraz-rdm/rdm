@@ -2,7 +2,7 @@
 
 import { Boundary } from '#/ui/boundary';
 import Button from '#/ui/button';
-import React from "react";
+import React from 'react';
 
 export default function Error({ error, reset }: any) {
   React.useEffect(() => {
@@ -12,8 +12,7 @@ export default function Error({ error, reset }: any) {
   return (
     <Boundary
       labels={['./[categorySlug]/[subCategorySlug]/error.tsx']}
-      color="blue"
-    >
+      color="blue">
       <div className="space-y-4">
         <h2 className="text-lg font-bold">Error</h2>
         <p className="text-sm">{error?.message}</p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { TabGroup } from '#/ui/tab-group';
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {
             text: 'Home',
           },
-          ...ids.map((x) => ({
+          ...ids.map(x => ({
             text: `Post ${x.id}`,
             slug: x.id,
           })),
