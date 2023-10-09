@@ -1,6 +1,6 @@
 import { Boundary } from '#/ui/boundary';
 import { ClickCounter } from '#/ui/click-counter';
-import React from "react";
+import React from 'react';
 import { TabGroup } from '#/ui/tab-group';
 import { getCategories } from '#/app/api/categories/getCategories';
 
@@ -15,8 +15,7 @@ export default async function Layout({
     <Boundary
       labels={['marketing layout']}
       color="violet"
-      animateRerendering={false}
-    >
+      animateRerendering={false}>
       <div className="space-y-9">
         <div className="flex justify-between">
           <TabGroup
@@ -25,7 +24,7 @@ export default async function Layout({
               {
                 text: 'Home',
               },
-              ...categories.map((x) => ({
+              ...categories.map(x => ({
                 text: x.name,
                 slug: x.slug,
               })),

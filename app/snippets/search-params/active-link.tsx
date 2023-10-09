@@ -22,8 +22,7 @@ export default function ActiveLink({
           !isActive,
         'bg-red-tu text-white': isActive,
       })}
-      href={pathname + '?' + searchParams}
-    >
+      href={pathname + '?' + searchParams}>
       {children}
     </Link>
   );

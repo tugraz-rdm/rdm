@@ -1,7 +1,7 @@
 'use client';
 
 import Button from '#/ui/button';
-import React from "react";
+import React from 'react';
 
 export default function BuggyButton() {
   const [clicked, setClicked] = React.useState(false);
@@ -15,8 +15,7 @@ export default function BuggyButton() {
       kind="error"
       onClick={() => {
         setClicked(true);
-      }}
-    >
+      }}>
       Trigger Error
     </Button>
   );

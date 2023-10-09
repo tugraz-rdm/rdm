@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from "react";
+import React, { Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 function Params() {
@@ -16,15 +16,13 @@ function Params() {
             <span className="px-1">
               <span
                 key={key}
-                className="animate-[highlight_1s_ease-in-out_1] text-gray-100"
-              >
+                className="animate-[highlight_1s_ease-in-out_1] text-gray-100">
                 {key}
               </span>
               <span>=</span>
               <span
                 key={value}
-                className="animate-[highlight_1s_ease-in-out_1] text-gray-100"
-              >
+                className="animate-[highlight_1s_ease-in-out_1] text-gray-100">
                 {value}
               </span>
             </span>
@@ -40,9 +38,7 @@ export function AddressBar() {
 
   return (
     <div className="flex items-center gap-x-2 p-3.5 lg:px-5 lg:py-3">
-      <div className="text-gray-600">
-  
-      </div>
+      <div className="text-gray-600"></div>
       <div className="flex gap-x-1 text-sm font-medium">
         <div>
           <span className="px-2 font-thin text-gray-400">Dashboard</span>
@@ -53,14 +49,13 @@ export function AddressBar() {
             {pathname
               .split('/')
               .slice(2)
-              .map((segment) => {
+              .map(segment => {
                 return (
                   <React.Fragment key={segment}>
                     <span>
                       <span
                         key={segment}
-                        className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 py-0.5 text-gray-100"
-                      >
+                        className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 py-0.5 text-gray-100">
                         {segment}
                       </span>
                     </span>

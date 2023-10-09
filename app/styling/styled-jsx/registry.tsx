@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { StyleRegistry, createStyleRegistry } from 'styled-jsx';
 
 import { useServerInsertedHTML } from 'next/navigation';

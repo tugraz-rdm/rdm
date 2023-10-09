@@ -24,9 +24,8 @@ export const SimpleGlobalNav: React.FC<{
 
   return (
     <>
-      <div className="fixed top-0 z-50 flex h-[9vh] w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
-        {' '}
-        <div className="mt-20">
+      <div className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-5 lg:mt-0">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />
         </div>
@@ -35,8 +34,7 @@ export const SimpleGlobalNav: React.FC<{
             className={`items-left group flex w-full transform gap-x-3 transition-transform lg:w-auto ${
               isOpen ? 'translate-x-[10vw]' : ''
             }`}
-            onClick={toggleDrawer}
-          >
+            onClick={toggleDrawer}>
             {/* Any content or components you want inside the Link */}
           </a>
         </Link>
@@ -49,6 +47,7 @@ export const SimpleGlobalNav: React.FC<{
     </>
   );
 };
+
 
 export function GlobalNav() {
   const [content, setContent] = useState<'nav' | 'events'>('nav');
@@ -63,8 +62,7 @@ export function GlobalNav() {
             <Link
               href="/"
               className="group inline w-full items-center gap-x-2.5"
-              onClick={close}
-            >
+              onClick={close}>
               <div className="logo-wrapper m-5 ml-8 h-12 w-32">
                 <TULogo />
               </div>
@@ -79,8 +77,7 @@ export function GlobalNav() {
         <button
           type="button"
           className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+          onClick={() => setIsOpen(!isOpen)}>
           <div className="font-medium text-gray-100 group-hover:text-gray-400">
             Menu
           </div>
@@ -93,14 +90,12 @@ export function GlobalNav() {
         <div className="ml-8 flex">
           <button
             className="bg-white-smoke mb-2 mr-2  rounded-lg px-5 py-2.5 text-sm font-semibold text-black focus:outline-none "
-            onClick={() => setContent('nav')}
-          >
+            onClick={() => setContent('nav')}>
             Navigation
           </button>
           <button
             className="bg-white-smoke mb-2 mr-2  rounded-lg px-5 py-2.5 text-sm font-semibold text-black focus:outline-none"
-            onClick={() => setContent('events')}
-          >
+            onClick={() => setContent('events')}>
             Events
           </button>
         </div>
@@ -109,15 +104,13 @@ export function GlobalNav() {
             className={clsx('overflow-y-auto lg:static lg:block', {
               'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen,
               hidden: !isOpen,
-            })}
-          >
+            })}>
             <nav className="space-y-6 px-2 py-3 lg:space-x-0 lg:space-y-4">
               {services.map((section, sectionIdx) => (
                 <Disclosure
                   as="div"
                   key={sectionIdx}
-                  className="ml-2 flex flex-col space-y-1 lg:ml-0 lg:space-y-2"
-                >
+                  className="ml-2 flex flex-col space-y-1 lg:ml-0 lg:space-y-2">
                   {() => (
                     <>
                       <Disclosure.Button className="mb-2 ml-4 px-3 text-left font-thin uppercase tracking-wider text-white">
@@ -144,11 +137,10 @@ export function GlobalNav() {
         ) : (
           <div className=" h-[80vh] w-full overflow-y-auto lg:w-72">
             <div className="mt-20 space-y-8">
-              {events.map((event) => (
+              {events.map(event => (
                 <div
                   key={event.date}
-                  className="bg-white-smoke ml-8 h-full max-w-sm rounded-lg border border-gray-200 p-6 shadow-lg group-hover:opacity-10 dark:border-gray-700 dark:bg-gray-800"
-                >
+                  className="bg-white-smoke ml-8 h-full max-w-sm rounded-lg border border-gray-200 p-6 shadow-lg group-hover:opacity-10 dark:border-gray-700 dark:bg-gray-800">
                   {event.urlImage ? (
                     <Image
                       src={event.urlImage}
@@ -198,17 +190,15 @@ export function GlobalNavItem({
   const isActive = item.slug === segment;
 
   return (
-    <Link href={`/${item.slug}`} legacyBehavior
-        onClick={close}
-        className={clsx(
-          'ml-6 block rounded-md  py-2 text-sm font-thin ',
-          {
-            'text-gray-700 hover:border-2 hover:text-gray-700': !isActive,
-            'text-gray-700 hover:border-2 ': isActive,
-          },
-        )}
-      >
-        {item.name}
+    <Link
+      href={`/${item.slug}`}
+      legacyBehavior
+      onClick={close}
+      className={clsx('ml-6 block rounded-md  py-2 text-sm font-thin ', {
+        'text-gray-700 hover:border-2 hover:text-gray-700': !isActive,
+        'text-gray-700 hover:border-2 ': isActive,
+      })}>
+      {item.name}
     </Link>
   );
 }

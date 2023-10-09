@@ -2,13 +2,11 @@
 
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowUpRightFromSquare
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { services } from '#/lib/services';
 import { useRouter } from 'next/navigation';
 
-export const Page: FC = () => {
+const Page: FC = () => {
   const router = useRouter();
   return (
     <>
@@ -31,17 +29,15 @@ export const Page: FC = () => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div
-              className={`border-1 rounded-lg ${bgColor} border border-gray-200 p-6 group-hover:opacity-10`}
-            >
+              className={`border-1 rounded-lg ${bgColor} border border-gray-200 p-6 group-hover:opacity-10`}>
               <div key={section.name} className="space-y-3">
                 <button
                   type="button"
-                  className="bg-white-smoke font-regular mb-2  mr-2 rounded-lg px-5 py-2.5 text-sm text-gray-700 focus:outline-none"
-                >
+                  className="bg-white-smoke font-regular mb-2  mr-2 rounded-lg px-5 py-2.5 text-sm text-gray-700 focus:outline-none">
                   {section.name}
                 </button>
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-                  {section.items.map((item) => {
+                  {section.items.map(item => {
                     return (
                       <div
                         key={item.name}
@@ -50,7 +46,7 @@ export const Page: FC = () => {
                       >
                         <div className="bg-white-smoke absolute bottom-0 left-0 right-0 top-0 z-10 flex items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-0">
                           <div className="flex items-center gap-3 rounded px-6 py-3.5 text-center">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col flex-wrap">
                               <span className="font-regular text-2xl text-gray-800 focus:ring-4">
                                 {item.name}
                               </span>
@@ -75,9 +71,7 @@ export const Page: FC = () => {
                                   href={item.externalLink}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="font-regular flex w-full items-center justify-center rounded border border-gray-900 px-4 py-2 text-gray-900"
-                                >
-                                  
+                                  className="font-regular flex w-full items-center justify-center rounded border border-gray-900 px-4 py-2 text-gray-900">
                                   {button.text}
                                   <div className="mt-2 inline-flex cursor-pointer items-center text-gray-700 hover:underline">
                                     <FontAwesomeIcon
@@ -101,4 +95,6 @@ export const Page: FC = () => {
       </div>
     </>
   );
-}
+};
+
+export default Page;

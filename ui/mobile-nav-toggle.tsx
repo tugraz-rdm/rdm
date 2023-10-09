@@ -2,7 +2,7 @@
 
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
 
-import React from "react";
+import React from 'react';
 import clsx from 'clsx';
 
 const MobileNavContext = React.createContext<
@@ -26,7 +26,7 @@ export function useMobileNavToggle() {
   const context = React.useContext(MobileNavContext);
   if (context === undefined) {
     throw new Error(
-      'useMobileNavToggle must be used within a MobileNavContextProvider',
+      'useMobileNavToggle must be used within a MobileNavContextProvider'
     );
   }
   return context;
@@ -40,8 +40,7 @@ export function MobileNavToggle({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+        onClick={() => setIsOpen(!isOpen)}>
         <div className="font-medium text-gray-100 group-hover:text-gray-400">
           Menu
         </div>
@@ -56,8 +55,7 @@ export function MobileNavToggle({ children }: { children: React.ReactNode }) {
         className={clsx('overflow-y-auto lg:static lg:block', {
           'fixed inset-x-0 bottom-0 top-14 bg-gray-900': isOpen,
           hidden: !isOpen,
-        })}
-      >
+        })}>
         {children}
       </div>
     </>

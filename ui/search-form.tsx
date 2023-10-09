@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 
@@ -31,11 +31,13 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
           className="focus:border-custom-red focus:ring-custom-red dark:focus:border-custom-red dark:focus:ring-custom-red block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
           placeholder="Search items..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}
           required
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-          <button type="submit" className="flex items-center justify-center text-gray-700">
+          <button
+            type="submit"
+            className="flex items-center justify-center text-gray-700">
             <FontAwesomeIcon icon={faSearch} className="h-4 w-4" />
             <span className="sr-only">Search</span>
           </button>
@@ -46,5 +48,3 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
 };
 
 export default SearchForm;
-
-

@@ -1,22 +1,22 @@
 [
-    {
-        "date": "17 May 2023",
-        "name": "RDM Month May",
-        "url": "https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/rdm-month-may-2023",
-        "urlImage": ""
-    },
-    {
-        "date": "07 November 2022",
-        "name": "Second General Assembly of EOSC Support Office Austria",
-        "moreInfo": "More Information",
-        "url": "https://eosc-austria.at/wrap-up-2nd-general-assembly-of-eosc-support-office-austria/",
-        "urlImage": "/rdm-ilire.png"
-    },
-    {
-        "date": "23 May 2022",
-        "name": "Symposium of the Cluster Research Data: Future Research (Data) Management",
-        "moreInfo": "More Information",
-        "url": "https://forschungsdaten.at/cluster-forschungsdaten-symposium-2022-programm/",
-        "urlImage": ""
-    }
+  {
+    "date": "17 May 2023",
+    "name": "RDM Month May",
+    "url": "https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/rdm-month-may-2023",
+    "urlImage": ""
+  },
+  {
+    "date": "07 November 2022",
+    "name": "Second General Assembly of EOSC Support Office Austria",
+    "moreInfo": "More Information",
+    "url": "https://eosc-austria.at/wrap-up-2nd-general-assembly-of-eosc-support-office-austria/",
+    "urlImage": "/events/rdm-ilire.png"
+  },
+  {
+    "date": "23 May 2022",
+    "name": "Symposium of the Cluster Research Data: Future Research (Data) Management",
+    "moreInfo": "More Information",
+    "url": "https://forschungsdaten.at/cluster-forschungsdaten-symposium-2022-programm/",
+    "urlImage": ""
+  }
 ]

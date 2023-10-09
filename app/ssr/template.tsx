@@ -6,6 +6,8 @@ interface TemplateProps {
   children: React.ReactNode;
 }
 
-export const Template: FC<TemplateProps> = ({ children }) => {
+const Template: FC<TemplateProps> = ({ children }) => {
   return <Boundary>{children}</Boundary>;
 };
+
+export default Template;

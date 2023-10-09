@@ -20,17 +20,18 @@ export const Tab = ({ path, item }: { path: string; item: Item }) => {
 
   return (
     <li className="mr-2 list-none overflow-hidden rounded-lg border shadow-md transition-transform duration-300 hover:scale-105 ">
-      <Link href={href} aria-current={isActive ? 'page' : undefined} legacyBehavior>
+      <Link
+        href={href}
+        aria-current={isActive ? 'page' : undefined}
+        legacyBehavior>
         <a
           className={clsx(
             'inline-block p-4',
             isActive ? activeClasses : inactiveClasses
-          )}
-        >
+          )}>
           {item.text}
         </a>
       </Link>
     </li>
   );
 };
-

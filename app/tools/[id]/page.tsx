@@ -66,8 +66,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_DMP_Tool_en_v1.0.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white"
-            >
+              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
               DMP Tool Guide (EN)
             </a>
 
@@ -75,8 +74,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_DMP_Tool_de_v1.0.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white"
-            >
+              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
               DMP Tool Guide (DE)
             </a>
           </div>

@@ -20,7 +20,7 @@ export function LayoutHooks() {
               useSelectedLayoutSegments: selectedLayoutSegments,
             },
             null,
-            2,
+            2
           )}
         </pre>
       </div>

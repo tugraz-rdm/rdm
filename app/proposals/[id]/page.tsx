@@ -1,4 +1,4 @@
-import { getContentProposalAndTitleById } from "../random-post-tab";
+import { getContentProposalAndTitleById } from '../random-post-tab';
 
 export default async function Page({ params }: { params: { id: string } }) {
   const { content, title } = getContentProposalAndTitleById(params.id);

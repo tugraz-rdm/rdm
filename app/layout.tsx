@@ -13,12 +13,12 @@ export default function RootLayout({
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   const toggleDrawer = () => {
-    setIsDrawerOpen((prev) => !prev);
+    setIsDrawerOpen(prev => !prev);
   };
 
   return (
     <html lang="en" className="[color-scheme:light]">
-      <body className="overflow-y-scroll bg-white bg-[url('/grid.svg')]">
+      <body className="overflow-y-scroll bg-white bg-[url('/grid.svg')] pt-[2vh]">
         <div className="flex-grow">
           <SimpleGlobalNav isOpen={isDrawerOpen} onToggle={toggleDrawer} />
           <div>
@@ -29,8 +29,7 @@ export default function RootLayout({
               style={{
                 marginTop: '6rem',
                 width: isDrawerOpen ? 'calc(100% - 20rem)' : '100%',
-              }}
-            >
+              }}>
               {children}
             </div>
           </div>

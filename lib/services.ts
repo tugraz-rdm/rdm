@@ -189,7 +189,7 @@ export const events = [
     name: 'Second General Assembly of EOSC Support Office Austria',
     moreInfo: 'More Information',
     url: 'https://eosc-austria.at/wrap-up-2nd-general-assembly-of-eosc-support-office-austria/',
-    urlImage: '/rdm-ilire.png',
+    urlImage: '/events/rdm-ilire.png',
   },
   {
     date: '23 May 2022',

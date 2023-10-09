@@ -7,7 +7,7 @@ import 'server-only';
 import { data } from './route';
 import { notFound } from 'next/navigation';
 
-export const getCategories = async ({ parent }: { parent?: string } = {}) => {
+export async function getCategories({ parent }: { parent?: string } = {}) {
   
   const categories = data.filter((category) =>
     parent ? category.parent === parent : category.parent === null,
@@ -21,7 +21,7 @@ export const getCategories = async ({ parent }: { parent?: string } = {}) => {
   return categories;
 }
 
-export const getCategory = async ({ slug }: { slug: string }) => {
+export async function getCategory({ slug }: { slug: string }) {
 
   const category = data.find((category) => category.slug === slug);
 

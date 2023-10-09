@@ -1,7 +1,6 @@
 import { Boundary } from '#/ui/boundary';
-import ContextClickCounter from './context-click-counter';
 import { CounterProvider } from 'app/context/counter-context';
-import React from "react";
+import React from 'react';
 import { TabGroup } from '#/ui/tab-group';
 import { getCategories } from '#/app/api/categories/getCategories';
 
@@ -19,20 +18,17 @@ export default async function Layout({
     <Boundary
       labels={['Server Component Boundary']}
       size="small"
-      animateRerendering={false}
-    >
+      animateRerendering={false}>
       <Boundary
         labels={['Counter Context Provider [Client Component]']}
         color="blue"
         size="small"
-        animateRerendering={false}
-      >
+        animateRerendering={false}>
         <CounterProvider>
           <Boundary
             labels={['Server Component Boundary']}
             size="small"
-            animateRerendering={false}
-          >
+            animateRerendering={false}>
             <div className="space-y-9">
               <div className="flex justify-between">
                 <TabGroup
@@ -41,7 +37,7 @@ export default async function Layout({
                     {
                       text: 'Home',
                     },
-                    ...categories.map((x) => ({
+                    ...categories.map(x => ({
                       text: x.name,
                       slug: x.slug,
                     })),
@@ -49,7 +45,6 @@ export default async function Layout({
                 />
               </div>
 
-              <ContextClickCounter />
               <div>{children}</div>
             </div>
           </Boundary>

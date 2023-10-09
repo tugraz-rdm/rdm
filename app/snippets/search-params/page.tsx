@@ -2,7 +2,7 @@ import ActiveLink from './active-link';
 import { Boundary } from '#/ui/boundary';
 import Client from './client';
 import { ExternalLink } from '#/ui/external-link';
-import { Suspense } from "react";
+import { Suspense } from 'react';
 
 const options = [
   {
@@ -62,7 +62,7 @@ export default async function Page({ searchParams }: { searchParams: any }) {
             </h3>
 
             <div className="flex items-center gap-6">
-              {options.map((option) => {
+              {options.map(option => {
                 return (
                   <div key={option.name}>
                     <div className="text-gray-400">{option.name}</div>
@@ -82,8 +82,7 @@ export default async function Page({ searchParams }: { searchParams: any }) {
                           <ActiveLink
                             key={item}
                             isActive={isActive}
-                            searchParams={params.toString()}
-                          >
+                            searchParams={params.toString()}>
                             {item}
                           </ActiveLink>
                         );

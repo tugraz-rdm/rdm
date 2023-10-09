@@ -16,7 +16,7 @@ export default async function Page({
       // We intentionally disable Next.js Cache to better demo
       // `loading.js`
       cache: 'no-cache',
-    },
+    }
   );
 
   if (!res.ok) {

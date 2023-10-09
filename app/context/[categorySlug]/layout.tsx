@@ -1,7 +1,6 @@
 import { getCategories, getCategory } from '#/app/api/categories/getCategories';
 
 import { Boundary } from '#/ui/boundary';
-import { Counter } from '../context-click-counter';
 import { TabGroup } from '#/ui/tab-group';
 
 export default async function Layout({
@@ -21,15 +20,14 @@ export default async function Layout({
           path={`/context/${category.slug}`}
           items={[
             {
-              text: 'All'
+              text: 'All',
             },
-            ...categories.map((x) => ({
+            ...categories.map(x => ({
               text: x.name,
               slug: x.slug,
             })),
           ]}
         />
-        <Counter />
         <div>{children}</div>
       </div>
     </Boundary>
