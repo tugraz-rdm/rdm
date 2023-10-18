@@ -1,30 +1,28 @@
-# Use an official Node.js runtime as the base image
+# Use an official Node.js image with version 16.14
 FROM node:16.14
 
-# Create a non-root user to run the application
-RUN useradd -m -s /bin/bash rdm
+ENV USER=dmp
 
-# Set the working directory
+# Install pnpm globally using npm
+RUN npm install -g pnpm
+
+# Set the working directory for your application
 WORKDIR /app
 
 # Copy your application code into the container
-COPY . .
-
-# Install pnpm globally
-RUN npm install -g pnpm
-
-# Change ownership of the application directory to the non-root user
-RUN chown -R rdm:rdm /app
-
-# Switch to the non-root user
-USER rdm
+COPY . /app
 
 # Install application dependencies using pnpm
 RUN pnpm install
 
-# Expose the port your application will run on
-EXPOSE 3000
+# Create a new user named "$USER"
+RUN useradd -m $USER
 
-# Start your application
-# CMD [ "pnpm", "start" ] # -> should be start?
+# Set the ownership of the /app directory to the "$USER" user
+RUN chown -R $USER:$USER /app
+
+# Switch to the "$USER" user for running the application
+USER $USER
+
+# Define the command to start your application
 CMD [ "pnpm", "dev" ]

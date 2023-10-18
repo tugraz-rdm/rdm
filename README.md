@@ -26,3 +26,18 @@ pnpm dev
 ## Documentation
 
 https://nextjs.org/docs
+
+
+## Running with Docker
+
+1. Build image
+
+```sh
+docker build -t rdm:latest .
+```
+
+2. Run
+
+```sh
+docker run -p 3000:3000 rdm:latest
+```

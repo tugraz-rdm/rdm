@@ -1,45 +1,12 @@
-# Exclude development and build artifacts
 node_modules
 npm-debug.log
 pnpm-lock.yaml
+yarn-error.log
 *.log
 *.pid
-*.seed
-*.log.*
-yarn-error.log
-.yarn-integrity
-.pnp.*
-__tests__
-__mocks__
-coverage
-.nyc_output
-Dockerfile.dev
-
-# Exclude version control directories and files
-.git
-.gitignore
-.gitattributes
-.gitmodules
-
-# Exclude editor/IDE-specific files
-.vscode
-.idea
-
-# Exclude other development-specific files
-package-lock.json
+.DS_Store
 .env
-.env.local
-.env.development
-.env.test
-.env.production
-
-# Exclude build and compiled files
-/build
-/dist
-/out
-/public
-
-# Exclude configuration files
-*.config.js
-tsconfig.json
-.eslintrc.js
+*.md
+*.markdown
+Dockerfile
+.dockerignore
