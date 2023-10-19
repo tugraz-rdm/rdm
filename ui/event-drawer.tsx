@@ -9,6 +9,7 @@ import {
   faList,
 } from '@fortawesome/free-solid-svg-icons';
 
+import ButtonLANGroup from './button-lan-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobalNavItem } from './global-nav';
 import Image from 'next/image';
@@ -47,15 +48,20 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
       <div
         className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform ${
           isOpen ? '' : '-translate-x-full'
-        } bg-white-smoke dark:bg-white-smoke w-80 sm:w-80`}
+        } bg-custom-gray dark:bg-white-smoke w-80 sm:w-80`}
         tabIndex={-1}
         aria-labelledby="drawer-left-label">
         <InformationalBanner />
-        <h5
-          id="drawer-body-scrolling-label"
-          className="font-thin mb-10 text-base uppercase text-gray-700 dark:text-gray-400">
-          Menu
-        </h5>
+        <div
+          className="flex justify-between mb-10 -mt-3"
+          style={{ height: '35px' }}>
+          <h5
+            id="drawer-body-scrolling-label"
+            className="font-thin mb-10 text-base uppercase text-gray-700 dark:text-gray-400">
+            Menu
+          </h5>
+          <ButtonLANGroup />
+        </div>
         <DrawerSection
           title="DASHBOARD"
           icon={faList}
@@ -69,7 +75,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                 <li key={sectionIdx} style={{ marginLeft: '17px' }}>
                   <button
                     type="button"
-                    className="hover:bg-custom-bone  group flex w-full items-center rounded-lg p-2 text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700"
+                    className="hover:bg-white-smoke  group flex w-full items-center rounded-lg p-2 text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700"
                     onClick={() => handleClick(sectionIdx)}>
                     <span className="flex-1 whitespace-nowrap text-left font-thin">
                       {section.name}
@@ -83,7 +89,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     {section.items.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className="border-transparent hover:border-gray-900 hover:bg-custom-bone ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700">
+                        className="border-transparent hover:border-gray-900 hover:bg-white-smoke ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700">
                         <GlobalNavItem item={item} close={handleClose} />
                       </li>
                     ))}

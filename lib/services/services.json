@@ -53,7 +53,7 @@
     "items": [
       {
         "name": "eLabFTW",
-        "slug": "layout",
+        "slug": "elabftw",
         "externalLink": "https://damap.org/",
         "description": "TU Graz offers its own instance of eLabFTW to all its members, accessible via a browser without needing any additional software.",
         "buttons": [

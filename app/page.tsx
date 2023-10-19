@@ -29,11 +29,14 @@ const Page: FC = () => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div
-              className={`border-1 rounded-lg ${bgColor} border border-gray-200 p-6 group-hover:opacity-10`}>
+              className={`border-1 rounded-lg ${bgColor} border border-gray-200 p-6 group-hover:opacity-10`}
+            >
               <div key={section.name} className="space-y-3">
                 <button
                   type="button"
-                  className="bg-white-smoke font-regular mb-2  mr-2 rounded-lg px-5 py-2.5 text-sm text-gray-700 focus:outline-none">
+                  className="bg-white-smoke font-regular mb-2  mr-2 rounded-lg px-5 py-2.5 text-sm text-gray-700 focus:outline-none"
+                  // style={{backgroundColor: bgColor}}
+                  >
                   {section.name}
                 </button>
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -61,7 +64,6 @@ const Page: FC = () => {
                           alt={item.name}
                           className="h-48 w-full transform bg-white object-cover transition-transform duration-500 hover:scale-110"
                         />
-
                         <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-60 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                           <div className="flex h-full w-full space-x-3">
                             {item.buttons?.map((button, index) => {

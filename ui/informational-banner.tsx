@@ -21,21 +21,18 @@ const InformationalBanner: FC = () => {
           The RDM website promotes awareness of RDM issues among TU Graz
           researchers. RDM encompasses steps ensuring data can be found,
           accessed, and reused with proper description. <br />
-          This site also offers the services and materials from the RDM team at
-          TU Graz.
+          This site offers RDM tools, services and materials from the RDM Team at TU Graz.
         </p>
       </div>
       <div className="flex items-center flex-shrink-0">
         <a
-          href="https://www.tugraz.at/sites/rdm/home"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-3 py-2 mr-3 text-xs font-medium text-white bg-custom-blue border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-custom-blue focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+          href="https://www.tugraz.at/sites/rdm/home" target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-3 py-2 mr-3 text-xs font-medium text-white bg-gray-700 border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-custom-blue focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
           Learn more
           <svg
             className="w-3 h-3 ml-2"
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"  
             fill="none"
             viewBox="0 0 14 10">
             <path

@@ -71,10 +71,10 @@ export const services: { name: string; items: Item[] }[] = [
     items: [
       {
         name: 'eLabFTW',
-        slug: 'layout',
+        slug: 'elabftw',
         externalLink: 'https://damap.org/',
         description:
-          'TU Graz offers its own instance of eLabFTW to all its members, accessible via a browser without needing any additional software.',
+          'eLabFTW is a versatile open-source electronic lab notebook solution used at TU Graz, offering collaborative features and equipment management through a browser interface.',
         buttons: [
           {
             text: 'Read More',
