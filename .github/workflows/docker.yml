@@ -18,7 +18,6 @@ jobs:
       packages: write
 
     steps:
-     # sed -i '/# create a second/,$d' Dockerfile
       - name: Checkout
         uses: actions/checkout@v3
 
