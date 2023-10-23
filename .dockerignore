@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+pnpm-lock.yaml
+yarn-error.log
+*.log
+*.pid
+.DS_Store
+.env
+*.md
+*.markdown
+Dockerfile
+.dockerignore
