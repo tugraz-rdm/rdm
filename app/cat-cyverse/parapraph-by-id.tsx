@@ -1,17 +1,17 @@
 export function getContentAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
     support:
-      'The page is intended to provide support for the use of the TU Graz DMP Tool. If you have a question or request about the DMP Tool (e.g. permission control, templates) please contact us.',
+      'The page is intended to provide support for the use of CyVerse Austria (CAT). You can find a list of frequently asked questions (FAQ). If you have a question or request about CyVerse Austria please contact us!',
     faq: '',
     manuals: 'Manuals content here...',
     'api-support': 'API Support content here...',
   };
 
   const titleMap: Record<string, string> = {
-    support: 'DMP Tool - Support',
-    faq: 'DMP Tool - FAQ',
-    manuals: 'DMP Tool - Manuals',
-    'api-support': 'DMP Tool - API Support',
+    support: 'CyVerse - Support',
+    faq: 'CyVerse Tool - FAQ',
+    portals: 'User Portals',
+    materials: 'CyVerse Training materials',
   };
 
   return {
@@ -24,7 +24,7 @@ export function generateStaticParams() {
   return [
     { id: 'support' },
     { id: 'faq' },
-    { id: 'manuals' },
-    { id: 'api-support' },
+    { id: 'portals' },
+    { id: 'materials' },
   ];
 }

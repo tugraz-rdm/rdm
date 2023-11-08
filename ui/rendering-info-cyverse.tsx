@@ -1,12 +1,12 @@
-type RenderingInfoToolProps = {
+type RenderingInfoCyVerseProps = {
   type: 'tu-graz-dmp-tool';
   showEmail?: boolean;
 };
 
-export function RenderingInfoTool({
+export function RenderingInfoCyVerse({
   type,
   showEmail = false,
-}: RenderingInfoToolProps) {
+}: RenderingInfoCyVerseProps) {
   if (!showEmail) return null;
 
   let msg = '';
@@ -18,9 +18,9 @@ export function RenderingInfoTool({
 
   return (
     <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
-      <a href="mailto:damap-support@tugraz.at">
+      <a href=" cyverse-support@tugraz.at">
         <div className="flex justify-center text-sm font-thin text-white">
-          damap-support@tugraz.at
+          cyverse-support@tugraz.at
         </div>
       </a>
     </div>

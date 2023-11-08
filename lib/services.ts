@@ -22,13 +22,17 @@ export const services: { name: string; items: Item[] }[] = [
     name: 'PLANNING',
     items: [
       {
-        name: 'DMP TOOL',
-        slug: 'tools',
+        name: 'TU Graz DMP TOOL',
+        slug: 'tu-graz-dmp-tool',
         description:
           'A comprehensive tool designed to guide researchers through the process of creating a data management plan.',
-        externalLink: '#',
+        externalLink: 'https://damap.org/',
         buttons: [
-          { text: 'Read More', link: 'https://damap.org/', iframeSrc: '' },
+          {
+            text: 'Read More',
+            link: '#',
+            iframeSrc: 'https://damap.org/',
+          },
           {
             text: 'Launch',
             link: 'https://damap.org/',
@@ -83,14 +87,14 @@ export const services: { name: string; items: Item[] }[] = [
           },
           {
             text: 'Launch',
-            link: '#',
+            link: 'https://www.elabftw.net/',
             iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
           },
         ],
       },
       {
         name: 'CyVerse Austria',
-        slug: 'hooks',
+        slug: 'cat-cyverse',
         description:
           'A comprehensive platform for data analysis specifically tailored for Austrian research needs.',
         externalLink: 'https://www.tugraz.at/sites/rdm/home',
@@ -128,7 +132,7 @@ export const services: { name: string; items: Item[] }[] = [
     items: [
       {
         name: 'TU Graz Repository',
-        slug: 'layout',
+        slug: 'tu-graz-repository',
         externalLink: 'https://damap.org/',
         description:
           'A central hub for data publication and archiving, offering persistent identifier linking.',

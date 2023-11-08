@@ -51,7 +51,10 @@ export default async function Page({ params }: { params: { id: string } }) {
       </div>
       {params.id === 'support' && (
         <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
-          <RenderingInfoTool type="tools" showEmail={params.id === 'support'} />
+          <RenderingInfoTool
+            type="tu-graz-dmp-tool"
+            showEmail={params.id === 'support'}
+          />
         </div>
       )}
       {params.id === 'manuals' && (

@@ -1,5 +1,5 @@
 type RenderingInfoELabProps = {
-  type: 'tools';
+  type: 'tu-graz-dmp-tool';
   showEmail?: boolean;
 };
 
@@ -11,7 +11,7 @@ export function RenderingInfoELab({
 
   let msg = '';
   switch (type) {
-    case 'tools':
+    case 'tu-graz-dmp-tool':
       msg = 'CONTACT TEAM';
       break;
   }

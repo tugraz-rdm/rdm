@@ -85,7 +85,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         {params.id === 'support' && (
           <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
             <RenderingInfoELab
-              type="tools"
+              type="tu-graz-dmp-tool"
               showEmail={params.id === 'support'}
             />
           </div>

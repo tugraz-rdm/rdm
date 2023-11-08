@@ -15,7 +15,6 @@ export default async function Page({
         <h1 className="text-xl font-medium text-gray-400/80">
           All {category.name}
         </h1>
-
       </div>
     </Boundary>
   );

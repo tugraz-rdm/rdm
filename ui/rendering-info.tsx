@@ -3,7 +3,7 @@ import { RenderedTimeAgo } from '#/ui/rendered-time-ago';
 export function RenderingInfo({
   type,
 }: {
-  type: 'ssg' | 'ssgod' | 'ssr' | 'tools';
+  type: 'ssg' | 'ssgod' | 'ssr' | 'tu-graz-dmp-tool';
 }) {
   let msg = '';
   switch (type) {
@@ -13,11 +13,11 @@ export function RenderingInfo({
     case 'ssgod':
       msg = 'Statically rendered on demand';
       break;
-    case 'tools':
+    case 'tu-graz-dmp-tool':
       msg =
         'Statically pre-rendered at build time and periodically revalidated';
       break;
-    case 'tools':
+    case 'tu-graz-dmp-tool':
       msg = 'Dynamically rendered at request time';
       break;
   }

@@ -3,8 +3,8 @@
     "name": "PLANNING",
     "items": [
       {
-        "name": "DMP TOOL",
-        "slug": "tools",
+        "name": "TU Graz DMP TOOL",
+        "slug": "tu-graz-dmp-tool",
         "description": "A comprehensive tool designed ...",
         "externalLink": "https://www.tugraz.at/sites/rdm/home",
         "buttons": [

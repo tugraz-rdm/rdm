@@ -8,9 +8,8 @@ import { data } from './route';
 import { notFound } from 'next/navigation';
 
 export async function getCategories({ parent }: { parent?: string } = {}) {
-  
-  const categories = data.filter((category) =>
-    parent ? category.parent === parent : category.parent === null,
+  const categories = data.filter(category =>
+    parent ? category.parent === parent : category.parent === null
   );
 
   if (categories.length === 0) {
@@ -22,8 +21,7 @@ export async function getCategories({ parent }: { parent?: string } = {}) {
 }
 
 export async function getCategory({ slug }: { slug: string }) {
-
-  const category = data.find((category) => category.slug === slug);
+  const category = data.find(category => category.slug === slug);
 
   if (!category) {
     // Render the closest `not-found.js` Error Boundary

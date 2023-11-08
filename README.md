@@ -1,13 +1,21 @@
-# RDM
+# Research Data Management at TU Graz
 
-Next.js recently introduced the App Router with support for:
+Welcome to the official repository for the Research Data Management (RDM) website at TU Graz. Our mission is to promote awareness and implementation of best practices in research data management, providing resources and support to the research community at TU Graz.
 
-- **Layouts:** Easily share UI while preserving state and avoiding re-renders.
-- **Server Components:** Making server-first the default for the most dynamic applications.
-- **Streaming:** Display instant loading states and stream in updates.
-- **Suspense for Data Fetching:** `async`/`await` support and the `use` hook for component-level fetching.
+## Project Overview
 
-The App Router can coexist with the existing `pages` directory for incremental adoption. While you **don't need to use the App Router** when upgrading to Next.js 13, we're laying the foundations to build complex interfaces while shipping less JavaScript.
+The RDM project at TU Graz facilitates good management of research data at all stages of the research process. The website acts as a central hub for resources, advice, and support related to the full spectrum of research data management.
+
+
+## Building with Next.js 13
+
+Our website leverages the innovative features of Next.js 13 to provide a seamless and interactive experience. With the introduction of the App Router, we've enhanced our service delivery by enabling:
+
+- **Efficient Navigation**: Fast and state-persistent transitions between the different services and resources offered by the RDM team.
+- **Dynamic Content Loading**: Server Components and Streaming allow for the real-time presentation and update of service information and available resources.
+- **Modern Data Fetching**: Using Suspense for Data Fetching, we can ensure that the latest information is presented in an efficient and responsive manner.
+
+# Getting Started
 
 ## Running Locally
 
@@ -26,7 +34,6 @@ pnpm dev
 ## Documentation
 
 https://nextjs.org/docs
-
 
 ## Running with Docker
 

@@ -48,7 +48,6 @@ export const SimpleGlobalNav: React.FC<{
   );
 };
 
-
 export function GlobalNav() {
   const [content, setContent] = useState<'nav' | 'events'>('nav');
   const [isOpen, setIsOpen] = useState(true);

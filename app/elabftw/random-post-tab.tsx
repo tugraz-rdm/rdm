@@ -15,7 +15,7 @@ export function getContentProposalAndTitleById(id: string) {
     entries: 'EXPORT OF ENTRIES',
     tip: 'TIP: LEAVING A TEAM/GROUP OR THE TOOL',
     backup: 'BACKUP OPTIONS FOR USERS',
-    api: 'API SUPPORT PAGE'
+    api: 'API SUPPORT PAGE',
   };
 
   return {
@@ -26,13 +26,13 @@ export function getContentProposalAndTitleById(id: string) {
 
 export function generateStaticParams() {
   return [
-    { id: 'support' }, 
-    { id: 'faq' }, 
-    { id: 'manuals' }, 
-    { id: 'overview' }, 
+    { id: 'support' },
+    { id: 'faq' },
+    { id: 'manuals' },
+    { id: 'overview' },
     { id: 'entries' },
     { id: 'tip' },
     { id: 'backup' },
-    { id: 'api' }
+    { id: 'api' },
   ];
 }
