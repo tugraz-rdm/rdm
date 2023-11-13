@@ -56,7 +56,7 @@ export const services: { name: string; items: Item[] }[] = [
       },
       {
         name: 'RDM In-proposals',
-        slug: 'proposals',
+        slug: 'in-proposals',
         description:
           'Incorporate Research Data Management best practices within project proposals for efficient and responsible data handling.',
         externalLink: 'https://www.tugraz.at/sites/rdm/home',
@@ -106,14 +106,14 @@ export const services: { name: string; items: Item[] }[] = [
           },
           {
             text: 'Launch',
-            link: '#',
+            link: 'https://de.cyverse.tugraz.at/',
             iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
           },
         ],
       },
       {
         name: 'RDM Optimization',
-        slug: 'hooks',
+        slug: 'optimization',
         description:
           'Improvement solutions for research data management, including workflows, pipelines, infrastructures, and more.',
         externalLink: 'https://www.tugraz.at/sites/rdm/home',
@@ -144,14 +144,14 @@ export const services: { name: string; items: Item[] }[] = [
           },
           {
             text: 'Launch',
-            link: '#',
+            link: 'https://repository.tugraz.at/',
             iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
           },
         ],
       },
       {
         name: 'Publication Consulting',
-        slug: 'hooks',
+        slug: 'publication-consulting',
         description:
           'Assistance with repository searches and metadata management for publications.',
         externalLink: 'https://www.tugraz.at/sites/rdm/home',
@@ -165,7 +165,7 @@ export const services: { name: string; items: Item[] }[] = [
       },
       {
         name: 'Legal & Ethical Aspects',
-        slug: 'hooks',
+        slug: 'legal-ethical-aspects',
         description:
           'Guidance on navigating the legal and ethical considerations in research data management.',
         externalLink: 'https://www.tugraz.at/sites/rdm/home',

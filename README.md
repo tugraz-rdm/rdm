@@ -13,7 +13,7 @@ Our website leverages the innovative features of Next.js 13 to provide a seamles
 
 - **Efficient Navigation**: Fast and state-persistent transitions between the different services and resources offered by the RDM team.
 - **Dynamic Content Loading**: Server Components and Streaming allow for the real-time presentation and update of service information and available resources.
-- **Modern Data Fetching**: Using Suspense for Data Fetching, we can ensure that the latest information is presented in an efficient and responsive manner.
+- **Modern Data Fetching**: Using Suspense for Data Fetching, we can ensure that the latest information is presented in an efficient and responsive manner. (not yet implemented)
 
 # Getting Started
 
