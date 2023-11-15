@@ -6,7 +6,6 @@ Welcome to the official repository for the Research Data Management (RDM) websit
 
 The RDM project at TU Graz facilitates good management of research data at all stages of the research process. The website acts as a central hub for resources, advice, and support related to the full spectrum of research data management.
 
-
 ## Building with Next.js 13
 
 Our website leverages the innovative features of Next.js 13 to provide a seamless and interactive experience. With the introduction of the App Router, we've enhanced our service delivery by enabling:

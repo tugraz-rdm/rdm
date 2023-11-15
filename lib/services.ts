@@ -1,6 +1,12 @@
-import { IconDefinition, faBook } from '@fortawesome/free-solid-svg-icons';
+'use client';
 
-export type Item = {
+import { useEffect, useReducer, useState } from 'react';
+
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import i18 from '#/i18';
+import { useTranslation } from 'react-i18next';
+
+export type ServiceItem = {
   name: string;
   slug: string;
   description?: string;
@@ -9,7 +15,12 @@ export type Item = {
   buttons?: { text: string; link: string; iframeSrc: string }[];
 };
 
-export type Events = {
+export type ServiceData = {
+  name: string;
+  items: ServiceItem[];
+};
+
+export type EventData = {
   date: string;
   name: string;
   url: string;
@@ -17,189 +28,211 @@ export type Events = {
   moreInfo?: string;
 };
 
-export const services: { name: string; items: Item[] }[] = [
-  {
-    name: 'PLANNING',
-    items: [
-      {
-        name: 'TU Graz DMP TOOL',
-        slug: 'tu-graz-dmp-tool',
-        description:
-          'A comprehensive tool designed to guide researchers through the process of creating a data management plan.',
-        externalLink: 'https://damap.org/',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://damap.org/',
-          },
-          {
-            text: 'Launch',
-            link: 'https://damap.org/',
-            iframeSrc: 'https://damap.org/',
-          },
-        ],
-      },
-      {
-        name: 'DMP Consulting',
-        slug: 'consulting',
-        description:
-          'Consultation services for researchers to aid in the development and execution of data management strategies.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-      {
-        name: 'RDM In-proposals',
-        slug: 'in-proposals',
-        description:
-          'Incorporate Research Data Management best practices within project proposals for efficient and responsible data handling.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: 'ACTIVE STATE OF RESEARCH',
-    items: [
-      {
-        name: 'eLabFTW',
-        slug: 'elabftw',
-        externalLink: 'https://damap.org/',
-        description:
-          'eLabFTW is a versatile open-source electronic lab notebook solution used at TU Graz, offering collaborative features and equipment management through a browser interface.',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-          {
-            text: 'Launch',
-            link: 'https://www.elabftw.net/',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-      {
-        name: 'CyVerse Austria',
-        slug: 'cat-cyverse',
-        description:
-          'A comprehensive platform for data analysis specifically tailored for Austrian research needs.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-          {
-            text: 'Launch',
-            link: 'https://de.cyverse.tugraz.at/',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-      {
-        name: 'RDM Optimization',
-        slug: 'optimization',
-        description:
-          'Improvement solutions for research data management, including workflows, pipelines, infrastructures, and more.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: 'RESEARCH COMPLETE',
-    items: [
-      {
-        name: 'TU Graz Repository',
-        slug: 'tu-graz-repository',
-        externalLink: 'https://damap.org/',
-        description:
-          'A central hub for data publication and archiving, offering persistent identifier linking.',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-          {
-            text: 'Launch',
-            link: 'https://repository.tugraz.at/',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-      {
-        name: 'Publication Consulting',
-        slug: 'publication-consulting',
-        description:
-          'Assistance with repository searches and metadata management for publications.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-      {
-        name: 'Legal & Ethical Aspects',
-        slug: 'legal-ethical-aspects',
-        description:
-          'Guidance on navigating the legal and ethical considerations in research data management.',
-        externalLink: 'https://www.tugraz.at/sites/rdm/home',
-        buttons: [
-          {
-            text: 'Read More',
-            link: '#',
-            iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
-          },
-        ],
-      },
-    ],
-  },
-];
+export type CombinedData = {
+  servicesData: ServiceData[];
+  eventsData: EventData[];
+};
 
-export const events = [
-  {
-    date: '17 May 2023',
-    name: 'RDM Month May',
-    url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/rdm-month-may-2023',
-    urlImage: '',
-  },
-  {
-    date: '07 November 2022',
-    name: 'Second General Assembly of EOSC Support Office Austria',
-    moreInfo: 'More Information',
-    url: 'https://eosc-austria.at/wrap-up-2nd-general-assembly-of-eosc-support-office-austria/',
-    urlImage: '/events/rdm-ilire.png',
-  },
-  {
-    date: '23 May 2022',
-    name: 'Symposium of the Cluster Research Data: "Future Research (Data) Management"',
-    moreInfo: 'More Information',
-    url: 'https://forschungsdaten.at/cluster-forschungsdaten-symposium-2022-programm/',
-    urlImage: '',
-  },
-];
+export const useCombinedData = () => {
+  const { t, i18n } = useTranslation();
+  const [combinedData, setCombinedData] = useState<CombinedData>({
+    servicesData: [],
+    eventsData: [],
+  });
+
+  useEffect(() => {
+    const servicesData: ServiceData[] = [
+      {
+        name: i18.t('planning.title'),
+        items: [
+          {
+            name: i18.t('planning.itemName.dmpTool'),
+            slug: 'tu-graz-dmp-tool',
+            description: i18.t('planning.tuGrazDmpToolDescription'),
+            externalLink: 'https://damap.org/',
+            buttons: [
+              {
+                text: i18.t('planning.readMore'),
+                link: '#',
+                iframeSrc: 'https://damap.org/',
+              },
+              {
+                text: i18.t('planning.launch'),
+                link: 'https://damap.org/',
+                iframeSrc: 'https://damap.org/',
+              },
+            ],
+          },
+          {
+            name: i18.t('planning.itemName.dmpConsulting'),
+            slug: 'consulting',
+            description: i18.t('planning.dmpConsultingDescription'),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('planning.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+          {
+            name: i18.t('planning.itemName.rdmInProposals'),
+            slug: 'in-proposals',
+            description: i18.t('planning.rdmInProposalsDescription'),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('planning.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: i18.t('activeStateOfResearch.title'),
+        items: [
+          {
+            name: i18.t('activeStateOfResearch.itemName.eLabFtwTool'),
+            slug: 'elabftw',
+            externalLink: '',
+            description: i18.t('activeStateOfResearch.eLabFTWDescription'),
+            buttons: [
+              {
+                text: i18.t('activeStateOfResearch.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+              {
+                text: i18.t('activeStateOfResearch.launch'),
+                link: 'https://www.elabftw.net/',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+          {
+            name: i18.t('activeStateOfResearch.itemName.cyverseTool'),
+            slug: 'cat-cyverse',
+            description: i18.t(
+              'activeStateOfResearch.cyVerseAustriaDescription'
+            ),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('activeStateOfResearch.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+              {
+                text: i18.t('activeStateOfResearch.launch'),
+                link: 'https://de.cyverse.tugraz.at/',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+          {
+            name: i18.t('activeStateOfResearch.itemName.rdmOptimization'),
+            slug: 'optimization',
+            description: i18.t(
+              'activeStateOfResearch.rdmOptimizationDescription'
+            ),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('activeStateOfResearch.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: i18.t('researchComplete.title'),
+        items: [
+          {
+            name: i18.t('researchComplete.itemName.tuGrazRepository'),
+            slug: 'tu-graz-repository',
+            externalLink: 'https://damap.org/',
+            description: i18.t('researchComplete.tuGrazRepositoryDescription'),
+            buttons: [
+              {
+                text: i18.t('researchComplete.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+              {
+                text: i18.t('researchComplete.launch'),
+                link: 'https://repository.tugraz.at/',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+          {
+            name: i18.t('researchComplete.itemName.publicationConsulting'),
+            slug: 'publication-consulting',
+            description: i18.t(
+              'researchComplete.publicationConsultingDescription'
+            ),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('researchComplete.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+          {
+            name: i18.t('researchComplete.itemName.legalAndEthicalAspects'),
+            slug: 'legal-ethical-aspects',
+            description: i18.t(
+              'researchComplete.legalEthicalAspectsDescription'
+            ),
+            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            buttons: [
+              {
+                text: i18.t('researchComplete.readMore'),
+                link: '#',
+                iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
+              },
+            ],
+          },
+        ],
+      },
+    ];
+
+    const eventsData: EventData[] = [
+      {
+        date: i18.t('events.event1.date'),
+        name: i18.t('events.event1.name'),
+        url: i18.t('events.events.url'),
+        urlImage: '',
+      },
+      {
+        date: i18.t('events.event2.date'),
+        name: i18.t('events.event2.name'),
+        moreInfo: i18.t('events.event2.moreInfo'),
+        url: i18.t('events.event2.url'),
+        urlImage: i18.t('events.event2.urlImage', {
+          defaultValue: '/events/rdm-ilire.png',
+        }),
+      },
+      {
+        date: i18.t('events.event3.date'),
+        name: i18.t('events.event3.name'),
+        moreInfo: i18.t('events.event3.moreInfo'),
+        url: i18.t('events.event3.url'),
+        urlImage: i18.t('events.event3.urlImage', {
+          defaultValue: '/events/rdm-ilire.png',
+        }),
+      },
+    ];
+
+    setCombinedData({ servicesData, eventsData });
+  }, [t, i18n.language]);
+
+  return combinedData;
+};

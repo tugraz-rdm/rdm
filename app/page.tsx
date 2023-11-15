@@ -1,19 +1,32 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+
 import HoverableButtons from '#/ui/hoverable-buttons';
-import { services } from '#/lib/services';
+import { useCombinedData } from '#/lib/services';
 
 const Page: FC = () => {
+  const { servicesData } = useCombinedData();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // loading state in the future
+  }
+
   return (
     <>
       <div className="container mx-auto space-y-10  text-white">
         <div className="ml-auto w-1/3">{/* <SearchForm /> */}</div>
-        {services.map(section => {
+        {servicesData.map(section => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div
-              className={`border-1 rounded-lg border border-gray-200 p-6 group-hover:opacity-10`}>
+              className={`border-1 rounded-lg border border-gray-200 p-6 group-hover:opacity-10`}
+              key={section.name}>
               <div key={section.name} className="space-y-3">
                 <button
                   type="button"

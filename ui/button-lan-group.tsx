@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 interface ButtonProps {
   label: string;
   onClick?: () => void;
@@ -24,20 +26,26 @@ const Button: FC<ButtonProps> = ({
 );
 
 const ButtonLANGroup: FC = () => {
-  const [selectedLang, setSelectedLang] = useState('EN');
+  const { i18n } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState(i18n.language);
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setSelectedLang(lang);
+  };
 
   return (
     <div className="inline-flex rounded-md shadow-sm" role="group">
       <Button
         label="EN"
-        onClick={() => setSelectedLang('EN')}
-        selected={selectedLang === 'EN'}
+        onClick={() => changeLanguage('en')}
+        selected={selectedLang === 'en'}
         className="border border-gray-900 rounded-l-lg"
       />
       <Button
         label="DE"
-        onClick={() => setSelectedLang('GE')}
-        selected={selectedLang === 'GE'}
+        onClick={() => changeLanguage('de')}
+        selected={selectedLang === 'de'}
         className="border border-gray-900 rounded-r-md"
       />
     </div>

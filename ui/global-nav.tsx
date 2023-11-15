@@ -1,18 +1,18 @@
 'use client';
 
-import { services, events, type Item } from '#/lib/services';
-import { Disclosure } from '@headlessui/react';
+import { ButtonDrawer, EventDrawer } from './event-drawer';
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/outline';
-import clsx from 'clsx';
+import { ServiceItem, useCombinedData } from '#/lib/services';
+
+import { Disclosure } from '@headlessui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import { useState, useEffect } from 'react';
 import { TULogo } from './tu-logo';
-
+import clsx from 'clsx';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ButtonDrawer, EventDrawer } from './event-drawer';
+import { useSelectedLayoutSegment } from 'next/navigation';
+import { useState } from 'react';
 
 export const SimpleGlobalNav: React.FC<{
   isOpen: boolean;
@@ -52,7 +52,8 @@ export function GlobalNav() {
   const [content, setContent] = useState<'nav' | 'events'>('nav');
   const [isOpen, setIsOpen] = useState(true);
   const close = () => setIsOpen(false);
-
+  const { servicesData, eventsData } = useCombinedData();
+  
   return (
     <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-700 bg-gray-700 lg:bottom-0 lg:z-auto lg:w-96 lg:border-b-0 lg:border-r lg:border-gray-700">
       <div>
@@ -105,7 +106,7 @@ export function GlobalNav() {
               hidden: !isOpen,
             })}>
             <nav className="space-y-6 px-2 py-3 lg:space-x-0 lg:space-y-4">
-              {services.map((section, sectionIdx) => (
+              {servicesData.map((section, sectionIdx) => (
                 <Disclosure
                   as="div"
                   key={sectionIdx}
@@ -136,7 +137,7 @@ export function GlobalNav() {
         ) : (
           <div className=" h-[80vh] w-full overflow-y-auto lg:w-72">
             <div className="mt-20 space-y-8">
-              {events.map(event => (
+              {eventsData.map(event => (
                 <div
                   key={event.date}
                   className="bg-white-smoke ml-8 h-full max-w-sm rounded-lg border border-gray-200 p-6 shadow-lg group-hover:opacity-10 dark:border-gray-700 dark:bg-gray-800">
@@ -182,7 +183,7 @@ export function GlobalNavItem({
   item,
   close,
 }: {
-  item: Item;
+  item: ServiceItem;
   close: () => false | void;
 }) {
   const segment = useSelectedLayoutSegment();

@@ -1,6 +1,5 @@
 'use client';
 
-import { events, services } from '#/lib/services';
 import {
   faArrowUpRightFromSquare,
   faCalendarDays,
@@ -15,6 +14,7 @@ import { GlobalNavItem } from './global-nav';
 import Image from 'next/image';
 import InformationalBanner from './informational-banner';
 import Link from 'next/link';
+import { useCombinedData, } from '#/lib/services';
 import { useState } from 'react';
 
 type EventsProps = {
@@ -26,6 +26,8 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isEventOpen, setIsEventOpen] = useState<boolean>(true);
+  const { servicesData, eventsData } = useCombinedData();
+  
 
   const handleMenuClick = () => {
     setIsMenuOpen(prev => !prev);
@@ -42,6 +44,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const handleClose = () => {
     setOpenSectionIndex(null);
   };
+
 
   return (
     <div>
@@ -71,7 +74,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
         <div className="overflow-y-auto py-2">
           <ul className="space-y-2">
             {isMenuOpen &&
-              services.map((section, sectionIdx) => (
+              servicesData.map((section, sectionIdx) => (
                 <li key={sectionIdx} style={{ marginLeft: '17px' }}>
                   <button
                     type="button"
@@ -105,7 +108,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
             {isEventOpen && (
               <ul>
                 <div className="flex flex-col gap-3 py-2">
-                  {events.map(event => (
+                  {eventsData.map(event => (
                     <li
                       key={event.date}
                       className="bg-white-smoke grid h-full max-w-sm rounded-lg border border-gray-400 p-6 shadow-sm group-hover:opacity-10 dark:border-gray-700 dark:bg-gray-800">
