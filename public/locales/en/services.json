@@ -1,0 +1,41 @@
+{
+  "planning": {
+    "title": "PLANNING",
+    "itemName": {
+      "dmpTool": "TU Graz DMP TOOL",
+      "dmpConsulting": "DMP Consulting",
+      "rdmInProposals": "RDM In-proposals"
+    },
+    "tuGrazDmpToolDescription": "A comprehensive tool designed to guide researchers through the process of creating a data management plan.",
+    "dmpConsultingDescription": "Consultation services for researchers to aid in the development and execution of data management strategies.",
+    "rdmInProposalsDescription": "Incorporate Research Data Management best practices within project proposals for efficient and responsible data handling.",
+    "readMore": "Read More",
+    "launch": "Launch"
+  },
+  "activeStateOfResearch": {
+    "title": "ACTIVE STATE OF RESEARCH",
+    "itemName": {
+      "eLabFtwTool": "eLabFTW",
+      "cyverseTool": "CyVerse Austria",
+      "rdmOptimization": "RDM Optimization"
+    },
+    "eLabFTWDescription": "TU Graz offers its own instance of eLabFTW to all its members, accessible via a browser without needing any additional software.",
+    "cyVerseAustriaDescription": "A comprehensive platform for data analysis specifically tailored for Austrian research needs.",
+    "rdmOptimizationDescription": "Improvement solutions for research data management, including workflows, pipelines, infrastructures, and more.",
+    "readMore": "Read More",
+    "launch": "Launch"
+  },
+  "researchComplete": {
+    "title": "RESEARCH COMPLETE",
+    "itemName": {
+      "tuGrazRepository": "TU Graz Repository",
+      "publicationConsulting": "Publication Consulting",
+      "legalAndEthicalAspects": "Legal & Ethical Aspects"
+    },
+    "tuGrazRepositoryDescription": "A central hub for data publication and archiving, offering persistent identifier linking.",
+    "publicationConsultingDescription": "Assistance with repository searches and metadata management for publications.",
+    "legalEthicalAspectsDescription": "Guidance on navigating the legal and ethical considerations in research data management.",
+    "readMore": "Read More",
+    "launch": "Launch"
+  }
+}

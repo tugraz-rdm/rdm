@@ -1,0 +1,41 @@
+{
+  "planning": {
+    "title": "PLANUNG",
+    "itemName": {
+      "dmpTool": "TU Graz DMP TOOL",
+      "dmpConsulting": "DMP Beratung",
+      "rdmInProposals": "RDM in Vorschlägen"
+    },
+    "tuGrazDmpToolDescription": "Ein umfassendes Werkzeug, das Forscher durch den Prozess der Erstellung eines Datenmanagementplans führt.",
+    "dmpConsultingDescription": "Beratungsdienste für Forscher zur Unterstützung bei der Entwicklung und Durchführung von Datenmanagementstrategien.",
+    "rdmInProposalsDescription": "Einbeziehung von Best Practices im Forschungsdatenmanagement in Projektvorschläge für eine effiziente und verantwortungsvolle Datenverwaltung.",
+    "readMore": "Mehr lesen",
+    "launch": "Starten"
+  },
+  "activeStateOfResearch": {
+    "title": "AKTIVER FORSCHUNGSSTATUS",
+    "itemName": {
+      "eLabFtwTool": "eLabFTW",
+      "cyverseTool": "CyVerse Österreich",
+      "rdmOptimization": "RDM-Optimierung"
+    },
+    "eLabFTWDescription": "Die TU Graz bietet allen ihren Mitgliedern eine eigene Instanz von eLabFTW, die über einen Browser ohne zusätzliche Software zugänglich ist.",
+    "cyVerseAustriaDescription": "Eine umfassende Plattform für Datenanalyse, speziell zugeschnitten auf die Bedürfnisse der österreichischen Forschung.",
+    "rdmOptimizationDescription": "Verbesserungslösungen für das Forschungsdatenmanagement, einschließlich Arbeitsabläufen, Pipelines, Infrastrukturen und mehr.",
+    "readMore": "Mehr lesen",
+    "launch": "Starten"
+  },
+  "researchComplete": {
+    "title": "FORSCHUNG ABGESCHLOSSEN",
+    "itemName": {
+      "tuGrazRepository": "TU Graz Repository",
+      "publicationConsulting": "Publikationsberatung",
+      "legalAndEthicalAspects": "Rechtliche und ethische Aspekte"
+    },
+    "tuGrazRepositoryDescription": "Eine zentrale Anlaufstelle für die Veröffentlichung und Archivierung von Daten, die eine dauerhafte Identifikatorverknüpfung bietet.",
+    "publicationConsultingDescription": "Unterstützung bei Repositoriumssuchen und Metadatenmanagement für Publikationen.",
+    "legalEthicalAspectsDescription": "Beratung bei der Navigation durch rechtliche und ethische Überlegungen im Forschungsdatenmanagement.",
+    "readMore": "Mehr lesen",
+    "launch": "Starten"
+  }
+}

@@ -2,9 +2,11 @@
 
 import { FC } from 'react';
 import HoverableButtons from '#/ui/hoverable-buttons';
-import { services } from '#/lib/services';
+import { useServicesData } from '#/lib/services';
 
 const Page: FC = () => {
+  const services = useServicesData();
+
   return (
     <>
       <div className="container mx-auto space-y-10  text-white">
@@ -13,7 +15,8 @@ const Page: FC = () => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div
-              className={`border-1 rounded-lg border border-gray-200 p-6 group-hover:opacity-10`}>
+              className={`border-1 rounded-lg border border-gray-200 p-6 group-hover:opacity-10`}
+              key={section.name}>
               <div key={section.name} className="space-y-3">
                 <button
                   type="button"

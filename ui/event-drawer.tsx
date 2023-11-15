@@ -1,6 +1,6 @@
 'use client';
 
-import { events, services } from '#/lib/services';
+import { events, useServicesData } from '#/lib/services';
 import {
   faArrowUpRightFromSquare,
   faCalendarDays,
@@ -42,6 +42,8 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const handleClose = () => {
     setOpenSectionIndex(null);
   };
+
+  const services = useServicesData();
 
   return (
     <div>
