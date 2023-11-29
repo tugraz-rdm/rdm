@@ -97,13 +97,13 @@ export default async function Page({ params }: { params: { id: string } }) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
-              API Support Page
+              Direct forwarding
             </a>
           </>
         )}
         {params.id === 'manuals' && (
           <>
-            <div className="mb-5 mt-5 flex gap-5">
+            <div className="mb-5 mt-5 flex gap-2">
               <a
                 href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/eLabFTW_Guide_User_en_v1.3.pdf"
                 target="_blank"
@@ -122,9 +122,12 @@ export default async function Page({ params }: { params: { id: string } }) {
             </div>
           </>
         )}
-        {params.id === 'overview' && (
+        {params.id === 'info' && (
           <>
             <div className="">
+              <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
+                {'OVERVIEW OF PERMISSIONS MANAGEMENT IN ELABFTW'}
+              </h1>
               <p className="font-thin mb-3">
                 Configuration options are identical for viewing and writing
                 permissions. Entries always have permission settings that are
@@ -139,9 +142,12 @@ export default async function Page({ params }: { params: { id: string } }) {
             </div>
           </>
         )}
-        {params.id === 'entries' && (
-          <>
-            <p className="font-thin mb-3">
+        {params.id === 'info' && (
+          <div>
+            <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
+              {'EXPORT OF ENTRIES'}
+            </h1>
+            <p className="font-thin">
               Depending on the section in eLabFTW, different export formats are
               available for one or more entries. This allows you to use your
               documentation externally or, for example, as additional
@@ -149,10 +155,13 @@ export default async function Page({ params }: { params: { id: string } }) {
               overview of the available export formats and a short description.
             </p>
             <ExportEntries />
-          </>
+          </div>
         )}
-        {params.id === 'tip' && (
-          <>
+        {params.id === 'info' && (
+          <div>
+            <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
+              {'TIP: LEAVING A TEAM/GROUP OR THE TOOL'}
+            </h1>
             <p className="font-thin mb-3">
               When a user leaves a team, a group or the entire tool, it makes
               sense to have an offboarding strategy in place beforehand. In the
@@ -170,18 +179,21 @@ export default async function Page({ params }: { params: { id: string } }) {
               it is the intellectual property of the person concerned.
             </p>
             <UserExit />
-          </>
+          </div>
         )}
-        {params.id === 'backup' && (
-          <>
-            <p className="font-thin">
+        {params.id === 'info' && (
+          <div>
+                       <h1 className="truncate text-1xl font-medium capitalize text-gray-700 mt-5">
+              {'BACKUP OPTIONS FOR USERS'}
+            </h1>
+            <p className="font-thin mb-2">
               If you want to save your entries from eLabFTW externally, i.e. on
               your computer or on another storage medium, this is possible in
               different ways. We distinguish here between entries in experiments
               and in the database.
             </p>
-            <p className="font-thin">
-              <h2 className="font-medium">Experiments</h2>
+            <div className="font-thin">
+              <h2 className="truncate text-1xl font-medium capitalize text-gray-200">EXPERIMENTS</h2>
               You can select one or more entries via the web interface and
               export them directly. Several formats are available, which can be
               selected depending on the application. The entry itself remains
@@ -195,9 +207,9 @@ export default async function Page({ params }: { params: { id: string } }) {
               experiments of a user in different formats via the Admin Panel.
               You can also export database objects and bookings in the calendar.
               Option via API: Coming soon (only timestamped entries)
-            </p>
+            </div>
             <p className="font-thin">
-              <h2 className="font-medium">Resources</h2>
+              <h2 className="truncate text-1xl font-medium capitalize text-gray-200">RESOURCES</h2>
               You can select one or more entries via the web interface and
               export them directly. Again, several formats are available, which
               can be selected depending on the application. The entry itself
@@ -206,7 +218,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               different formats available for export. First check which one you
               need before exporting the entry(s).
             </p>
-          </>
+          </div>
         )}
       </div>
     </div>

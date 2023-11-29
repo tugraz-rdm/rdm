@@ -20,9 +20,6 @@ const Page: FC = () => {
         <ExternalLink href="https://elabftw.tugraz.at">
           Access portal
         </ExternalLink>
-        <ExternalLink href="https://demo.elabftw.net/experiments.php">
-          Online Live Demo
-        </ExternalLink>
       </div>
     </div>
   );

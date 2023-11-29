@@ -5,9 +5,13 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     services: require('public/locales/en/services.json'),
+    header: require('public/locales/en/header.json'),
+    dmp: require('public/locales/en/dmp-tool.json'),
   },
   de: {
     services: require('public/locales/de/services.json'),
+    header: require('public/locales/de/header.json'),
+    dmp: require('public/locales/de/dmp-tool.json'),
   },
 };
 
@@ -16,7 +20,7 @@ i18n
   .use(initReactI18next)
   .init({
     lng: 'en',
-    ns: ['services'],
+    ns: ['services', 'header', 'dmp-tool'],
     debug: false,
     interpolation: {
       escapeValue: false,

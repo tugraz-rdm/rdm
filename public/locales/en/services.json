@@ -29,7 +29,7 @@
     "title": "RESEARCH COMPLETE",
     "itemName": {
       "tuGrazRepository": "TU Graz Repository",
-      "publicationConsulting": "Publication Consulting",
+      "publicationConsulting": "Data Publication Consulting",
       "legalAndEthicalAspects": "Legal & Ethical Aspects"
     },
     "tuGrazRepositoryDescription": "A central hub for data publication and archiving, offering persistent identifier linking.",
@@ -39,6 +39,18 @@
     "launch": "Launch"
   },
   "events": {
+    "event5": {
+      "date": "29 Nov 2023",
+      "name": "National RDM Exchange",
+      "url": "https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/national-rdm-exchange",
+      "urlImage": ""
+    },
+    "event4": {
+      "date": "28 Nov 2023",
+      "name": "Data Management mit LinkAhead",
+      "url": "https://forschungsdaten.at/sharedrdm/materialien/data-management-mit-linkahead/",
+      "urlImage": ""
+    },
     "event1": {
       "date": "17 May 2023",
       "name": "RDM Month May",

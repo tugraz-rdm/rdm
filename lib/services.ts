@@ -172,7 +172,7 @@ export const useCombinedData = () => {
           },
           {
             name: i18.t('researchComplete.itemName.publicationConsulting'),
-            slug: 'publication-consulting',
+            slug: 'data-publication-consulting',
             description: i18.t(
               'researchComplete.publicationConsultingDescription'
             ),
@@ -206,6 +206,18 @@ export const useCombinedData = () => {
 
     const eventsData: EventData[] = [
       {
+        date: i18.t('events.event5.date'),
+        name: i18.t('events.event5.name'),
+        url: i18.t('events.events.url'),
+        urlImage: '',
+      },
+      {
+        date: i18.t('events.event4.date'),
+        name: i18.t('events.event4.name'),
+        url: i18.t('events.events.url'),
+        urlImage: '',
+      },
+      {
         date: i18.t('events.event1.date'),
         name: i18.t('events.event1.name'),
         url: i18.t('events.events.url'),
@@ -219,16 +231,7 @@ export const useCombinedData = () => {
         urlImage: i18.t('events.event2.urlImage', {
           defaultValue: '/events/rdm-ilire.png',
         }),
-      },
-      {
-        date: i18.t('events.event3.date'),
-        name: i18.t('events.event3.name'),
-        moreInfo: i18.t('events.event3.moreInfo'),
-        url: i18.t('events.event3.url'),
-        urlImage: i18.t('events.event3.urlImage', {
-          defaultValue: '/events/rdm-ilire.png',
-        }),
-      },
+      }
     ];
 
     setCombinedData({ servicesData, eventsData });

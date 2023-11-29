@@ -1,0 +1,37 @@
+{
+  "dmp": {
+    "page": {
+      "title": "TU Graz DMP Tool",
+      "description": "Das TU Graz DMP Tool basiert auf einer Open-Source-Lösung namens DAMAP, die als Werkzeug für maschinenlesbare Datenverwaltungspläne (maDMPs) dient. DAMAP wurde in Zusammenarbeit mit der TU Wien entwickelt und wird kontinuierlich verbessert. DAMAP wurde an die institutionellen Anforderungen der TU Graz angepasst (z. B. Design, Integration bestehender Datenbanken) und steht allen Mitgliedern der TU Graz zur Erstellung ihrer Datenverwaltungspläne zur Verfügung. Das TU Graz DMP-Tool ist unter folgendem Link verfügbar. Wir suchen auch Freiwillige, die das neue Tool testen möchten, und uns Feedback zu Verbesserungen oder Ähnlichem geben möchten. Im folgenden Video erhalten Sie eine schnelle Übersicht über DAMAP:",
+      "externalLinkText": "TU Graz DMP Tool"
+    },
+    "paragraphById": {
+      "contentMap": {
+        "support": "Die Seite soll Unterstützung für die Verwendung des TU Graz DMP Tools bieten. Wenn Sie Fragen oder Anfragen zum DMP-Tool haben (z. B. Berechtigungssteuerung, Vorlagen), kontaktieren Sie uns bitte.",
+        "faq": "",
+        "manuals": "Inhalte des Handbuchs...",
+        "apiSupport": "API-Support-Inhalte hier..."
+      },
+      "titleMap": {
+        "support": "TU Graz DMP-Tool - Support",
+        "faq": "TU Graz DMP-Tool - FAQ",
+        "manuals": "TU Graz DMP-Tool - Handbuch",
+        "apiSupport": "API-Support-Inhalte hier..."
+      }
+    },
+    "faq": {
+      "firstQuestion": "Was ist erlaubt, um neue DMPs im TU Graz DMP-Tool zu erstellen?",
+      "firstAnswer": "Jeder mit einem TU Graz-Konto (Studierende, Mitarbeiter, externe Projektmitarbeiter).",
+      "secondQuestion": "Sind meine DMPs für alle innerhalb und außerhalb der TU Graz sichtbar?",
+      "secondAnswer": "Nein, standardmäßig gehören die Anzeige- und Bearbeitungsrechte Ihnen. Sie können jedoch Mitgliedern der TU Graz Bearbeitungsoptionen für Ihr DMP geben.",
+      "thirdQuestion": "Wie lange werden meine DMPs gespeichert?",
+      "thirdAnswer": "Mindestens 10 Jahre lang, aber auch danach werden Ihre DMPs nicht automatisch gelöscht.",
+      "fourthQuestion": "Muss ich bezahlen, wenn ich das DMP-Tool benutze?",
+      "fourthAnswer": "Nein, Sie müssen nichts bezahlen, um es zu verwenden.",
+      "fifthQuestion": "Kann ich meine DMPs löschen?",
+      "fifthAnswer": "Ja, wenn Sie wissen, dass Sie Ihr DMP nicht mehr im DMP-Tool behalten möchten, können Sie es jederzeit selbst löschen.",
+      "sixthQuestion": "Wo werden die DMPs gespeichert, und sind sie dort sicher?",
+      "sixthAnswer": "Die DMPs werden auf den Servern des ZID der TU Graz gespeichert und durch deren Sicherheitsmaßnahmen geschützt."
+    }
+  }
+}

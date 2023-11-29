@@ -11,10 +11,7 @@ export function getContentProposalAndTitleById(id: string) {
     support: 'eLabFTW SUPPORT',
     faq: 'eLabFTW - FAQ',
     manuals: 'eLabFTW - MANUALS',
-    overview: 'OVERVIEW OF PERMISSIONS MANAGEMENT IN eLabFTW',
-    entries: 'EXPORT OF ENTRIES',
-    tip: 'TIP: LEAVING A TEAM/GROUP OR THE TOOL',
-    backup: 'BACKUP OPTIONS FOR USERS',
+    info: 'FURTHER INFORMATION',
     api: 'API SUPPORT PAGE',
   };
 
@@ -29,10 +26,6 @@ export function generateStaticParams() {
     { id: 'support' },
     { id: 'faq' },
     { id: 'manuals' },
-    { id: 'overview' },
-    { id: 'entries' },
-    { id: 'tip' },
-    { id: 'backup' },
     { id: 'api' },
   ];
 }

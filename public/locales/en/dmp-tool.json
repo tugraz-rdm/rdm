@@ -1,0 +1,37 @@
+{
+  "dmp": {
+    "page": {
+      "title": "TU Graz DMP Tool",
+      "description": "TU Graz DMP Tool is based on an open source solution called DAMAP that serves as a tool for machine actionable DMPs (maDMPs). DAMAP was developed in collaboration with TU Wien and is under continuous improvement. DAMAP was adapted to the institutional requirements of TU Graz (e.g. design, integration of existing databases) and is available to all TU Graz members for the creation of their data management plans. TU Graz DMP Tool is availbale under the following link. We are also looking for volunteers who would like to test the new tool and give us feedback on improvements or similar. In the following video you can get a quick overview of DAMAP:",
+      "externalLinkText": "TU Graz DMP Tool"
+    },
+    "paragraphById": {
+      "contentMap": {
+        "support": "The page is intended to provide support for the use of the TU Graz DMP Tool. If you have a question or request about the DMP Tool (e.g. permission control, templates) please contact us.",
+        "faq": "",
+        "manuals": "'Manuals content...",
+        "apiSupport": "API Support content here..."
+      },
+      "titleMap": {
+        "support": "TU Graz DMP Tool - Support",
+        "faq": "TU Graz DMP Tool - FAQ",
+        "manuals": "TU Graz DMP Tool - Manual",
+        "apiSupport": "API Support content here..."
+      }
+    },
+    "faq": {
+      "firstQuestion": "What is allowed to create new DMPs in the TU Graz DMP Tool?",
+      "firstAnswer": "Anyone with a TU Graz account (students, employees, external project staff).",
+      "secondQuestion": "Are my DMPs visible to everyone inside and outside of TU Graz?",
+      "secondAnswer": "No, by default, the viewing and editing rights are yours. However, you can give members of the TU Graz editing options for your DMP.",
+      "thirdQuestion": "How long will my DMPs be stored?",
+      "thirdAnswer": "At least for 10 years, but even after that, your DMPs are not automatically deleted.",
+      "fourthQuestion": "Will I have to pay if I use the DMP Tool?",
+      "fourthAnswer": "No, you don't have to pay anything to use it.",
+      "fifthQuestion": "Can I delete my DMPs?",
+      "fifthAnswer": "Yes, if you know that you no longer want to keep the DMP in the DMP Tool, you can delete it yourself at any time.",
+      "sixthQuestion": "Where is the DMP stored and is it safe there?",
+      "sixthAnswer": "The DMPs are stored on the servers of the ZID of TU Graz and are protected by their security measures."
+    }
+  }
+}

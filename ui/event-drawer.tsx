@@ -16,6 +16,7 @@ import InformationalBanner from './informational-banner';
 import Link from 'next/link';
 import { useCombinedData, } from '#/lib/services';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type EventsProps = {
   isOpen: boolean;
@@ -165,7 +166,9 @@ export const ButtonDrawer: React.FC<{
   const toggleDrawer = () => {
     onToggle();
   };
-
+  const { t } = useTranslation('header');
+  const title = t('header.title')
+  
   return (
     <div
       className={`fixed left-0 top-0 mt-8 transition-transform ${
@@ -209,7 +212,7 @@ export const ButtonDrawer: React.FC<{
           <Link href="/" className="flex gap-x-2" onClick={onToggle}>
             <h3 className="font-base text-2xl tracking-wide text-white">RDM</h3>
             <h3 className="text-2xl font-thin tracking-wide text-white">
-              | Research Data Management
+              | {title}
             </h3>
           </Link>
         </div>

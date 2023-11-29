@@ -24,17 +24,17 @@ const HoverableButtons: React.FC<HoverableButtonsProps> = ({ item }) => {
     button: Button
   ) => {
     e.stopPropagation();
-    switch (button.text) {
-      case 'Launch':
-        window.open(button.link, '_blank');
-        break;
-      case 'Read More':
-        router.push(`/${item.slug}`);
-        break;
-      default:
-        break;
+    
+    const launchTexts = ['Launch', 'Starten'];
+    const readMoreTexts = ['Read More', 'Mehr lesen'];
+  
+    if (launchTexts.includes(button.text)) {
+      window.open(button.link, '_blank');
+    } else if (readMoreTexts.includes(button.text)) {
+      router.push(`/${item.slug}`);
     }
   };
+  
 
   return (
     <div>
