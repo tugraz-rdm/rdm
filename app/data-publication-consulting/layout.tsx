@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Tab } from '#/ui/tab';
 
 export const metadata = {
-  title: 'DMP Publication Consulting',
+  title: 'DMP Consulting',
 };
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,20 +14,13 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <div className="space-y-9">
       <div className="flex flex-wrap items-center gap-2">
         <Tab
-          path="/publication-consulting"
-          item={{ text: 'DMP Publication Consulting' }}
+          path="/data-publication-consulting"
+          item={{ text: 'DATA PUBLICATION CONSULTING' }}
         />
+        <Tab path="/data-publication-consulting" item={{ text: 'LICENSES', slug: 'licenses' }} />
         <Tab
-          path="/publication-consulting"
+          path="/data-publication-consulting"
           item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
-        />
-        <Tab
-          path="/publication-consulting"
-          item={{ text: 'FAQ', slug: 'faq' }}
-        />
-        <Tab
-          path="/publication-consulting"
-          item={{ text: 'MANUAL', slug: 'manuals' }}
         />
       </div>
       <div>{children}</div>

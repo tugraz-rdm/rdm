@@ -12,17 +12,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Tab path="/cat-cyverse" item={{ text: 'CAT - CyVerse Austria' }} />
         <Tab
           path="/cat-cyverse"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT INFO', slug: 'support' }}
+        />
+        <Tab
+          path="/cat-cyverse"
+          item={{ text: 'NEW ACCOUNT', slug: 'account' }}
         />
         <Tab path="/cat-cyverse" item={{ text: 'FAQ', slug: 'faq' }} />
-        <Tab
-          path="/cat-cyverse"
-          item={{ text: 'USER PORTALS', slug: 'portals' }}
-        />
-        <Tab
-          path="/cat-cyverse"
-          item={{ text: 'CyVerse TRAINING MATERIALS', slug: 'materials' }}
-        />
       </div>
       <div>{children}</div>
     </div>

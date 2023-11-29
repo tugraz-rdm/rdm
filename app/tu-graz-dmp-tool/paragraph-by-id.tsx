@@ -1,4 +1,6 @@
+
 export function getContentAndTitleById(id: string) {
+  
   const contentMap: Record<string, string> = {
     support:
       'The page is intended to provide support for the use of the TU Graz DMP Tool. If you have a question or request about the DMP Tool (e.g. permission control, templates) please contact us.',

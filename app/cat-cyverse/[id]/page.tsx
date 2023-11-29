@@ -68,36 +68,21 @@ export default async function Page({ params }: { params: { id: string } }) {
         )}
       </div>
       {params.id === 'support' && (
-        <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
-          <RenderingInfoCyVerse
-            type="tu-graz-dmp-tool"
-            showEmail={params.id === 'support'}
-          />
-        </div>
-      )}
-      {params.id === 'portals' && (
-        <div>
-          <div className=" flex gap-5 whitespace-nowrap">
-            <ExternalLink href="https://user.cyverse.tugraz.at/">
-              Login User Portal
-            </ExternalLink>
-            <ExternalLink href="https://de.cyverse.tugraz.at/">
-              Login Discovery Environment
-            </ExternalLink>
+        <>
+          <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
+            <RenderingInfoCyVerse
+              type="tu-graz-dmp-tool"
+              showEmail={params.id === 'support'}
+            />
           </div>
-        </div>
+        </>
       )}
-      {params.id === 'materials' && (
-        <div>
-          <div className=" flex gap-5 whitespace-nowrap">
-            <ExternalLink href="https://cyverse.org/webinar-get-started-with-cyverse">
-              Get started with CyVerse
-            </ExternalLink>
-            <ExternalLink href="https://cyverse.org/learning">
-              Learning Materials
-            </ExternalLink>
-          </div>
-        </div>
+      {params.id === 'account' && (
+        <>
+          <ExternalLink href="https://cloud.tugraz.at/index.php/f/733433518">
+            Insert Tutorial (doc-file)
+          </ExternalLink>
+        </>
       )}
     </div>
   );

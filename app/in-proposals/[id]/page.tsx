@@ -1,3 +1,4 @@
+import { RenderingInfoInProposals } from '#/ui/rendering-info-tool-in-proposals';
 import { getContentProposalAndTitleById } from '../random-post-tab';
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -9,6 +10,11 @@ export default async function Page({ params }: { params: { id: string } }) {
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
+        {params.id === 'support' && (
+          <div>
+          <RenderingInfoInProposals type={'in-proposals'} showEmail />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
-import React, { FC } from 'react';
-
-import { ExternalLink } from '#/ui/external-link';
+import { FC } from 'react';
 import LicensesForData from '../licences-for-data';
 import LicensesForPersonal from '../licenses-for-personal';
 import LicensesForSoftware from '../license-for-software';

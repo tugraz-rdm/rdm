@@ -39,6 +39,18 @@
     "launch": "Starten"
   },
   "events": {
+    "event5": {
+      "date": "29. Nov 2023",
+      "name": "Nationaler RDM-Austausch",
+      "url": "https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/national-rdm-exchange",
+      "urlImage": ""
+    },
+    "event4": {
+      "date": "28. Nov 2023",
+      "name": "Datenmanagement mit LinkAhead",
+      "url": "https://forschungsdaten.at/sharedrdm/materialien/data-management-mit-linkahead/",
+      "urlImage": ""
+    },
     "event1": {
       "date": "17. Mai 2023",
       "name": "RDM Monat Mai",

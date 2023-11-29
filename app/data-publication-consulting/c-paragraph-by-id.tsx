@@ -6,8 +6,7 @@ export const getContentConsultingAndTitleById = (id: string) => {
 
   const titleMap: Record<string, string> = {
     licenses: 'Licenses',
-    support: 'Consulting Support',
-    manuals: 'Consulting - Manuals',
+    support: 'Data Publication Consulting Support',
   };
 
   return {
@@ -17,5 +16,5 @@ export const getContentConsultingAndTitleById = (id: string) => {
 };
 
 export const generateStaticParams = () => {
-  return [{ id: 'support' }, { id: 'licenses' }, { id: 'manuals' }];
+  return [{ id: 'support' }, { id: 'licenses' }];
 };
