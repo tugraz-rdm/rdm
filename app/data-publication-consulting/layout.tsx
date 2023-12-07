@@ -20,7 +20,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <Tab path="/data-publication-consulting" item={{ text: 'LICENSES', slug: 'licenses' }} />
         <Tab
           path="/data-publication-consulting"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>

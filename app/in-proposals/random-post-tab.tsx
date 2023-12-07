@@ -4,7 +4,8 @@ export function getContentProposalAndTitleById(id: string) {
   };
 
   const titleMap: Record<string, string> = {
-    support: 'In-Proposal RDM Support',
+    examples: 'EXAMPLE FOR PROPOSALS',
+    support: 'CONTACT',
   };
 
   return {
@@ -14,5 +15,5 @@ export function getContentProposalAndTitleById(id: string) {
 }
 
 export function generateStaticParams() {
-  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }];
+  return [{ id: 'support' }, { id: 'examples' }];
 }

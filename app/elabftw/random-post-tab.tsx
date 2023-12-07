@@ -1,10 +1,8 @@
 export function getContentProposalAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support:
-      ' The page is intended to provide support for the use of eLabFTW. You will find manuals for users and admins of teams in eLabFTW. You will also find a list of frequently asked questions. If you have a question or request about eLabFTW (e.g. create a team or add a user) please contact us.',
-    faq: 'Frequently Asked Questions about incorporating RDM best practices in your project proposals.',
-    manuals:
-      'Guides and resources for embedding Research Data Management into your research proposal strategies.',
+    support:'',
+    faq: 'Frequently Asked Questions about incorporating RDM best practices',
+    manuals: '',
   };
 
   const titleMap: Record<string, string> = {

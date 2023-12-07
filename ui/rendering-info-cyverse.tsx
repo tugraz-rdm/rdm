@@ -1,4 +1,3 @@
-import { ExternalLink } from "./external-link";
 
 type RenderingInfoCyVerseProps = {
   type: 'tu-graz-dmp-tool';
@@ -27,15 +26,7 @@ export function RenderingInfoCyVerse({
           </div>
         </a>
       </div>
-     <p className="font-thin mt-3">For frequently asked questions (FAQ) follow to the support subsection!</p>
-          <div className=" flex flex-column gap-5 whitespace-nowrap mt-3">
-            <ExternalLink href="https://user.cyverse.tugraz.at/">
-              Login User Portal
-            </ExternalLink>
-            <ExternalLink href="https://de.cyverse.tugraz.at/">
-              Login Discovery Environment
-            </ExternalLink>
-          </div>
+     <p className="text-gray-700 font-thin mt-3">Our data stewards will be pleased to help you.</p>
     </>
   );
 }

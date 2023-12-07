@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Tab path="/optimization" item={{ text: 'CHECKLIST', slug: 'checklist' }} />
         <Tab
           path="/optimization"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>

@@ -10,9 +10,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="space-y-9">
       <div className="flex flex-wrap items-center gap-2">
         <Tab path="/in-proposals" item={{ text: 'RDM IN-PROPOSALS' }} />
+        <Tab path="/in-proposals" item={{ text: 'EXAMPLE FOR PROPOSALS', slug: 'examples' }} />
         <Tab
           path="/in-proposals"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>

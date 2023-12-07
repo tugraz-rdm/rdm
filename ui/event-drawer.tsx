@@ -189,7 +189,7 @@ export const ButtonDrawer: React.FC<{
                 stroke="currentColor"
                 // strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"
               />
             </svg>
@@ -204,7 +204,7 @@ export const ButtonDrawer: React.FC<{
                 stroke="currentColor"
                 // strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"
               />
             </svg>

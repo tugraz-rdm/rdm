@@ -1,8 +1,7 @@
-import AccordionCollapse from '#/ui/accordion-collapse';
-import { ExportEntries } from '#/ui/e-labftw-material/export-entries';
-import { OverviewPermissionsManagement } from '#/ui/e-labftw-material/overview-permissions-management';
+import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
+
+import AccordionFaq from '#/ui/accordion-faq';
 import { RenderingInfoELab } from '#/ui/rendering-info-elab';
-import { UserExit } from '#/ui/e-labftw-material/user-exit';
 import { getContentProposalAndTitleById } from '../random-post-tab';
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -72,6 +71,48 @@ export default async function Page({ params }: { params: { id: string } }) {
     },
   ];
 
+  const managementInElabFtw: AccordionItem[] = [
+    {
+      ifPermissionManagement: true,
+      title: 'OVERVIEW OF PERMISSIONS MANAGEMENT IN ELABFTW',
+      description:
+        'Configuration options are identical for viewing and writing permissions. Entries always have permission settings that are anchored in the base settings these are taken from the personal default settings or from template settings, but can be changed.',
+      content:
+        ' Adding one or more teams, team groups or individual users is optional and can, but does not have to be done. Exception: Admin has forced the use of certain permission settings in the team settings.',
+    },
+  ];
+
+  const exportOfEntries: AccordionItem[] = [
+    {
+      ifExportEntries: true,
+      title: 'EXPORT OF ENTRIES',
+      description:
+        'Depending on the section in eLabFTW, different export formats are available for one or more entries. ',
+      content:
+        'This allows you to use your documentation externally or, for example, as additional information for publications or audits. Below you will find an overview of the available export formats and a short description.',
+    },
+  ];
+
+  const leavingTeamGroupOrTool: AccordionItem[] = [
+    {
+      ifTip: true,
+      title: 'TIP: LEAVING A TEAM/GROUP OR THE TOOL',
+      description:
+        'When a user leaves a team, a group or the entire tool, it makes sense to have an offboarding strategy in place beforehand.',
+      content:
+        ' In the three cases mentioned above, there are a few important points to consider when dealing with eLabFTW. As a user, it is important to remember which entries do not belong to you but you want to keep the information. As an admin or other user of the team, it is also important to think about this point in relation to the entries of the departing user. Entries can be duplicated for further use or exported for external archiving. If you leave the tool as a user, you should always export relevant entries, as you will lose access to them. If you are also the owner of database entries, transfer ownership to the admin of your team. Please remember, if you copy other peoples entries, to ask the owner for permission first, as it is the intellectual property of the person concerned.',
+    },
+  ];
+
+  const ifBackup: AccordionItem[] = [
+    {
+      ifBackup: true,
+      title: 'BACKUP OPTIONS FOR USERS',
+      description:
+        'If you want to save your entries from eLabFTW externally, i.e. on your computer or on another storage medium, this is possible in different ways. We distinguish here between entries in experiments and in the database.',
+    },
+  ];
+
   return (
     <div className="grid grid-cols-6 gap-x-6 gap-y-3">
       <div className="col-span-full space-y-3 lg:col-span-6">
@@ -79,9 +120,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
-        {params.id === 'faq' && (
-          <AccordionCollapse data={questionsAndAnswers} />
-        )}
+        {params.id === 'faq' && <AccordionFaq data={questionsAndAnswers} />}
         {params.id === 'support' && (
           <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
             <RenderingInfoELab
@@ -123,102 +162,19 @@ export default async function Page({ params }: { params: { id: string } }) {
           </>
         )}
         {params.id === 'info' && (
-          <>
-            <div className="">
-              <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
-                {'OVERVIEW OF PERMISSIONS MANAGEMENT IN ELABFTW'}
-              </h1>
-              <p className="font-thin mb-3">
-                Configuration options are identical for viewing and writing
-                permissions. Entries always have permission settings that are
-                anchored in the base settings. these are taken from the personal
-                default settings or from template settings, but can be changed.
-                Adding one or more teams, team groups or individual users is
-                optional and can, but does not have to be done. Exception: Admin
-                has forced the use of certain permission settings in the team
-                settings.
-              </p>
-              <OverviewPermissionsManagement />
-            </div>
-          </>
+          <AccordionContent items={managementInElabFtw} />
         )}
+
         {params.id === 'info' && (
           <div>
-            <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
-              {'EXPORT OF ENTRIES'}
-            </h1>
-            <p className="font-thin">
-              Depending on the section in eLabFTW, different export formats are
-              available for one or more entries. This allows you to use your
-              documentation externally or, for example, as additional
-              information for publications or audits. Below you will find an
-              overview of the available export formats and a short description.
-            </p>
-            <ExportEntries />
+            <AccordionContent items={exportOfEntries} />
           </div>
         )}
         {params.id === 'info' && (
-          <div>
-            <h1 className="truncate text-1xl font-medium capitalize text-gray-700">
-              {'TIP: LEAVING A TEAM/GROUP OR THE TOOL'}
-            </h1>
-            <p className="font-thin mb-3">
-              When a user leaves a team, a group or the entire tool, it makes
-              sense to have an offboarding strategy in place beforehand. In the
-              three cases mentioned above, there are a few important points to
-              consider when dealing with eLabFTW. As a user, it is important to
-              remember which entries do not belong to you but you want to keep
-              the information. As an admin or other user of the team, it is also
-              important to think about this point in relation to the entries of
-              the departing user. Entries can be duplicated for further use or
-              exported for external archiving. If you leave the tool as a user,
-              you should always export relevant entries, as you will lose access
-              to them. If you are also the owner of database entries, transfer
-              ownership to the admin of your team. Please remember, if you copy
-              other people's entries, to ask the owner for permission first, as
-              it is the intellectual property of the person concerned.
-            </p>
-            <UserExit />
-          </div>
+          <AccordionContent items={leavingTeamGroupOrTool} />
         )}
         {params.id === 'info' && (
-          <div>
-                       <h1 className="truncate text-1xl font-medium capitalize text-gray-700 mt-5">
-              {'BACKUP OPTIONS FOR USERS'}
-            </h1>
-            <p className="font-thin mb-2">
-              If you want to save your entries from eLabFTW externally, i.e. on
-              your computer or on another storage medium, this is possible in
-              different ways. We distinguish here between entries in experiments
-              and in the database.
-            </p>
-            <div className="font-thin">
-              <h2 className="truncate text-1xl font-medium capitalize text-gray-200">EXPERIMENTS</h2>
-              You can select one or more entries via the web interface and
-              export them directly. Several formats are available, which can be
-              selected depending on the application. The entry itself remains
-              after the export. You can also export an entry via the view of an
-              individual entry. Depending on the view, you have different
-              formats available for export. First check which one you need
-              before exporting the entry(s). You can export all your experiments
-              in one go via your "Profile". This is possible in different
-              formats. However, only experiments for which you are the owner can
-              be exported. Option for admins: As an admin, you can export all
-              experiments of a user in different formats via the Admin Panel.
-              You can also export database objects and bookings in the calendar.
-              Option via API: Coming soon (only timestamped entries)
-            </div>
-            <p className="font-thin">
-              <h2 className="truncate text-1xl font-medium capitalize text-gray-200">RESOURCES</h2>
-              You can select one or more entries via the web interface and
-              export them directly. Again, several formats are available, which
-              can be selected depending on the application. The entry itself
-              remains after the export. You can also export an entry via the
-              view of an individual entry. Depending on the view, you have
-              different formats available for export. First check which one you
-              need before exporting the entry(s).
-            </p>
-          </div>
+          <AccordionContent items={ifBackup} />
         )}
       </div>
     </div>

@@ -1,35 +1,79 @@
-import { ExternalLink } from '#/ui/external-link';
 import { FC } from 'react';
 
 const Page: FC = () => {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
-      <ul className="text-gray-700 font-thin p-0 text-base">
-        <h1 className="text-xl font-thin text-gray-700">
-          Data Publication Consulting
+      <ul className="text-gray-900 font-thin p-0 text-base">
+        <h1 className="text-xl font-medium text-gray-300 uppercase">
+          What is a DMP?
         </h1>
-        <p>
-          All non-sensitive research results which lead to a publication shall
-          be made available for the scientific community in terms of
-          transparency and reproducibility. Furthermore, making data available
-          and repurposable by a wider research community promotes the scientific
-          process of knowledge discovery and increases citability or enables new
-          collaboration possibilites. Therefore, all forms of digital objects,
-          such as research data, metadata, or source code, can be assigned a
-          persistent identifier through entries on repositories Tu Graz offers
-          the{' '}
-          <a className="text-gray-900" href="repository.tugraz.at">
-            instutional repository
-          </a>{' '}
-          for publishing research results. Additional topic- or
-          discipline-specific data repositories can be found via the{' '}
-          <a className="text-gray-900" href="re3data.org">
-            registry of research data repositories{' '}
-          </a>
-          . Licenses have to be attached to all research results before
-          publication, some examples are given for the various digital objects
-          under the subsection Licenses.
+        <p className="text-gray-900">
+          Imagine you are working on a new research project. You are faced with
+          a lot of data that you need to collect, store, organize, and manage.
+          You know this is important, but you are not sure how to get
+          started.This is where a data management plan (DMP) comes in. A DMP is
+          a document that describes how you will handle your research data. It
+          is an important part of your research project because it helps you to
+          organize, secure, and make your data accessible.
         </p>
+        <p className="mt-5 mb-3 text-lg font-medium text-gray-300 uppercase">
+          A DMP typically includes the following sections:
+        </p>
+        <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+          <li>
+            Introduction: In this section, you explain what your research
+            project is and what data you will collect{' '}
+          </li>
+          <li>
+            Data definitions: In this section, you define the data you will
+            collect. You should describe the data types, formats, and sources of
+            the data.{' '}
+          </li>
+          <li>
+            Data collection and access: In this section, you describe how you
+            will collect your data and how you will enable others to access your
+            data.{' '}
+          </li>
+          <li>
+            Data storage and preservation: In this section, you describe how you
+            will store your data and how you will protect it from loss or
+            damage.{' '}
+          </li>
+          <li>
+            Data quality and accessibility: In this section, you describe how
+            you will ensure the quality of your data and how you will make it
+            accessible to others.{' '}
+          </li>
+        </ul>
+        <p className="mt-5 mb-3 text-lg font-medium text-gray-300 uppercase">
+          What do we offer?
+        </p>
+        <p className="text-gray-900">
+          The RDM team, especially the data stewards, will support you in
+          creating a data management plan. Whether you need to provide this for
+          the funding body or simply want to have a professional DMP for your
+          research project, the data stewards can give you comprehensive advice
+          and review your DMP and provide feedback before finalization.
+        </p>
+        <p className="mt-5 mb-3 text-lg font-medium text-gray-300 uppercase">
+          What are the benefits?
+        </p>
+        <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+          <li>
+            Fulfill all requirements of funding bodies with regard to DMPs
+          </li>
+          <li>DMPs are part of good scientific practice</li>
+          <li>
+            Each research project, including master's and dissertation projects,
+            should have its own DMPs
+          </li>
+          <li>
+            You can identify potential bottlenecks in the project at an early
+            stage: e.g. storage, licenses, agreements, backups
+          </li>
+          <li>Organize and manage your data </li>
+          <li>Improve the reproducibility of your research </li>
+        </ul>
       </ul>
     </div>
   );

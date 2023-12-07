@@ -7,11 +7,11 @@ type QuestionAnswer = {
   answer: string;
 };
 
-interface AccordionCollapseProps {
+interface AccordionFaqProps {
   data: QuestionAnswer[];
 }
 
-const AccordionCollapse = ({ data }: AccordionCollapseProps) => {
+const AccordionFaq = ({ data }: AccordionFaqProps) => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const toggleItem = (itemId: string) => {
@@ -36,7 +36,7 @@ const AccordionCollapse = ({ data }: AccordionCollapseProps) => {
               <span>{item.question}</span>
               <svg
                 data-accordion-icon
-                className="h-3 w-3 shrink-0 rotate-180"
+                className="h-4 w-4 shrink-0 rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -45,7 +45,7 @@ const AccordionCollapse = ({ data }: AccordionCollapseProps) => {
                   stroke="currentColor"
                   // strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="2"
+                  strokeWidth="1"
                   d="M9 5 5 1 1 5"
                 />
               </svg>
@@ -67,4 +67,4 @@ const AccordionCollapse = ({ data }: AccordionCollapseProps) => {
   );
 };
 
-export default AccordionCollapse;
+export default AccordionFaq;

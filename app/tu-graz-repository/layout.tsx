@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
         <Tab
           path="/tu-graz-repository"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
         <Tab path="/tu-graz-repository" item={{ text: 'FAQ', slug: 'faq' }} />
         <Tab

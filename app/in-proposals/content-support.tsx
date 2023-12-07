@@ -2,16 +2,29 @@ import React from 'react';
 
 const ContentSupport = () => {
   return (
-    <>
-      <div className=" text-1xl font-thin text-gray-700">
-        <div
-          className="p-4 text-base text-gray-800 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 mb-3"
-          role="alert">
-          The RDM Team at Graz University of Technology supports all aspects of
-          RDM, including how to:
-        </div>
+    <div className="prose prose-sm prose-invert max-w-none">
+      <p  className="font-thin text-base text-gray-900">
+        Research Data Management (RDM) pertains to all steps taken along the
+        data lifecycle to ensure that research data can be found, are accessible
+        to others (whether other researchers or other interested parties), and
+        are described (e.g. through proper metadata) in such a way that they can
+        be reused by others (FAIR Data - findable, accessible, interoperable,
+        reusable). Thereby, the{' '}
+        <a className='text-gray-900 underline' href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/General_RDM_Policy_TU_Graz.pdf">
+          TU Graz framework policy
+        </a>{' '}
+        provides guidance to all University academics, staff and students on
+        good research data management practices. Adherence to these guidelines
+        enables transparency and reproducibility of research. TU Graz also
+        provides RDM tools and infrastructure detailed in the list beneath.
+      </p>
+      <div
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
+        role="alert">
+        The RDM Team at Graz University of Technology supports all aspects of
+        RDM, including how to:
       </div>
-      <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+      <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>Organise research data adequately </li>
         <li>Store and document data appropriately with metadata </li>
         <li>
@@ -22,11 +35,11 @@ const ContentSupport = () => {
         <li>Comply to funder mandates </li>
       </ul>
       <div
-        className="p-4 font-thin text-gray-800 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 mb-3"
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
         role="alert">
         Tools available at Graz University of Technology for RDM tasks:
       </div>
-      <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+      <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
           TU Graz Repository (based on InvenioRDM): Repository for long-term
           storage of reusable and citable data{' '}
@@ -43,7 +56,7 @@ const ContentSupport = () => {
           laboratory management{' '}
         </li>
       </ul>
-      <p className="font-thin text-gray-900">
+      <p className="font-thin text-base text-gray-900">
         To implement data management in the project, a data management plan
         (DMP) is created in which all necessary processes and tasks are
         described. During this phase, it is determined which data is generated
@@ -57,26 +70,12 @@ const ContentSupport = () => {
         period.
       </p>
       <div
-        className="p-4 font-thin text-gray-800 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 mb-3"
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
         role="alert">
         Some key points that shall be elaborated in the DMP and can be noted in
         the planning phase:
       </div>
-      <style>
-        {`
-          .roman-list {
-            counter-reset: custom-counter 0; /* Start counter at 6 so that the first item is 'VII' */
-          }
-          .roman-list li {
-            counter-increment: custom-counter;
-          }
-          .roman-list li::before {
-            content: counter(custom-counter, upper-roman) ". "; /* Display the counter as an upper-roman numeral */
-            font-weight: bold; /* Optional: Style the numeral */
-          }
-        `}
-      </style>
-      <ul className="roman-list space-y-1 list-inside font-thin text-gray-700">
+      <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
           A responsible person for data management in the project consortium
           will be selected and will be supported by the institutional data
@@ -108,8 +107,8 @@ const ContentSupport = () => {
           and storing data.
         </li>
         <li>
-          VI. Data management processes will also adhere to TU Graz guidelines
-          on safeguarding the good scientific practice:{' '}
+          Data management processes will also adhere to TU Graz guidelines on
+          safeguarding the good scientific practice:{' '}
           <a
             className="font-thin text-gray-900"
             href="/Studierende_und_Bedienstete/Directives_and_regulations_of_TU_Graz/Safeguarding_Good_Scientific_Practice_Guidelines.pdf"
@@ -138,7 +137,7 @@ const ContentSupport = () => {
           </a>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

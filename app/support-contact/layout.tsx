@@ -21,7 +21,7 @@ export default async function Layout({
           path="/support-contact"
           items={[
             {
-              text: 'SUPPORT CONTACT',
+              text: 'CONTACT',
             },
             ...categories.map(x => ({
               text: x.name,

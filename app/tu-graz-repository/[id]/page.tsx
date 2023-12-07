@@ -1,4 +1,4 @@
-import AccordionCollapse from '#/ui/accordion-collapse';
+import AccordionFaq from '#/ui/accordion-faq';
 import { ExternalLink } from '#/ui/external-link';
 import { RenderingInfoRepository } from '#/ui/rendering-info-repository';
 import { getContentAndTitleById } from '../parapraph-by-id';
@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
         {params.id === 'faq' && (
-          <AccordionCollapse data={questionsAndAnswers} />
+          <AccordionFaq data={questionsAndAnswers} />
         )}
       </div>
       {params.id === 'support' && (

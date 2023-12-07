@@ -12,16 +12,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Tab path="/tu-graz-dmp-tool" item={{ text: 'TU GRAZ DMP TOOL' }} />
         <Tab
           path="/tu-graz-dmp-tool"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
         <Tab path="/tu-graz-dmp-tool" item={{ text: 'FAQ', slug: 'faq' }} />
         <Tab
           path="/tu-graz-dmp-tool"
           item={{ text: 'MANUAL', slug: 'manuals' }}
-        />
-        <Tab
-          path="/tu-graz-dmp-tool"
-          item={{ text: 'API SUPPORT PAGE', slug: 'api-support' }}
         />
       </div>
 

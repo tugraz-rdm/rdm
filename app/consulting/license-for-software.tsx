@@ -3,7 +3,7 @@ import React from 'react';
 const LicensesForSoftware = () => {
   return (
     <>
-      <div className="mt-5 mb-3 text-2xl font-medium text-gray-200">
+      <div className="mt-5 mb-3 text-lg font-medium text-gray-300 uppercase">
         <h1>Licenses for Software and Code</h1>
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">

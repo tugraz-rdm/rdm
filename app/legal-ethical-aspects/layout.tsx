@@ -9,11 +9,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="space-y-9">
       <div className="flex flex-wrap items-center gap-2">
+      <Tab
+          path="/legal-ethical-aspects"
+          item={{ text: 'LEGAL & ETHICAL ASPECTS OF RESEARCH DATA' }}
+        />
         <Tab
           path="/legal-ethical-aspects"
-          item={{ text: 'LEGAL & ETHICAL ASPECTS OF RESEARCH DATA ' }}
+          item={{ text: 'LEGAL ASPECTS', slug: 'legal' }}
         />
-
         <Tab
           path="/legal-ethical-aspects"
           item={{
@@ -27,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
         <Tab
           path="/legal-ethical-aspects"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>

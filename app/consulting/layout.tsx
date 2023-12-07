@@ -15,12 +15,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <div className="flex flex-wrap items-center gap-2">
         <Tab
           path="/consulting"
-          item={{ text: 'DATA PUBLICATION CONSULTING' }}
+          item={{ text: 'DMP' }}
         />
         <Tab path="/consulting" item={{ text: 'LICENSES', slug: 'licenses' }} />
         <Tab
           path="/consulting"
-          item={{ text: 'SUPPORT CONTACT', slug: 'support' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>

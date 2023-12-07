@@ -16,8 +16,7 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      // https://vercel.com/design/color
-
+      // https://vercel.com/design/color,
       colors: {
         gray: colors.zinc,
         'gray-1000': 'rgb(17,17,19)',
@@ -32,6 +31,7 @@ export default {
         'custom-white': '#FIEDEE',
         'custom-green': '#8AA29E',
         'custom-blue': '#1D4960',
+        'custom-blue-dark': '#1D4960',
         'custom-bone': '#DAD2BC',
         'custom-isabelline': '#F5F1ED',
         vercel: {
@@ -48,6 +48,7 @@ export default {
         'vc-border-gradient': `radial-gradient(at left top, ${theme(
           'colors.gray.500'
         )}, 50px, ${theme('colors.gray.800')} 50%)`,
+        'custom-background': "url('/test.jpg')",
       }),
       keyframes: ({ theme }) => ({
         rerender: {

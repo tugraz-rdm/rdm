@@ -1,4 +1,4 @@
-import AccordionCollapse from '#/ui/accordion-collapse';
+import AccordionFaq from '#/ui/accordion-faq';
 import { ExternalLink } from '#/ui/external-link';
 import { RenderingInfoCyVerse } from '#/ui/rendering-info-cyverse';
 import { getContentAndTitleById } from '../parapraph-by-id';
@@ -63,13 +63,11 @@ export default async function Page({ params }: { params: { id: string } }) {
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
-        {params.id === 'faq' && (
-          <AccordionCollapse data={questionsAndAnswers} />
-        )}
+        {params.id === 'faq' && <AccordionFaq data={questionsAndAnswers} />}
       </div>
       {params.id === 'support' && (
         <>
-          <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
+          <div className="-order-1 col-span-full lg:order-none lg:col-span-6">
             <RenderingInfoCyVerse
               type="tu-graz-dmp-tool"
               showEmail={params.id === 'support'}
@@ -82,6 +80,24 @@ export default async function Page({ params }: { params: { id: string } }) {
           <ExternalLink href="https://cloud.tugraz.at/index.php/f/733433518">
             Insert Tutorial (doc-file)
           </ExternalLink>
+        </>
+      )}
+      {params.id === 'manual' && (
+        <>
+          <div className="col-span-full space-y-3 lg:col-span-6">
+            <p className="font-thin text-gray-700">
+              You can find a list of online support resources at the{' '}
+              <a
+                className="text-gray-700 font-medium underline"
+                href="https://cyverse.org/learning-center">
+                CyVerse Learning Center
+              </a>
+              . The Learning Center provides information about the CyVerse
+              platform and related tools for managing data, running analyses,
+              quickstarts for launching RStudio or JupyterHub, and other science
+              tutorials.
+            </p>
+          </div>
         </>
       )}
     </div>

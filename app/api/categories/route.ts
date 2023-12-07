@@ -38,7 +38,7 @@ export async function GET(request: Request) {
 }
 
 export const data: Category[] = [
-  { name: 'SUPPORT CONTACT', slug: 'support-contact', count: 11, parent: null },
+  { name: 'CONTACT', slug: 'support-contact', count: 11, parent: null },
   { name: 'FAQ', slug: 'faq', count: 12, parent: null },
   { name: 'MANUAL', slug: 'manuals', count: 10, parent: null },
   { name: 'API SUPPORT PAGE', slug: 'api-support', count: 4, parent: null },

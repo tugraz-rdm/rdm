@@ -19,7 +19,7 @@ export function RenderingInfoDataset({
   return (
     <div className="inline-flex gap-x-2 rounded-lg bg-gray-700 p-1 px-2 py-1 ml-2">
       <a href="mailto:datenschutz@tugraz.at" className="no-underline">
-        <div className="flex justify-center text-sm font-thin text-white">
+        <div className="flex justify-center text-sm font-thin text-white lowercase">
           datenschutz@tugraz.at
         </div>
       </a>
