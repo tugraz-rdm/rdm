@@ -37,10 +37,10 @@ const Page: FC = () => {
               <p className="font-medium">RESEARCH COMPLETE </p>
             </p>
             <br />
-            <p className="font-thin italic  text-custom-blue-dark">
+            {/* <p className="font-thin italic  text-custom-blue-dark">
                 Along theses phases, the RDM-team offers several tools and
                 services:
-              </p>
+              </p> */}
           </blockquote>
         </div>
         {servicesData.map((section, index) => {

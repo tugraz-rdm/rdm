@@ -31,9 +31,9 @@ export function InvenioLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/favicon/invenioRDM.png"
+      src="/repo.PNG"
       alt="Invenio RDM Logo"
-      style={{ width: '150px', height: 'auto' }}
+      style={{ width: '200px', height: 'auto' }}
     />
   );
 }

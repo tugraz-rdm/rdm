@@ -2,9 +2,11 @@ import React from 'react';
 
 const LicensesForData = () => {
   return (
-    <>
-      <div className="mt-5 mb-3 text-lg font-medium text-gray-300">
-        <p>LICENSES FOR DATA</p>
+    <div className="mt-3 prose prose-sm prose-invert max-w-none">
+      <div
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
+        role="alert">
+       Licenses for Data
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
@@ -98,7 +100,7 @@ const LicensesForData = () => {
           </a>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

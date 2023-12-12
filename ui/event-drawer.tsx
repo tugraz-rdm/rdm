@@ -14,7 +14,7 @@ import { GlobalNavItem } from './global-nav';
 import Image from 'next/image';
 import InformationalBanner from './informational-banner';
 import Link from 'next/link';
-import { useCombinedData, } from '#/lib/services';
+import { useCombinedData } from '#/lib/services';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -28,7 +28,6 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isEventOpen, setIsEventOpen] = useState<boolean>(true);
   const { servicesData, eventsData } = useCombinedData();
-  
 
   const handleMenuClick = () => {
     setIsMenuOpen(prev => !prev);
@@ -46,13 +45,18 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
     setOpenSectionIndex(null);
   };
 
+  const hideScrollbarStyle: React.CSSProperties = {
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+  };
 
   return (
     <div>
       <div
+        style={hideScrollbarStyle}
         className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform ${
           isOpen ? '' : '-translate-x-full'
-        } bg-custom-gray dark:bg-white-smoke w-80 sm:w-80`}
+        } bg-custom-bone dark:bg-white-smoke w-80 sm:w-80`}
         tabIndex={-1}
         aria-labelledby="drawer-left-label">
         <InformationalBanner />
@@ -167,8 +171,8 @@ export const ButtonDrawer: React.FC<{
     onToggle();
   };
   const { t } = useTranslation('header');
-  const title = t('header.title')
-  
+  const title = t('header.title');
+
   return (
     <div
       className={`fixed left-0 top-0 mt-8 transition-transform ${

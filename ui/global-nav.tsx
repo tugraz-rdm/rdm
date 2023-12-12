@@ -24,8 +24,7 @@ export const SimpleGlobalNav: React.FC<{
 
   return (
     <>
-    
-      <div className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
+      <div  className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
         <div className="mt-5 lg:mt-0">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />

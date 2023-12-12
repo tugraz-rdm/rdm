@@ -6,8 +6,8 @@ export const getContentConsultingAndTitleById = (id: string) => {
 
   const titleMap: Record<string, string> = {
     licenses: 'LICENSES',
-    support: 'CONSULTING CONTACT',
-    manuals: 'CONSULTING - MANUALS',
+    support: 'CONTACT',
+    manuals: 'MANUALS',
   };
 
   return {

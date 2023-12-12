@@ -14,9 +14,11 @@ const Page: FC = () => {
         users and developers and is good choice if you are looking for a
         flexible and reliable ELN.
       </ul>
-      <p className="mt-5 mb-3 text-lg font-medium text-gray-300 uppercase">
-        What do we offer?
-      </p>
+      <div
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
+        role="alert">
+             What do we offer?
+      </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
           Documentation of research data (metadata) in research and teaching
@@ -32,12 +34,13 @@ const Page: FC = () => {
         <li>Connections between experiments and resources</li>
         <li>Schedular for booking of resource objects</li>
         <li>Many more…</li>
-      </ul>
-      <div className="flex gap-2 ">
+        <div className="flex gap-2 pt-3">
         <ExternalLink href="https://elabftw.tugraz.at">
           Access portal
         </ExternalLink>
       </div>
+      </ul>
+
     </div>
   );
 };

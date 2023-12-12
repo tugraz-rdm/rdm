@@ -49,17 +49,17 @@ export const useCombinedData = () => {
             name: i18.t('planning.itemName.dmpTool'),
             slug: 'tu-graz-dmp-tool',
             description: i18.t('planning.tuGrazDmpToolDescription'),
-            externalLink: 'https://damap.org/',
+            externalLink: 'https://dmp.tugraz.at/',
             buttons: [
               {
                 text: i18.t('planning.readMore'),
                 link: '#',
-                iframeSrc: 'https://damap.org/',
+                iframeSrc: 'https://dmp.tugraz.at/',
               },
               {
                 text: i18.t('planning.launch'),
-                link: 'https://damap.org/',
-                iframeSrc: 'https://damap.org/',
+                link: 'https://dmp.tugraz.at/',
+                iframeSrc: 'https://dmp.tugraz.at/',
               },
             ],
           },

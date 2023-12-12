@@ -4,20 +4,32 @@ import { FC } from 'react';
 const Page: FC = () => {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
-      <ul className="text-gray-700 font-thin p-0">
-        <h1 className="text-xl font-thin text-gray-700">
-          Optimization analysis
-        </h1>
-        Research data management (RDM) processes and workflows can be, on the
-        one hand, optimized on a project-based level for a limited time-frame
-        with options to adapt for the team, group, or institute. On the other
-        hand, processes can also be detailed on a person-based level from a team
-        or institute level perspective. We offer structured support to analyze
-        you current RDM situation from a process down to a metadata level:
-        together we can assess the current situation along the research data
-        cycle, discuss possible collaborative tools that could support specific
-        processes, and provide workflow visualizations as well as a list of
-        short-term and long-term optimization goals.
+      <p className="text-gray-900 text-base font-thin p-0">
+        Data management processes are often heterogeneously handled among
+        researchers resulting in possible data handling issues during
+        collaboration or after several years when it comes to reusing older
+        research output. The RDM-team offers an individual optimization analysis
+        of RDM processes enabling advanced data handling actions.
+      </p>
+      <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+        <li>
+          Read more about RDM optimization at -optimization analysis- and go to
+          -contact- to reach out and arrange for an initial informative meeting.
+        </li>
+        <li>
+          You can also self-asses your current state and find some online guides
+          at -self-assessment-
+        </li>
+        <li>
+          As well as for the specific topic of on-/ offboarding at
+          -On-/Offboarding- or find out about data structure optimization at
+          -data structure-.
+        </li>
+        <li>
+          Strengthen your data-management strategy and optimize your data
+          collection and storage processes while improving security and
+          efficiency – optimize daily elements of data storage and collaboration
+        </li>
       </ul>
     </div>
   );
