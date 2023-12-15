@@ -12,9 +12,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Tab path="/optimization" item={{ text: 'RDM OPTIMIZATION' }} />
         <Tab path="/optimization" item={{ text: 'OPTIMIZATION ANALYSIS', slug: 'analysis' }} />
         <Tab path="/optimization" item={{ text: 'SELF-ASSESSMENT',  slug: 'assessment'  }} />
-        <Tab path="/optimization" item={{ text: 'ON-/OFFBOARDING', slug: 'boarding' }} />
+        <Tab path="/optimization" item={{ text: 'ON-/OFF BOARDING', slug: 'boarding' }} />
         <Tab path="/optimization" item={{ text: 'DATA STRUCTURE', slug: 'datastructure' }} />
-        <Tab path="/optimization" item={{ text: 'CHECKLIST', slug: 'checklist' }} />
         <Tab
           path="/optimization"
           item={{ text: 'CONTACT', slug: 'support' }}

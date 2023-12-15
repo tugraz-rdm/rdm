@@ -12,12 +12,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Tab path="/elabftw" item={{ text: 'eLabFTW' }} />
         <Tab path="/elabftw" item={{ text: 'FAQ', slug: 'faq' }} />
         <Tab path="/elabftw" item={{ text: 'MANUAL', slug: 'manuals' }} />
-        <Tab path="/elabftw" item={{ text: 'FURTHER INFORMATION', slug: 'info'}} />
+        <Tab path="/elabftw" item={{ text: 'TOPICS OF INTEREST', slug: 'info'}} />
         <Tab
           path="/elabftw"
           item={{ text: 'CONTACT', slug: 'support' }}
         />
-        <Tab path="/elabftw" item={{ text: 'API SUPPORT PAGE', slug: 'api' }} />
+        {/* <Tab path="/elabftw" item={{ text: 'API SUPPORT PAGE', slug: 'api' }} /> */}
       </div>
       <div>{children}</div>
     </div>

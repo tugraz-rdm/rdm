@@ -26,7 +26,6 @@ export function RenderingInfoCyVerse({
           </div>
         </a>
       </div>
-     <p className="text-gray-700 font-thin mt-3">Our data stewards will be pleased to help you.</p>
     </>
   );
 }

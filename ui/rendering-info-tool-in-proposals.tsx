@@ -30,7 +30,7 @@ export function RenderingInfoInProposals({
       </div>
       <p className="mb-2 mt-2 font-thin text-gray-900">
         {' '}
-        You can also reach the data stewards via individual mails of:
+        You can also reach the Data Stewards via individual e-mails:
       </p>
       <div className="inline-flex gap-2">
         <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">

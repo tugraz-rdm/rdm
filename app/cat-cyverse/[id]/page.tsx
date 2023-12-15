@@ -1,3 +1,5 @@
+import StepsComponent, { steps } from '#/ui/steps-component';
+
 import AccordionFaq from '#/ui/accordion-faq';
 import { ExternalLink } from '#/ui/external-link';
 import { RenderingInfoCyVerse } from '#/ui/rendering-info-cyverse';
@@ -25,6 +27,20 @@ export default async function Page({ params }: { params: { id: string } }) {
       question: 'How can I manage metadata?',
       answer:
         'There are several options described to add and edit metadata to your data in Discovery Environment to be found at https://learning.cyverse.org/ds/metadata.',
+    },
+    {
+      question: 'How do you create an CyVerse Austria account?',
+      answer: (
+        <span>
+          For detailed instructions, please visit the{' '}
+          <a
+            href="/cat-cyverse/account" 
+            className="text-gray-700">
+            New Account
+          </a>{' '}
+          section.
+        </span>
+      ),
     },
     {
       question:
@@ -77,9 +93,10 @@ export default async function Page({ params }: { params: { id: string } }) {
       )}
       {params.id === 'account' && (
         <>
-          <ExternalLink href="https://cloud.tugraz.at/index.php/f/733433518">
+          <StepsComponent steps={steps} />
+          {/* <ExternalLink href="https://cloud.tugraz.at/index.php/f/733433518">
             Insert Tutorial (doc-file)
-          </ExternalLink>
+          </ExternalLink> */}
         </>
       )}
       {params.id === 'manual' && (

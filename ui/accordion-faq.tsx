@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 type QuestionAnswer = {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 };
 
 interface AccordionFaqProps {

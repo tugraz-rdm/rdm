@@ -15,13 +15,13 @@ const Page: FC = () => {
         flexible and reliable ELN.
       </ul>
       <div
-        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300"
         role="alert">
-             What do we offer?
+        WHAT DOES eLabFTW OFFER?
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-          Documentation of research data (metadata) in research and teaching
+        Documentation of research data (metadata) in research and teaching
         </li>
         <li>
           Possibility to work in teams and groups, with a detailed permission
@@ -35,12 +35,11 @@ const Page: FC = () => {
         <li>Schedular for booking of resource objects</li>
         <li>Many more…</li>
         <div className="flex gap-2 pt-3">
-        <ExternalLink href="https://elabftw.tugraz.at">
-          Access portal
-        </ExternalLink>
-      </div>
+          <ExternalLink href="https://elabftw.tugraz.at">
+            TU Graz eLabFTW
+          </ExternalLink>
+        </div>
       </ul>
-
     </div>
   );
 };

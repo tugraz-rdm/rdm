@@ -1,10 +1,20 @@
+'use client';
+
 import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
 
 import AccordionFaq from '#/ui/accordion-faq';
+import { FC } from 'react';
+import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoELab } from '#/ui/rendering-info-elab';
 import { getContentProposalAndTitleById } from '../random-post-tab';
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentProposalAndTitleById(params.id);
   const questionsAndAnswers = [
     {
@@ -15,7 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     {
       question: 'How can I join a specific team',
       answer:
-        'The admin of the team has to contact the RDM team (Alexander Bardel) and then the change to the team takes place.',
+        'The admin of the team has to contact the RDM Team(Alexander Bardel) and then the change to the team takes place.',
     },
     {
       question: "Why can't join or apply for the desired team myself? ",
@@ -116,7 +126,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div className="grid grid-cols-6 gap-x-6 gap-y-3">
       <div className="col-span-full space-y-3 lg:col-span-6">
-        <h1 className="truncate text-2xl font-medium capitalize text-gray-200">
+        <h1 className="truncate text-2xl font-medium  text-gray-200">
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
@@ -142,22 +152,10 @@ export default async function Page({ params }: { params: { id: string } }) {
         )}
         {params.id === 'manuals' && (
           <>
-            <div className="mb-5 mt-5 flex gap-2">
-              <a
-                href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/eLabFTW_Guide_User_en_v1.3.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
-                User Guide
-              </a>
-
-              <a
-                href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/eLabFTW_Guide_TeamAdmin_en_v1.3.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
-                Team-Admin Guide
-              </a>
+            <div className="md:flex">
+              <GuideTemplate
+                pdfSources={{ english: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf' }}
+              />
             </div>
           </>
         )}
@@ -173,10 +171,10 @@ export default async function Page({ params }: { params: { id: string } }) {
         {params.id === 'info' && (
           <AccordionContent items={leavingTeamGroupOrTool} />
         )}
-        {params.id === 'info' && (
-          <AccordionContent items={ifBackup} />
-        )}
+        {params.id === 'info' && <AccordionContent items={ifBackup} />}
       </div>
     </div>
   );
-}
+};
+
+export default Page;

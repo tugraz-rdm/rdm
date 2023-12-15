@@ -4,8 +4,8 @@ export function getContentProposalAndTitleById(id: string) {
   };
 
   const titleMap: Record<string, string> = {
-    examples: 'EXAMPLE FOR PROPOSALS',
-    support: 'CONTACT',
+    examples: 'RDM In-proposals - Example for proposals',
+    support: 'RDM In-proposals - Contact',
   };
 
   return {

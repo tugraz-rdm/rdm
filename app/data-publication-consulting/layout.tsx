@@ -17,11 +17,23 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           path="/data-publication-consulting"
           item={{ text: 'DATA PUBLICATION CONSULTING' }}
         />
-        <Tab path="/data-publication-consulting" item={{ text: 'LICENSES', slug: 'licenses' }} />
+
+        <Tab
+          path="/data-publication-consulting"
+          item={{ text: 'LICENSES', slug: 'licenses' }}
+        />
+        <Tab
+          path="/data-publication-consulting"
+          item={{ text: 'HOW TO CITE', slug: 'goal' }}
+        />
         <Tab
           path="/data-publication-consulting"
           item={{ text: 'CONTACT', slug: 'support' }}
         />
+        {/* <Tab
+          path="/data-publication-consulting"
+          item={{ text: 'LINKS', slug: 'links' }}
+        /> */}
       </div>
       <div>{children}</div>
     </div>

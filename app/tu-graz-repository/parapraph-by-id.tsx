@@ -1,18 +1,16 @@
 export function getContentAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
     support:
-      'The page is intended to provide support for the use of the TU Graz Repository. You will find a manual and a list of frequently asked questions. If you have a question or request about the repository (e.g. upload limit, communities) please contact us.',
+      'If you have any questions or requests regarding the repository (e.g. help with upload, increasing upload limit, working with community) please contact us.',
     faq: '',
-    manuals: 'Manuals content here...',
+    manuals: '',
     apisupport: 'API Support content here...',
   };
 
   const titleMap: Record<string, string> = {
-    support: 'TU Graz Repository - Support',
+    support: 'TU Graz Repository - Contact',
     faq: 'TU Graz Repository - FAQ',
     manuals: 'TU Graz Repository - Manual',
-    guide: 'TU Graz Repository Guide',
-    info: 'TU Graz Repository Shortinfo',
   };
 
   return {
@@ -22,11 +20,5 @@ export function getContentAndTitleById(id: string) {
 }
 
 export function generateStaticParams() {
-  return [
-    { id: 'support' },
-    { id: 'faq' },
-    { id: 'manuals' },
-    { id: 'guide' },
-    { id: 'info' },
-  ];
+  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }];
 }

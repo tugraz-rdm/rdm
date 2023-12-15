@@ -7,7 +7,7 @@ const Page: FC = () => {
         The importance of research data management (RDM) is increasingly
         recognized in scientific funding. Many funders now require research
         projects to submit a statement about RDM in their projects and/or how it
-        is handled at their university.We want to help you to address this
+        is handled at their university. The RDM Team helps you to address this
         important topic in your grant proposal.
       </p>
       <div
@@ -17,17 +17,17 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-          Consultation on all aspects of RDM: We will consult with you
-          individually to understand your needs and goals for RDM. Together, we
-          can create a customized description of your RDM activities in the
-          project.
+          Consultation on all aspects of RDM: We provide individual consultation
+          to understand your needs and goals for RDM. Together, we can create a
+          customized description of your RDM activities in the project.
         </li>
         <li>
-          Templates and checklists: We will provide you with templates and
-          checklists for developing your RDM activities.{' '}
+          Templates and checklists: We will offer templates and checklists for
+          further developing and refining your RDM activities.{' '}
         </li>
         <li>
-          Training and workshops: We offer training and workshops on RDM.{' '}
+          Training and workshops: We offer training and workshops on various RDM
+          topics and tools.{' '}
         </li>
       </ul>
       <div
@@ -38,12 +38,13 @@ const Page: FC = () => {
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
           You increase your chances of funding: Funders view the consideration
-          of RDM as an important quality criterion for research projects.
+          of RDM as an important quality criterion for evaluating research
+          proposals.
         </li>
         <li>
-          You improve the quality of your research: A well-thought-out RDM can
-          help to ensure that your research data are FAIR, i.e., Findable,
-          Accessible, Interoperable, and Reusable.
+          You improve the quality of your research: A well-thought-out RDM
+          strategy can help to ensure that your research data are FAIR, i.e.,
+          Findable, Accessible, Interoperable, and Reusable.
         </li>
         <li>
           You save time and resources: Consultation can help you to avoid errors
@@ -57,19 +58,19 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-          Contact the RDM team or a data steward as soon as you want to start
+          Contact the RDM Teamor a Data Steward as soon as you want to start
           writing the proposal.
         </li>
         <li>You then make an appointment (online or F2F).</li>
         <li>
-          A data steward and you discuss the specifics of the project and which
+          Data Stewards will discuss the specifics of the project and which
           points could be particularly important in relation to RDM and should
-          be included in the proposal. Available resources at TU Graz are also
-          discussed.
+          be included in the proposal. Available resources at TU Graz will also
+          be discussed.
         </li>
         <li>
-          Also serves as the basis for the data management plan if the project
-          is approved.
+          Such a preliminary discussion on RDM strategies serves as the basis
+          for the data management plan as soon as the project is approved.
         </li>
       </ul>
     </div>

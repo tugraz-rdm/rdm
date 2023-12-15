@@ -3,13 +3,13 @@ export function getContentAndTitleById(id: string) {
   
   const contentMap: Record<string, string> = {
     support:
-      'The page is intended to provide support for the use of the TU Graz DMP Tool. If you have a question or request about the DMP Tool (e.g. permission control, templates) please contact us.',
+      'If you have any questions or requests regarding the DMP tool, please contact us.',
     faq: '',
-    manuals: 'Manuals content...',
+    manuals: '',
   };
 
   const titleMap: Record<string, string> = {
-    support: 'TU Graz DMP Tool - Support',
+    support: 'TU Graz DMP Tool - Contact',
     faq: 'TU Graz DMP Tool - FAQ',
     manuals: 'TU Graz DMP Tool - Manual',
   };

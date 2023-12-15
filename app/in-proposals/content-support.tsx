@@ -3,14 +3,16 @@ import React from 'react';
 const ContentSupport = () => {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
-      <p  className="font-thin text-base text-gray-900">
+      <p className="font-thin text-base text-gray-900">
         Research Data Management (RDM) pertains to all steps taken along the
         data lifecycle to ensure that research data can be found, are accessible
         to others (whether other researchers or other interested parties), and
         are described (e.g. through proper metadata) in such a way that they can
         be reused by others (FAIR Data - findable, accessible, interoperable,
         reusable). Thereby, the{' '}
-        <a className='text-gray-900 underline' href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/General_RDM_Policy_TU_Graz.pdf">
+        <a
+          className="text-gray-900 underline"
+          href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/General_RDM_Policy_TU_Graz.pdf">
           TU Graz framework policy
         </a>{' '}
         provides guidance to all University academics, staff and students on
@@ -21,7 +23,7 @@ const ContentSupport = () => {
       <div
         className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
         role="alert">
-        The RDM Team at Graz University of Technology supports all aspects of
+        The RDM Teamat Graz University of Technology supports all aspects of
         RDM, including how to:
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">

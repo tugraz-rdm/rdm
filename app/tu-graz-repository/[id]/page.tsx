@@ -1,9 +1,18 @@
+'use client';
+
 import AccordionFaq from '#/ui/accordion-faq';
-import { ExternalLink } from '#/ui/external-link';
+import { FC } from 'react';
+import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoRepository } from '#/ui/rendering-info-repository';
 import { getContentAndTitleById } from '../parapraph-by-id';
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentAndTitleById(params.id);
   const questionsAndAnswers = [
     {
@@ -72,9 +81,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
-        {params.id === 'faq' && (
-          <AccordionFaq data={questionsAndAnswers} />
-        )}
+        {params.id === 'faq' && <AccordionFaq data={questionsAndAnswers} />}
       </div>
       {params.id === 'support' && (
         <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
@@ -86,34 +93,17 @@ export default async function Page({ params }: { params: { id: string } }) {
       )}
       {params.id === 'manuals' && (
         <div>
-          <div className=" flex gap-5 whitespace-nowrap">
-            <ExternalLink href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_Repository_Guide_en_v2.2.pdf">
-              Repository Guide EN
-            </ExternalLink>
-            <ExternalLink href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_Repository_Guide_de_v2.2.pdf">
-              Repository Guide DE
-            </ExternalLink>
-          </div>
-        </div>
-      )}
-      {params.id === 'guide' && (
-        <div>
-          <div className=" flex gap-5 whitespace-nowrap">
-            <ExternalLink href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_Repository_Guide_en_v2.2.pdf">
-              Check out our Guide
-            </ExternalLink>
-          </div>
-        </div>
-      )}
-      {params.id === 'info' && (
-        <div>
-          <div className=" flex gap-5 whitespace-nowrap">
-            <ExternalLink href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUG_Repository_ShortInfo.pdf">
-              Slides
-            </ExternalLink>
+          <div className="md:flex">
+            <GuideTemplate
+              pdfSources={{
+                english: '/pdf/TUGraz_Repository_Guide_en_v2.2.pdf',
+              }}
+            />
           </div>
         </div>
       )}
     </div>
   );
-}
+};
+
+export default Page;

@@ -1,6 +1,6 @@
 export function getContentProposalAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support:'',
+    support:'If you have any questions or requests regarding eLabFTW please contact us.',
     faq: 'Frequently Asked Questions about incorporating RDM best practices',
     manuals: '',
   };
@@ -8,9 +8,9 @@ export function getContentProposalAndTitleById(id: string) {
   const titleMap: Record<string, string> = {
     support: 'eLabFTW SUPPORT',
     faq: 'eLabFTW - FAQ',
-    manuals: 'eLabFTW - MANUALS',
-    info: 'FURTHER INFORMATION',
-    api: 'API SUPPORT PAGE',
+    manuals: 'eLabFTW- Manual',
+    info: 'eLabFTW - Topics of Interest',
+    api: 'eLabFTW- API Support page',
   };
 
   return {

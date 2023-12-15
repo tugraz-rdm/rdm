@@ -11,11 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-wrap items-center gap-2">
         <Tab
           path="/tu-graz-repository"
-          item={{ text: 'TU GRAZ REPOSITORY (invenioRDM)' }}
-        />
-        <Tab
-          path="/tu-graz-repository"
-          item={{ text: 'CONTACT', slug: 'support' }}
+          item={{ text: 'TU GRAZ REPOSITORY' }}
         />
         <Tab path="/tu-graz-repository" item={{ text: 'FAQ', slug: 'faq' }} />
         <Tab
@@ -24,14 +20,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
         <Tab
           path="/tu-graz-repository"
-          item={{ text: 'GUIDE', slug: 'guide' }}
-        />
-        <Tab
-          path="/tu-graz-repository"
-          item={{ text: 'SHORTINFO', slug: 'info' }}
+          item={{ text: 'CONTACT', slug: 'support' }}
         />
       </div>
       <div>{children}</div>
     </div>
   );
 }
+  

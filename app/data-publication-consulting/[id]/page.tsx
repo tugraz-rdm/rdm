@@ -1,3 +1,4 @@
+import { ExternalLink } from '#/ui/external-link';
 import { FC } from 'react';
 import LicensesForData from '../licences-for-data';
 import LicensesForPersonal from '../licenses-for-personal';
@@ -26,9 +27,9 @@ const Page: FC<PageProps> = ({ params }) => {
             <p className="font-thin text-gray-700 text-base">
               You have now decided to publish your data, which is great because
               with curated data there is a complete and clear record and the
-              conclusions can be substantiated, which protects you from possible
-              challenges, for example. However, the publication would not be
-              advisable without the appropriate terms of use or licenses,
+              conclusions can be substantiated, which protects you from
+              possibleF challenges, for example. However, the publication would
+              not be advisable without the appropriate terms of use or licenses,
               because in this case the{' '}
               <a
                 href="https://open-access.network/en/information-on-open-access/legal-issues/legal-issues-in-austria/copyright"
@@ -55,6 +56,32 @@ const Page: FC<PageProps> = ({ params }) => {
             showEmail={params.id === 'support'}
             type={'consulting'}
           />
+        )}
+        {params.id === 'goal' && (
+          <>
+            <p className="font-thin text-gray-900">
+              Reference or citation management software allows to effectively
+              create bibliographies for research publications. There are several
+              examples of such tools, e.g. Zotero or Mendeley that are further
+              detailed in the lecture “Finding Scientific Information and
+              Publishing Your Research Results”. For this topic we can forward
+              you to the contact points of experts at the library. There are
+              also two In-House Training courses available: „Literaturverwaltung
+              mit Mendeley“ and „Literaturverwaltung mit Citavi (Desktop)“.
+            </p>
+          </>
+        )}
+        {params.id === 'links' && (
+          <>
+            <div className="flex gap-2">
+              <ExternalLink href="https://www.re3data.org">
+                Registry of research data repositories
+              </ExternalLink>
+              <ExternalLink href="https://repository.tugraz.at/">
+                Instutional repository
+              </ExternalLink>
+            </div>
+          </>
         )}
       </div>
     </div>

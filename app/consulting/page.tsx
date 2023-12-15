@@ -25,12 +25,12 @@ const Page: FC = () => {
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
         <li>
           Introduction: In this section, you explain what your research project
-          is and what data you will collect{' '}
+          is and what data you will collect.{' '}
         </li>
         <li>
           Data definitions: In this section, you define the data you will
           collect. You should describe the data types, formats, and sources of
-          the data.{' '}
+          the data..{' '}
         </li>
         <li>
           Data collection and access: In this section, you describe how you will
@@ -52,10 +52,10 @@ const Page: FC = () => {
         What do we offer?
       </div>
       <p className="text-gray-900 text-base font-thin p-0">
-        The RDM team, especially the data stewards, will support you in creating
+        The RDM team, especially the Data Stewards, will support you in creating
         a data management plan. Whether you need to provide this for the funding
         body or simply want to have a professional DMP for your research
-        project, the data stewards can give you comprehensive advice and review
+        project, the Data Stewards can give you comprehensive advice and review
         your DMP and provide feedback before finalization.
       </p>
       <div
@@ -76,6 +76,28 @@ const Page: FC = () => {
         </li>
         <li>Organize and manage your data </li>
         <li>Improve the reproducibility of your research </li>
+      </ul>
+      <div
+        className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
+        role="alert">
+        What does the process look like?
+      </div>
+      <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
+        <li>
+          Contact the RDM team or a Data Steward as soon as a DMP is to be
+          created.
+        </li>
+        <li>
+          You then make an appointment (online or F2F) and roughly determine
+          what is to be discussed.
+        </li>
+        <li>
+          A Data Steward and you go through all the relevant steps and the data
+          steward answers your questions.
+        </li>
+        <li>
+          You send the Data Steward your draft DMP and receive feedback on it.{' '}
+        </li>
       </ul>
     </div>
   );

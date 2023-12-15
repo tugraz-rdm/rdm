@@ -68,7 +68,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
             className="font-thin mb-10 text-base uppercase text-gray-700 dark:text-gray-400">
             Menu
           </h5>
-          <ButtonLANGroup />
+          {/* <ButtonLANGroup /> */}
         </div>
         <DrawerSection
           title="DASHBOARD"

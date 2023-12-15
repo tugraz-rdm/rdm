@@ -28,7 +28,7 @@ export function RenderingInfoEthical({
       </div>
       <p className="mb-2 mt-2 font-thin text-gray-900">
         {' '}
-        You can also reach the data stewards via individual mails of:
+        You can also reach the Data Stewards via individual e-mails:
       </p>
       <div className="inline-flex gap-2">
         <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
@@ -66,7 +66,7 @@ export function RenderingInfoEthical({
           </a>
         </div>
       </div>
-      <p className="mb-3 mt-2 font-thin text-gray-700">
+      {/* <p className="mb-3 mt-2 font-thin text-gray-700">
         {' '}
         Some templates on data privacy can be found in TU4U:
       </p>
@@ -74,7 +74,7 @@ export function RenderingInfoEthical({
         <div className="flex text-sm font-thin text-gray-900 underline">
           https://tu4u.tugraz.at/bedienstete/organisation-und-administration/datenschutz-und-datensicherheit/vorlagen-datenschutz-und-urheberrecht?sword_list[0]=datenschutz&no_cache=1
         </div>
-      </a>
+      </a> */}
       <p className="mb-3 mt-2 font-thin text-gray-700">
         {' '}
         Questions on intellectual property rights can be send to:

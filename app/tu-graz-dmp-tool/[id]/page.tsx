@@ -1,11 +1,18 @@
-'use client'
+'use client';
 
 import AccordionFaq from '#/ui/accordion-faq';
-import DesktopMockup from '#/ui/desktop-mockup';
+import { FC } from 'react';
+import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoTool } from '#/ui/rendering-info-tool';
 import { getContentAndTitleById } from '../paragraph-by-id';
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentAndTitleById(params.id);
   const questionsAndAnswers = [
     {
@@ -47,9 +54,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           {title}
         </h1>
         <p className="font-thin text-gray-500">{content}</p>
-        {params.id === 'faq' && (
-          <AccordionFaq data={questionsAndAnswers} />
-        )}
+        {params.id === 'faq' && <AccordionFaq data={questionsAndAnswers} />}
       </div>
       {params.id === 'support' && (
         <div className="-order-1 col-span-full lg:order-none lg:col-span-2">
@@ -60,29 +65,14 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
       )}
       {params.id === 'manuals' && (
-        <div>
-          <DesktopMockup
-            lightImageUrl="../../../../dmp/dmp-tool-manual.png"
-            darkImageUrl="../../../../dmp/dmp-tool-manual.png"
+        <div className="md:flex">
+          <GuideTemplate
+            pdfSources={{ english: '/pdf/Handbuch_Datenschutz_TU_Graz.pdf' }}
           />
-          <div className="mb-5 mt-5 flex gap-2">
-            <a
-              href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_DMP_Tool_en_v1.0.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
-              DMP Tool Guide (EN)
-            </a>
-            <a
-              href="https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/TUGraz_DMP_Tool_de_v1.0.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex flex-shrink-0 gap-x-2 whitespace-nowrap rounded-lg bg-gray-900 px-4 py-2 text-sm font-thin text-gray-100 no-underline hover:bg-gray-500 hover:text-white">
-              DMP Tool Guide (DE)
-            </a>
-          </div>
         </div>
       )}
     </div>
   );
-}
+};
+
+export default Page;

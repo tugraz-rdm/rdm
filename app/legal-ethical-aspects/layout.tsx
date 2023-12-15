@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab } from '#/ui/tab';
 
 export const metadata = {
-  title: 'LEGAL & ETHICAL ASPECTS OF RESEARCH DATA',
+  title: 'LEGAL & ETHICAL ASPECTS',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -11,22 +11,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-wrap items-center gap-2">
       <Tab
           path="/legal-ethical-aspects"
-          item={{ text: 'LEGAL & ETHICAL ASPECTS OF RESEARCH DATA' }}
+          item={{ text: 'LEGAL & ETHICAL ASPECTS' }}
         />
         <Tab
           path="/legal-ethical-aspects"
-          item={{ text: 'LEGAL ASPECTS', slug: 'legal' }}
+          item={{ text: 'EXAMPLES OF LEGAL ISSUES', slug: 'legalissues' }}
         />
         <Tab
           path="/legal-ethical-aspects"
-          item={{
-            text: 'DATA HANDLING CONSIDERATIONS',
-            slug: 'considerations',
-          }}
-        />
-        <Tab
-          path="/legal-ethical-aspects"
-          item={{ text: 'ETHICAL ASPECTS', slug: 'ethical' }}
+          item={{ text: 'EXEMPLARY ETHICAL CASES', slug: 'ethical' }}
         />
         <Tab
           path="/legal-ethical-aspects"

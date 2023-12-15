@@ -6,10 +6,10 @@ export function getContentLegalEthicalAspectsAndTitleById(id: string) {
   };
 
   const titleMap: Record<string, string> = {
-    legal: 'LEGAL ASPECTS',
-    considerations: 'DATA HANDLING CONSIDERATIONS',
-    ethical : 'ETHICAL ASPECTS',
-    support: 'CONTACT',
+    legalissues: 'Legal & Ethical Aspects - Examples of Legal Issues',
+    considerations: 'Legal & Ethical Aspects - Data handling',
+    ethical : 'Legal & Ethical Aspects - Exemplary Ethical Cases',
+    support: 'Legal & Ethical Aspects - Contact',
   };
 
   return {
@@ -19,5 +19,5 @@ export function getContentLegalEthicalAspectsAndTitleById(id: string) {
 }
 
 export function generateStaticParams() {
-  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }, { id: 'legal' }];
+  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }, { id: 'legal-issues' }];
 }

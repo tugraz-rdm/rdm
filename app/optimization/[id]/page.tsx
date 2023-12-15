@@ -18,7 +18,10 @@ export default async function Page({ params }: { params: { id: string } }) {
               familiar to you: where did I put it? Oh, no, did someone delete it
               and where is the backup?
             </p>
-            <img src="../../../../optimization/optimization.jpeg" />
+            <img
+              src="../../../../optimization/Folder_Structure.png"
+              className="mb-3 mt-3 h-auto max-w-lg rounded-lg"
+            />
             <p className="font-thin text-gray-900">
               There are some simple rules that make a researchers life easier
               when it comes down to simple tool-less data folder options, such
@@ -70,43 +73,6 @@ export default async function Page({ params }: { params: { id: string } }) {
             </p>
           </div>
         )}
-        {params.id === 'checklist' && (
-          <>
-            <ul className="text-gray-700 font-thin p-0">
-              <ul className="space-y-1 text-base  list-disc list-inside font-thin text-gray-700 text-thin">
-                <li>
-                  <a
-                    className="underline"
-                    href="https://riojournal.com/article/26439/element/3/4349040/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    RDM Rubric by JA. Borghi et al.
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="underline"
-                    href="https://osf.io/zwxr7/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    RDM onboarding check list by Harvard Longwood Medical Area
-                    Research Data Management Working Group
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="underline"
-                    href="https://osf.io/h5d9y/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    RDM offboarding check list by Harvard Longwood Medical Area
-                    Research Data Management Working Group{' '}
-                  </a>
-                </li>
-              </ul>
-            </ul>
-          </>
-        )}
         {params.id === 'support' && (
           <div>
             <RenderingInfoOptimization type={'optimization'} showEmail />
@@ -127,7 +93,10 @@ export default async function Page({ params }: { params: { id: string } }) {
               provide workflow visualizations as well as a list of short-term
               and long-term optimization goals.{' '}
             </p>
-            <img src="../../../../optimization/analysis.jpeg" />
+            <img
+              src="../../../../optimization/RDM-optimization.png"
+              className="h-auto max-w-lg mx-auto rounded-lg"
+            />
           </>
         )}
         {params.id === 'assessment' && (
@@ -140,12 +109,14 @@ export default async function Page({ params }: { params: { id: string } }) {
               self-assessment kit that further provides guiding information on
               how to optimize some practices. It provides descriptive categories
               that allow researchers to check the maturity of their current
-              processes. The RDM-team can moreover support individual
-              researchers, project consortia, research groups and institutes to
-              optimize their data management processes. Do not hesitate to
-              contact them for a more personalized or comprehensive analysis.
-              The before described online-checklist, the RDM rubrik, can be
-              found at{' '}
+              processes.
+            </p>
+            <p className="font-thin text-gray-900">
+              The RDM-team can moreover support individual researchers, project
+              consortia, reseach groups and institutes to optimize their data
+              management processes. Do not hesitate to contact them for a more
+              personalized or comprehensive analysis. The before described
+              online-checklist, the RDM rubrik, can be found at{' '}
               <a
                 className="text-gray-900 font-medium underline"
                 href="https://riojournal.com/article/26439/element/3/4349040/">

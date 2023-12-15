@@ -5,9 +5,9 @@ export const getContentConsultingAndTitleById = (id: string) => {
   };
 
   const titleMap: Record<string, string> = {
-    licenses: 'LICENSES',
-    support: 'CONTACT',
-    manuals: 'MANUALS',
+    licenses: 'DMP Consulting - Licenses',
+    support: 'DMP Consulting - Contact',
+    manuals: 'DMP Consulting - Manuals',
   };
 
   return {
