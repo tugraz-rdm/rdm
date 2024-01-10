@@ -1,7 +1,7 @@
 export function TULogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/favicon/white-tu-graz-logo.png" alt="RDM Logo" />
+    <img src="/favicon/logo-tugraz-red-white.png" alt="RDM Logo" />
   );
 }
 

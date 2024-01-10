@@ -153,9 +153,16 @@ const Page: FC<PageProps> = ({ params }) => {
         {params.id === 'manuals' && (
           <>
             <div className="md:flex">
-              <GuideTemplate
-                pdfSources={{ english: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf' }}
-              />
+              <GuideTemplate pdfSources={{
+                 english: { 
+                  url: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf', 
+                  label: 'English - User Guide' 
+                },
+                englishAdmin: { 
+                  url: '/pdf/eLabFTW_Guide_TeamAdmin_en_v1.3.pdf', 
+                  label: 'English - Admin Guide' 
+                },
+              }} ></GuideTemplate>
             </div>
           </>
         )}

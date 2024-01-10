@@ -8,10 +8,10 @@ const Page: FC = () => {
       <InvenioLogo />
       <p className="text-gray-700 text-base font-thin p-0">
         The TU Graz repository is based on the open-source solution InvenioRDM
-        and was co-developed by TU Graz together with CERN and TU Vienna. This
-        institutional repository is available to all members of TU Graz and
-        consists of various sections. Digital objects that have been released in
-        the repository can be found and accessed worldwide.
+        and has been co-developed by TU Graz together with CERN and TU Vienna.
+        This institutional repository is available to all members of TU Gra.
+        Digital objects that have been released in the repository can be found
+        and accessed worldwide.
       </p>
       <div
         className="p-4 text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
@@ -20,8 +20,8 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-          Publication of your research data which belong to a paper, article,
-          thesis or similar.
+          Publication of your research data linked to a paper, article, thesis
+          or other research activity.
         </li>
         <li>
           Reliable and permanent findability through the assignment of DOIs
@@ -42,9 +42,6 @@ const Page: FC = () => {
         <ExternalLink href="https://repository.tugraz.at/">
           TU Graz Repository
         </ExternalLink>
-        {/* <ExternalLink href="https://inveniosoftware.org/products/rdm/">
-          invenioRDM
-        </ExternalLink> */}
       </div>
     </div>
   );

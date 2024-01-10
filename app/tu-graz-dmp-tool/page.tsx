@@ -23,23 +23,22 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
         <li>
-          The DMP tool will help you in creating a data management plan (DMP)
-          for your proposal, an ongoing project, a thesis or research group
-          activities.
+          The DMP tool will help you create a Data Management Plan (DMP) for
+          your proposal, ongoing project, thesis, or research group activity.
         </li>
         <li>
           The tool guides you through all relevant RDM sections through
-          questions while it provides a selection of possible predefined
-          answers. Thereby, you are quickly navigated through the complete DMP
-          and you are made aware of the necessary planning steps.
+          questions, while providing a selection of predefined answers. This
+          will, take you quickly through the complete DMP, and will make you
+          aware of the steps that need to be taken care of during planning.
         </li>
         <li>
-          The tool is connected to the project database of TU Graz which allows
-          the user e.g. to easily select projects, project members and define
-          roles.
+          The tool is connected to TU Graz’ project database, thus allowing the
+          user to e.g. easily select projects and project members and define
+          their roles.
         </li>
         <li>
-          The created DMP can be exported in several formats matched to given
+          The resulting DMP can be exported in several formats matched to given
           templates by e.g. FWF or Science Europe.
         </li>
         <li>
@@ -48,7 +47,7 @@ const Page: FC = () => {
         </li>
       </ul>
       <div className="flex gap-2 ">
-        <ExternalLink href="https://dmp.tugraz.at//">
+        <ExternalLink href="https://dmp.tugraz.at/">
           {externalLinkText}
         </ExternalLink>
       </div>

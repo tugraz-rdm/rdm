@@ -62,12 +62,12 @@ const Page: FC<PageProps> = ({ params }) => {
             <p className="font-thin text-gray-900">
               Reference or citation management software allows to effectively
               create bibliographies for research publications. There are several
-              examples of such tools, e.g. Zotero or Mendeley that are further
-              detailed in the lecture “Finding Scientific Information and
-              Publishing Your Research Results”. For this topic we can forward
-              you to the contact points of experts at the library. There are
-              also two In-House Training courses available: „Literaturverwaltung
-              mit Mendeley“ and „Literaturverwaltung mit Citavi (Desktop)“.
+              examples of such tools, e.g. Zotero or Mendeley (further detailed
+              in the lecture “Finding Scientific Information and Publishing Your
+              Research Results”). For this topic, we can put you in contact with
+              the relevant experts at the library. There are also two In-House
+              Training courses available: „Literaturverwaltung mit Mendeley“ and
+              „Literaturverwaltung mit Citavi (Desktop)“.
             </p>
           </>
         )}

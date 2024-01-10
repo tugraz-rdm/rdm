@@ -8,15 +8,17 @@ const Page: FC = () => {
       </h1>
       <p className="text-gray-900 text-base font-thin p-0">
         All non-sensitive research results which lead to a publication shall be
-        made available for the scientific community in terms of transparency and
+        made available for the scientific community for transparency and
         reproducibility. Therefore, all forms of digital objects, such as
-        research data, metadata, or source code, can be assigned a persistent
-        identifier through entries on repositories. TU Graz offers the
-        institutional repository for publishing research results. Additional
-        topic- or discipline-specific data repositories can be found via the
-        registry of research data repositories. Licenses have to be attached to
-        all research results before publication, some examples are given for the
-        various digital objects under the subsection Licenses.
+        research data, metadata, or source code, should be assigned a persistent
+        identifier by uploading them to a repository. TU Graz offers the
+        institutional repository to publish research results obtained by its
+        staff members. Additional topic- or discipline-specific repositories can
+        be found via the registry of research data repositories. In order to
+        specify what can and cannot be done with the data, all research results
+        are required to have a license attached to them before publication.
+        Examples for various digital objects can be found under the subsection
+        Licenses.
       </p>
       <div
         className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
@@ -25,22 +27,19 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
         <li>
-          The RDM Team provides consultation on publication of digital objects
-          based on criteria for current data science needs.
+          Consultancy on publication of digital objects based on known
+          discipline-specific criteria for research data
+        </li>
+        <li>Support to find a suitable repository for publication</li>
+        <li>Formulation of meta data to describe the data adequately</li>
+        <li>
+          Besides individual consultation, the RDM Team offers courses on
+          repositories, data publication and meta data, available in the
+          In-House Training programme
         </li>
         <li>
-          Support to finding a suitable repository for publication and
-          formulating meta data for describing the data in a proper way.
-        </li>
-        <li>
-          Next to individual consultation the RDM Team offers courses, available
-          in the In-House Training programme, on repositories and data
-          publication and meta data.
-        </li>
-        <li>
-          The library and the RDM team also offers a lecture called „Finding
-          Scientific Information and Publishing Your Research Results“, with the
-          focus on Finding and Publishing results.
+          The library and the RDM Team also offers a lecture called „Finding
+          Scientific Information and Publishing Your Research Results“
         </li>
       </ul>
       <div
@@ -50,16 +49,17 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
         <li>
-          Increased visibility of your research will result from the FAIR
-          guiding principles for scientific data management (to make digital
-          objects findable, accessible, interoperable, and reusable).
+          Making your data compliant with the FAIR guiding principles for
+          scientific data management (to make digital objects findable,
+          accessible, interoperable, and reusable) will increase the visibility
+          of your research.
         </li>
         <li>
-          Making data available and repurposable by a wider research community
-          promotes the scientific process of knowledge discovery,
+          Making data available and reusable (also for different purposes) by a
+          wider research community promotes the scientific process of knowledge
+          discovery, and increases citability,
         </li>
-        <li>and increases citability,</li>
-        <li>and enables new collaboration possibilites.</li>
+        <li>and enables new collaboration possibilities.</li>
       </ul>
       <div
         className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
@@ -68,12 +68,12 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-700 text-thin">
         <li>
-          Contact the RDM Team or a Data Steward by sending a question via mail
+          Contact the RDM Team or a data steward by sending a question via mail
           or asking for an online or face-to-face meeting.
         </li>
         <li>
-          During an appointment Data Stewards will discuss relevant options,
-          possibilities or issues with you.
+          During an appointment, data stewards will discuss with you suitable
+          options to have your data published.
         </li>
         <li>and increases citability,</li>
         <li>

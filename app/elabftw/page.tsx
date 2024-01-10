@@ -21,7 +21,7 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-        Documentation of research data (metadata) in research and teaching
+          Documentation of research data (metadata) in research and teaching
         </li>
         <li>
           Possibility to work in teams and groups, with a detailed permission

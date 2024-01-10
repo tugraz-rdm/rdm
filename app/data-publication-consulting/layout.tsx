@@ -24,7 +24,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         />
         <Tab
           path="/data-publication-consulting"
-          item={{ text: 'HOW TO CITE', slug: 'goal' }}
+          item={{ text: 'HOW TO MANAGE CITATIONS', slug: 'goal' }}
         />
         <Tab
           path="/data-publication-consulting"

@@ -14,7 +14,7 @@ const LicensesForSoftware = () => {
             href="https://opensource.org/license/mit/"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            MIT License:{' '}
+            MIT License{' '}
           </a>
         </li>
         <li>
@@ -22,7 +22,7 @@ const LicensesForSoftware = () => {
             href="https://www.apache.org/licenses/LICENSE-2.0"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            Apache License:{' '}
+            Apache License{' '}
           </a>
         </li>
         <li>
@@ -30,7 +30,7 @@ const LicensesForSoftware = () => {
             href="https://www.gnu.org/licenses/gpl-3.0"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            GNU General Public License 3:{' '}
+            GNU General Public License 3{' '}
           </a>
         </li>
         <li>
@@ -38,7 +38,7 @@ const LicensesForSoftware = () => {
             href="https://opensource.org/license/bsd-3-clause/"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            3-Clause BSD License:{' '}
+            3-Clause BSD License{' '}
           </a>
         </li>
         <li>
@@ -46,7 +46,7 @@ const LicensesForSoftware = () => {
             href="https://opensource.org/license/eupl-1-2/"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            European Union Public License:{' '}
+            European Union Public License{' '}
           </a>
         </li>
       </ul>

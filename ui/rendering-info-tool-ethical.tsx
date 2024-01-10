@@ -88,6 +88,17 @@ export function RenderingInfoEthical({
       </div>
       <p className="mb-3 mt-2 font-thin text-gray-700">
         {' '}
+        Questions refer to ethical committee can be send to:
+      </p>
+      <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
+        <a href="mailto:ethikkommission@tugraz.at">
+          <div className="flex justify-center text-sm font-thin text-white">
+          ethikkommission@tugraz.at
+          </div>
+        </a>
+      </div>
+      <p className="mb-3 mt-2 font-thin text-gray-700">
+        {' '}
         Questions on ethical issues can be directed to the ethics commission
         through:
       </p>

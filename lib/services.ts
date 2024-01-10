@@ -107,7 +107,7 @@ export const useCombinedData = () => {
               },
               {
                 text: i18.t('activeStateOfResearch.launch'),
-                link: 'https://www.elabftw.net/',
+                link: 'https://elabftw.tugraz.at/login.php',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],

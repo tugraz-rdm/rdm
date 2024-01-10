@@ -7,7 +7,7 @@ export const getContentConsultingAndTitleById = (id: string) => {
   const titleMap: Record<string, string> = {
     licenses: 'Data Publication Consulting - Licenses',
     support: 'Data Publication - Contact',
-    goal: 'Data Publication Consulting - How to cite',
+    goal: 'Data Publication Consulting - How to manage citations',
     links: 'Data Publication Consulting - Links',
   };
 

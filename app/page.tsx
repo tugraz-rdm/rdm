@@ -21,16 +21,15 @@ const Page: FC = () => {
     <>
       <div className="container mx-auto space-y-10  text-white">
         <div className="ml-auto w-3/3">
-          <blockquote className="text-xl font-semibold text-gray-900 dark:text-white">
-            <p className="font-thin text-2xl  text-custom-blue-dark">
-              Research data management (RDM) <span className='font-medium'>ensures integrity, increases your
-              research impact, and preserves time</span> that is otherwise lost in
-              searching for or understanding of data. 
-            </p>
-            <p className="font-thin text-1xl italic text-custom-blue-dark mt-3">
-            The RDM Team at TU Graz
-              offers the following tools and services (along the three phases of
-              research):
+          <blockquote className="text-xl font-semibold text-gray-900 dark:text-white -mt-4">
+            <p className="font-thin text-1xl  text-custom-blue-dark ">
+              Research data management (RDM){' '}
+              <span className="font-medium">
+                ensures integrity, increases research impact, and saves time
+              </span>{' '}
+              <p>that is otherwise lost in searching for or understanding of data.</p>
+              <p>The RDM Team at TU Graz offers the following tools and services
+              along the three phases of research:</p>      
             </p>
           </blockquote>
         </div>
@@ -38,13 +37,13 @@ const Page: FC = () => {
           let descriptionIntro = '';
           if (index === 0) {
             descriptionIntro =
-              'During the planning phase researchers can use the TU Graz DMP tool to create data management plans (DMP) for future and ongoing projects. Data Stewards will individually help with DMPs through consultations, and moreover support also project consortia in optimizing planned RDM processes.';
+              'During the planning phase, researchers can use the TU Graz DMP tool to create data management plans (DMP) for future projects. Data stewards will individually help with DMPs through consultations, and moreover support also project consortia in optimizing planned RDM processes.';
           } else if (index === 1) {
             descriptionIntro =
-              'During the active state of research, you have access to and can make use of the institutional electronic laboratory notebook eLabFTW, and the (meta)data management as well as analysis platform CyVerse Austria. Moreover, the RDM team will support individual researchers and research groups in optimizing their current RDM processes.              ';
+              'During the active state of research, you have access to and can make use of the institutional electronic laboratory notebook eLabFTW and the (meta)data management, as well as to the analysis platform CyVerse Austria. The RDM Team will support individual researchers and research groups to optimize their current RDM processes. DMPs can also be created for ongoing projects using the TU Graz DMP tool.';
           } else if (index === 2) {
             descriptionIntro =
-              'During the state of research complete, you can publish research results using the TU Graz Repository, while the RDM team will consult you in regard to data publications. You can also find guidance on legal and ethical aspects of handling and publishing research data.';
+              'During the state of research complete, results from research can be published using the TU Graz Repository, and the RDM Team can help you with the publication of any accompanying data. You can also find guidance on legal and ethical aspects of handling and publishing research data.';
           }
           return (
             <>

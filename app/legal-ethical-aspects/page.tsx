@@ -5,9 +5,8 @@ const Page: FC = () => {
     <div className="prose prose-sm prose-invert max-w-none">
       <p className="text-gray-900 text-base font-thin p-0">
         When working with research data, or digital objects in general, several
-        legal and ethical aspects have to be considered. Compliance to ethical
-        and legal terms thereby depends on the individual project and research
-        topic.
+        legal and ethical aspects have to be considered. Compliance with ethical
+        and legal terms depends on the individual project and research topic.
       </p>
       <div
         className="p-4 text-thin text-gray-700 rounded-lg bg-custom-isabelline dark:bg-custom-isabelline dark:text-gray-300 uppercase"
@@ -16,13 +15,12 @@ const Page: FC = () => {
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
         <li>
-          The Data Stewards provide support on general legal and ethical
-          considerations on or questions about your research data in terms of
-          e.g. suitable licenses, or secure and effective handling of sensitive
-          data.
+          Data Stewards provide support on general legal and ethical
+          considerations regarding your research data, including e.g. suitable
+          licenses, or secure and effective handling of sensitive data.
         </li>
         <li>
-          If necessary, questions will be forwarded to the various contact
+          If necessary, questions will be forwarded to the appropriate contact
           persons at TU Graz for legal and ethical matters.
         </li>
       </ul>
@@ -32,7 +30,7 @@ const Page: FC = () => {
         What are the benefits?
       </div>
       <ul className="space-y-1 list-disc list-inside font-thin text-gray-900 text-thin">
-        <li>You receive support with an often difficult and unclear topic.</li>
+        <li>You receive support to an often difficult and unclear topic.</li>
         <li>
           In most cases, the topic is already discussed after a brief
           clarification and the roadmap is set.
@@ -50,7 +48,7 @@ const Page: FC = () => {
         </li>
         <li>
           You then make an appointment (online or F2F). Sometimes a mail is
-          sufficent.
+          sufficient.
         </li>
         <li>
           A Data Steward and you go will discuss the situation and answers your
@@ -58,8 +56,8 @@ const Page: FC = () => {
         </li>
         <li>
           If necessary, you will be forwarded to other service departments, such
-          as the Research & Technology House, the Ethics Committee, IT services,
-          or the Data Protection Office.
+          as the Research & Technology House (F&T Haus), the Ethics Committee,
+          IT services, or the Data Protection Office.
         </li>
       </ul>
     </div>

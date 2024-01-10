@@ -1,22 +1,17 @@
 'use client';
 
 import {
-  faArrowUpRightFromSquare,
-  faCalendarDays,
   faChevronDown,
   faChevronRight,
   faList,
 } from '@fortawesome/free-solid-svg-icons';
 
-import ButtonLANGroup from './button-lan-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobalNavItem } from './global-nav';
-import Image from 'next/image';
 import InformationalBanner from './informational-banner';
 import Link from 'next/link';
 import { useCombinedData } from '#/lib/services';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 type EventsProps = {
   isOpen: boolean;
@@ -25,16 +20,18 @@ type EventsProps = {
 
 export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isEventOpen, setIsEventOpen] = useState<boolean>(true);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
+  const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
+    null
+  );
   const { servicesData, eventsData } = useCombinedData();
 
   const handleMenuClick = () => {
     setIsMenuOpen(prev => !prev);
   };
 
-  const handleEventClick = () => {
-    setIsEventOpen(prev => !prev);
+  const handleItemClick = (itemIdx: number) => {
+    setSelectedItemIndex(itemIdx);
   };
 
   const handleClick = (index: number) => {
@@ -56,7 +53,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
         style={hideScrollbarStyle}
         className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform ${
           isOpen ? '' : '-translate-x-full'
-        } bg-custom-bone dark:bg-white-smoke w-80 sm:w-80`}
+        } bg-custom-blue-dark dark:bg-white-smoke w-72 sm:w-72`}
         tabIndex={-1}
         aria-labelledby="drawer-left-label">
         <InformationalBanner />
@@ -65,7 +62,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           style={{ height: '35px' }}>
           <h5
             id="drawer-body-scrolling-label"
-            className="font-thin mb-10 text-base uppercase text-gray-700 dark:text-gray-400">
+            className="font-thin mb-10 text-base uppercase text-white-smoke light:white-smoke">
             Menu
           </h5>
           {/* <ButtonLANGroup /> */}
@@ -83,7 +80,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                 <li key={sectionIdx} style={{ marginLeft: '17px' }}>
                   <button
                     type="button"
-                    className="hover:bg-white-smoke  group flex w-full items-center rounded-lg p-2 text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700"
+                    className="hover:bg-white-smoke  group flex w-full items-center rounded-lg p-2 text-base hover:text-gray-700 text-white-smoke transition duration-75 dark:text-white-smoke dark:hover:bg-white-smoke"
                     onClick={() => handleClick(sectionIdx)}>
                     <span className="flex-1 whitespace-nowrap text-left font-thin">
                       {section.name}
@@ -97,20 +94,27 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     {section.items.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className="border-transparent hover:border-gray-900 hover:bg-white-smoke ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base text-gray-700 transition duration-75 dark:text-gray-700 dark:hover:bg-gray-700">
+                        className={`border-transparent ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base transition duration-75 ${
+                          selectedItemIndex === itemIdx
+                            ? 'bg-white-smoke text-gray-700'
+                            : 'hover:border-white-smoke hover:text-gray-700 hover:bg-white-smoke text-white-smoke dark:text-white-smoke dark:hover:bg-gray-700'
+                        }`}
+                        onClick={() => handleItemClick(itemIdx)}>
                         <GlobalNavItem item={item} close={handleClose} />
                       </li>
                     ))}
                   </ul>
                 </li>
               ))}
+            {/* 
+             //!!! this is needed for later, please do not remove it
             <DrawerSection
               title="EVENTS"
               icon={faCalendarDays}
               onClick={handleEventClick}
               isOpen={isEventOpen}
-            />
-            {isEventOpen && (
+            /> */}
+            {/* {isEventOpen && (
               <ul>
                 <div className="flex flex-col gap-3 py-2">
                   {eventsData.map(event => (
@@ -133,7 +137,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                         href={event.url}
                         target="_blank"
                         rel="noopener noreferrer">
-                        <div className="cursor-pointer text-lg font-semibold tracking-tight text-gray-900 hover:underline dark:text-white">
+                        <div className="cursor-pointer text-lg font-base tracking-tight text-gray-900 hover:underline dark:text-white">
                           {event.name}
                         </div>
                       </Link>
@@ -155,7 +159,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                   ))}
                 </div>
               </ul>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
@@ -170,54 +174,53 @@ export const ButtonDrawer: React.FC<{
   const toggleDrawer = () => {
     onToggle();
   };
-  const { t } = useTranslation('header');
-  const title = t('header.title');
 
   return (
     <div
-      className={`fixed left-0 top-0 mt-8 transition-transform ${
-        isOpen ? 'ml-80' : ''
+      className={`fixed left-0 top-0 mt-6 transition-transform ${
+        isOpen ? 'ml-72' : ''
       }`}>
       <div
-        className="focus:ring-4-gray-700 -mt-3 mr-2 rounded-lg px-5 text-sm font-medium text-white focus:outline-none focus:ring-gray-700"
+        className={`focus:ring-4-gray-700 mr-2 rounded-lg  text-sm font-medium text-white focus:outline-none focus:ring-gray-700 " 
+        ${isOpen ? 'px-2' : 'px-5'}`}
         onClick={toggleDrawer}>
         <div className="ml-5 flex gap-2 items-center">
           {isOpen ? (
             <svg
-              className="h-5 w-5 text-white dark:text-white"
+              className="w-5 h-5 text-white dark:text-white mr-2"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 16 16">
+              viewBox="0 0 8 14">
               <path
                 stroke="currentColor"
-                // strokeLinecap="round"
+                strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="1"
-                d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"
+                strokeWidth="2"
+                d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13"
               />
             </svg>
           ) : (
             <svg
-              className="h-5 w-5 text-white dark:text-white"
+              className="w-5 h-5 text-white dark:text-white mr-2"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 18 15">
+              viewBox="0 0 17 14">
               <path
                 stroke="currentColor"
-                // strokeLinecap="round"
+                strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="1"
-                d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
           )}
           <Link href="/" className="flex gap-x-2" onClick={onToggle}>
-            <h3 className="font-base text-2xl tracking-wide text-white">RDM</h3>
-            <h3 className="text-2xl font-thin tracking-wide text-white">
-              | {title}
-            </h3>
+            <img
+              src="/RDM-withTitle-rot-white.png"
+              style={{ width: '20rem', height: 'auto' }}
+            />
           </Link>
         </div>
       </div>
@@ -235,15 +238,16 @@ export const DrawerSection: React.FC<{
   <div>
     <div className="flex items-center justify-between">
       <div className="flex items-center">
-        <FontAwesomeIcon className="text-base" icon={icon} />
+        <FontAwesomeIcon className="text-base" icon={icon} color="#ffffff" />
         <h5
-          className="text-1xl font-base ml-2 cursor-pointer uppercase text-gray-700 dark:text-gray-400"
+          className="text-1xl font-thin ml-2 cursor-pointer uppercase text-white-smoke dark:text-white-smoke"
           onClick={onClick}>
           {title}
         </h5>
       </div>
       <FontAwesomeIcon
         className="h-4 w-4"
+        color="#ffffff"
         icon={isOpen ? faChevronDown : faChevronRight}
         onClick={onClick}
       />

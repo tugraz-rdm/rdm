@@ -34,8 +34,8 @@ export default async function Page({ params }: { params: { id: string } }) {
                 <li>
                   Before publication or sharing, data should be anonymized.
                   De-identification does not just mean removing people's names
-                  from a file. Tequniques involve data masking, data
-                  pseudonymization, data swapping, generalization, up to data
+                  from a file. Techniques involve data masking, data
+                  pseudonymization, data swapping, generalization, or data
                   perturbation and synthetic data. (Manual data preocessing or
                   exemplary tools:
                   <div className="grid text-gray-900 font-thin">
@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 Biological studies (invasive and non-invasive medical research,
                 including research that involves taking samples such as tissue
                 from human subjects, human stem cells; and animal
-                experimentation
+                experimentation)
               </li>
               <li>Research relevant to the environment</li>
               <li>Exchange of knowledge and technology with third countries</li>
@@ -95,7 +95,13 @@ export default async function Page({ params }: { params: { id: string } }) {
               <div className="font-regular">
                 If ethical considerations require an ethical approval for a
                 proposal, or ethical dilemma arise during an ongoing project, we
-                refer to the ethics committee.
+                refer to the{' '}
+                <a
+                  href="https://tu4u.tugraz.at/studierende/serviceeinrichtungen/vertretungen-der-tu-graz-angehoerigen/ethikkommission-an-der-tu-graz?sword_list%5B0%5D=ethik&no_cache=1"
+                  target="_blank"
+                  className="underline  text-gray-900 font-base">
+                  Ethics Committee.
+                </a>
               </div>
             </div>
           </div>
@@ -114,15 +120,15 @@ export default async function Page({ params }: { params: { id: string } }) {
             </div>
             <ul className="space-y-1 text-sm list-disc list-inside font-thin text-gray-700 text-thin">
               <li>
-                Studies using (collecting, archiving) personal or confidential
-                data, including trade secrets, data protected by intellectual
-                property rights security, safety; combination of datasets that
-                lead to sensitive information
+                Studies using (e.g. collecting, archiving) personal or
+                confidential data, including trade secrets, data protected by
+                intellectual property rights security, safety; combination of
+                datasets that lead to sensitive information
               </li>
               <li>
                 {' '}
                 Personal and sensitive metadata, including studies or research
-                with people (surveys).
+                with people (surveys)
               </li>
             </ul>
             <div
@@ -137,14 +143,14 @@ export default async function Page({ params }: { params: { id: string } }) {
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
               </svg>
               <span className="sr-only">Info</span>
-              Informed consent for research conducted with people, has to be
+              Informed consent for research conducted with people has to be
               considered throughout the research lifecycle!
             </div>
             <ul className="space-y-1 list-disc text-sm list-inside font-thin text-gray-700 text-thin">
               <li>
                 Participants have to understand what the research will involve
-                and consent, what data will be collected and how it will be
-                used, especially if it may reveal identities.
+                and give their consent, what data will be collected and how it
+                will be used, especially if it may reveal identities
               </li>
               <li>
                 Be specific and granular so that you get separate consent for
@@ -160,25 +166,26 @@ export default async function Page({ params }: { params: { id: string } }) {
               surveys have to detail:
             </div>
             <ul className="space-y-1 text-sm list-disc list-inside font-thin text-gray-700 text-thin">
-              <li>Project title</li>
+              <li>project title,</li>
               <li>
-                Detailing information on all data collected, data categories,
-                corresponding scope
+                information on all data collected, data categories,
+                corresponding scope,
               </li>
               <li>
-                Data handling processes, storage location and indicating the
-                persons having access to the data
+                data handling processes, storage location and indicating the
+                persons having access to the data,
+              </li>
+              <li>intended purpose of use,</li>
+              <li>
+                storage period, and what happens to the data after this time
+                period,
               </li>
               <li>
-                Storage period, and what happens to the data after this time
-                period
+                indication of the voluntary nature of participation, withdrawal
+                rights,
               </li>
               <li>
-                Indication of the voluntary nature of participation, withdrawal
-                rights
-              </li>
-              <li>
-                And the contact of the responsible person of data collection and
+                and the contact of the responsible person of data collection and
                 use in case of inquiries or withdrawal.
               </li>
             </ul>

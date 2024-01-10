@@ -2,7 +2,7 @@
   "dmp": {
     "page": {
       "title": "TU Graz DMP Tool",
-      "description": "TU Graz DMP Tool is based on an open source solution DAMAP that serves as a tool for machine actionable data management plans (maDMPs). DAMAP was developed in collaboration with TU Wien and it is under continuous improvement.",
+      "description": "TU Graz DMP Tool is a software solution to create machine actionable Data Management Plans (maDMPs) based on the open source solution DAMAP. DAMAP was developed by the RDM Team in collaboration with TU Wien and it is under continuous improvement.",
       "externalLinkText": "TU Graz DMP Tool"
     },
     "paragraphById": {

@@ -26,7 +26,7 @@ export default function RootLayout({
            <div className=" mx-auto space-y-10 bg-cover bg-no-repeat text-white" style={{ backgroundImage: `url('/front-light.png')`}}>   
             <div
               className={`max-w-8xl mx-auto px-2 pb-20  transition-all duration-300 sm:px-4 md:px-6 lg:px-8  ${
-                isDrawerOpen ? 'lg:ml-80' : ''
+                isDrawerOpen ? 'lg:ml-72' : ''
               }`}
               style={{
                 marginTop: '6rem',

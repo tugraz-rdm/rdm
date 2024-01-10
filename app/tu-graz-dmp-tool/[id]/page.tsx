@@ -67,7 +67,9 @@ const Page: FC<PageProps> = ({ params }) => {
       {params.id === 'manuals' && (
         <div className="md:flex">
           <GuideTemplate
-            pdfSources={{ english: '/pdf/Handbuch_Datenschutz_TU_Graz.pdf' }}
+            pdfSources={{ english: {
+              label: 'English Guide',
+              url: '/pdf/TUGraz_DMP_Tool_en_v1.0.pdf'} }}
           />
         </div>
       )}

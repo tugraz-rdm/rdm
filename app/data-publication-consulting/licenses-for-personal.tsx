@@ -12,7 +12,7 @@ const LicensesForPersonal = () => {
             href="https://library.unimelb.edu.au/Digital-Scholarship/restrictive-licence-template"
             className="text-gray-700 font-medium underline"
             target="_blank">
-            RLT (Restrictive License Template):{' '}
+            RLT (Restrictive License Template){' '}
           </a>
         </li>
       </ul>

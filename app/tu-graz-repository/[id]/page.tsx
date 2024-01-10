@@ -96,7 +96,10 @@ const Page: FC<PageProps> = ({ params }) => {
           <div className="md:flex">
             <GuideTemplate
               pdfSources={{
-                english: '/pdf/TUGraz_Repository_Guide_en_v2.2.pdf',
+                english: {
+                  url: '/pdf/TUGraz_Repository_Guide_en_v2.2.pdf',
+                  label: 'English Guide',
+                },
               }}
             />
           </div>
