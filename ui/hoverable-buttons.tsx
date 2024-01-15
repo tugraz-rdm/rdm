@@ -23,17 +23,14 @@ const HoverableButtons: React.FC<HoverableButtonsProps> = ({ item }) => {
     e: React.MouseEvent<HTMLAnchorElement>,
     button: Button
   ) => {
+    e.preventDefault();
     e.stopPropagation();
 
     const launchTexts = ['Launch', 'Starten'];
     const readMoreTexts = ['Read More', 'Mehr lesen'];
 
     if (launchTexts.includes(button.text)) {
-      window.open(
-        button.link,
-        '_blank',
-        'left=100,top=100,width=800,height=600'
-      );
+      window.open(button.link, '_blank');
     } else if (readMoreTexts.includes(button.text)) {
       router.push(`/${item.slug}`);
     }
@@ -47,7 +44,7 @@ const HoverableButtons: React.FC<HoverableButtonsProps> = ({ item }) => {
           {item.buttons?.map((button, index) => (
             <a
               key={index}
-              href="#"
+              href=""
               onClick={e => handleClick(e, button)}
               className="font-regular flex w-full items-center justify-center rounded border hover:bg-custom-blue px-4 py-2 text-gray-900 hover:text-white-smoke z-10">
               {button.text}

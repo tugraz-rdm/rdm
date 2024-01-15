@@ -1,4 +1,4 @@
-import DesktopMockup from '#/ui/desktop-mockup';
+import ImageModal from '#/ui/image-modal';
 import { RenderingInfoOptimization } from '#/ui/rendering-info-tool-optimization';
 import { getContentOptimizationAndTitleById } from '../random-post-tab';
 
@@ -18,9 +18,9 @@ export default async function Page({ params }: { params: { id: string } }) {
               following sound familiar to you: “where did I put it?”, “Oh, no,
               did someone delete it!”, or “Where is the backup”?
             </p>
-            <img
+            <ImageModal
               src="../../../../optimization/Folder_Structure.png"
-              className="mb-4 mt-4 h-auto max-w-lg rounded-lg"
+              alt="Folder Structure"
             />
             <p className="font-thin text-gray-900">
               There are some simple rules that make a researcher’s life easier
@@ -111,8 +111,9 @@ export default async function Page({ params }: { params: { id: string } }) {
               that could support specific processes, and provide workflow
               visualizations.{' '}
             </p>
-            <img
+            <ImageModal
               src="../../../../optimization/RDM-optimization.png"
+              alt="RDM Optimization"
               className="h-auto max-w-lg mx-auto rounded-lg"
             />
           </>
