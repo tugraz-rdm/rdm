@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
 

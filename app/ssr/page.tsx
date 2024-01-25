@@ -1,7 +1,7 @@
 import { ExternalLink } from '#/ui/external-link';
 import { FC } from 'react';
 
-export const Page: FC = () => {
+const Page: FC = () => {
   return (
     <div className="prose prose-sm prose-invert max-w-none">
       <h1 className="text-xl font-bold">Dynamic Data</h1>
@@ -28,3 +28,5 @@ export const Page: FC = () => {
     </div>
   );
 };
+
+export default Page;

@@ -4,10 +4,11 @@ const { i18n } = require('./next-i18next.config');
 const nextConfig = {
   // !important for testing set to true
   reactStrictMode: true,
+  output: 'export',
   experimental: {
     appDir: true,
   },
-  i18n,
+  // i18n,
 };
 
 module.exports = nextConfig;

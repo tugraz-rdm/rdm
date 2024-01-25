@@ -1,12 +1,21 @@
+'use client'
+
 import StepsComponent, { steps } from '#/ui/steps-component';
 
 import AccordionFaq from '#/ui/accordion-faq';
-import { ExternalLink } from '#/ui/external-link';
+import { FC } from 'react';
 import { RenderingInfoCyVerse } from '#/ui/rendering-info-cyverse';
 import { getContentAndTitleById } from '../parapraph-by-id';
 
-export default async function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentAndTitleById(params.id);
+
   const questionsAndAnswers = [
     {
       question: 'How can I use the system',
@@ -120,3 +129,5 @@ export default async function Page({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
+export default Page;
