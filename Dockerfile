@@ -1,25 +1,26 @@
 # Use an official Node.js image with version 16.14
-FROM node:16.14
+FROM node:18.17.0
 
 ENV USER=dmp
+ENV WDIR=/usr/src/rdm
 
 # Install pnpm globally using npm
 RUN npm install -g pnpm
 
 # Set the working directory for your application
-WORKDIR /app
+WORKDIR $WDIR
 
 # Copy your application code into the container
-COPY . /app
+COPY . .
 
 # Install application dependencies using pnpm
-RUN pnpm install
+RUN pnpm install && npm run build
 
 # Create a new user named "$USER"
 RUN useradd -m $USER
 
 # Set the ownership of the /app directory to the "$USER" user
-RUN chown -R $USER:$USER /app
+RUN chown -R $USER:$USER $WDIR
 
 # Switch to the "$USER" user for running the application
 USER $USER
