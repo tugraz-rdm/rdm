@@ -53,7 +53,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
         style={hideScrollbarStyle}
         className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform ${
           isOpen ? '' : '-translate-x-full'
-        } bg-custom-blue-dark dark:bg-white-smoke w-72 sm:w-72`}
+        } bg-custom-blue dark:bg-white-smoke w-72 sm:w-72`}
         tabIndex={-1}
         aria-labelledby="drawer-left-label">
         <InformationalBanner />
@@ -80,7 +80,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                 <li key={sectionIdx} style={{ marginLeft: '17px' }}>
                   <button
                     type="button"
-                    className="hover:bg-white-smoke  group flex w-full items-center rounded-lg p-2 text-base hover:text-gray-700 text-white-smoke transition duration-75 dark:text-white-smoke dark:hover:bg-white-smoke"
+                    className=" hover:bg-white-smoke  group flex w-full items-center rounded-lg p-2 text-base hover:text-gray-700 text-white-smoke transition duration-75 dark:text-white-smoke dark:hover:bg-white-smoke"
                     onClick={() => handleClick(sectionIdx)}>
                     <span className="flex-1 whitespace-nowrap text-left font-thin">
                       {section.name}
@@ -94,7 +94,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     {section.items.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className={`border-transparent ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base transition duration-75 ${
+                        className={` ml-5 pl-2 p-1 font-thin group flex items-center rounded-lg text-base transition duration-75 ${
                           selectedItemIndex === itemIdx
                             ? 'bg-white-smoke text-gray-700'
                             : 'hover:border-white-smoke hover:text-gray-700 hover:bg-white-smoke text-white-smoke dark:text-white-smoke dark:hover:bg-gray-700'

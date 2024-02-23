@@ -39,16 +39,16 @@ const HoverableButtons: React.FC<HoverableButtonsProps> = ({ item }) => {
   return (
     <div>
       <div className="h-48 w-full transform bg-white object-cover transition-transform duration-500 hover:scale-110" />
-      <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-60 p-5 opacity-0 transition-opacity duration-300  group-hover:opacity-100">
+      <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-60 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="flex h-full w-full space-x-3">
           {item.buttons?.map((button, index) => (
             <a
               key={index}
               href=""
               onClick={e => handleClick(e, button)}
-              className="font-regular flex w-full items-center justify-center rounded border hover:bg-custom-blue px-4 py-2 text-gray-900 hover:text-white-smoke z-10">
+              className="group font-regular flex w-full items-center justify-center rounded border hover:bg-custom-blue px-4 py-2 text-gray-900 hover:text-white-smoke z-10">
               {button.text}
-              <div className="mt-2 inline-flex cursor-pointer items-center text-gray-700 hover:text-white-smoke">
+              <div className="mt-2 inline-flex cursor-pointer items-center text-gray-700 group-hover:text-white-smoke">
                 <FontAwesomeIcon
                   icon={faArrowUpRightFromSquare}
                   className="mb-2 ml-2.5 h-3 w-3"
