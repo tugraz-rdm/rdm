@@ -1,5 +1,3 @@
-'use client'
-
 import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
 
 import AccordionFaq from '#/ui/accordion-faq';
@@ -185,3 +183,13 @@ const Page: FC<PageProps> = ({ params }) => {
 };
 
 export default Page;
+
+
+export function generateStaticParams() {
+  return [
+    { id: 'support' },
+    { id: 'faq' },
+    { id: 'manuals' },
+    { id: 'api' },
+  ];
+}

@@ -14,16 +14,16 @@ WORKDIR $WDIR
 COPY . .
 
 # Install application dependencies using pnpm
-RUN pnpm install && npm run build
+RUN pnpm install && pnpm run build
 
-# Create a new user named "$USER"
-RUN useradd -m $USER
+# # Create a new user named "$USER"
+# RUN useradd -m $USER
 
-# Set the ownership of the /app directory to the "$USER" user
-RUN chown -R $USER:$USER $WDIR
+# # Set the ownership of the /app directory to the "$USER" user
+# RUN chown -R $USER:$USER $WDIR
 
 # Switch to the "$USER" user for running the application
-USER $USER
+# USER $USER
 
 # Define the command to start your application
 CMD [ "pnpm", "dev" ]

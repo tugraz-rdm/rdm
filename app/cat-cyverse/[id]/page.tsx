@@ -1,4 +1,4 @@
-'use client'
+
 
 import StepsComponent, { steps } from '#/ui/steps-component';
 
@@ -131,3 +131,12 @@ const Page: FC<PageProps> = ({ params }) => {
 }
 
 export default Page;
+
+export function generateStaticParams() {
+  return [
+    { id: 'support' },
+    { id: 'manual' },
+    { id: 'faq' },
+    { id: 'account' },
+  ];
+}
