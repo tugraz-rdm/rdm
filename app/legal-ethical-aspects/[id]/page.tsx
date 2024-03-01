@@ -266,6 +266,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 }
 
 export function generateStaticParams() {
-  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }, { id: 'legal-issues' }];
+  return [{ id: 'legalissues' }, { id: 'ethical' }, { id: 'support' }];
 }
 
