@@ -5,7 +5,7 @@ const nextConfig = {
   // !important for testing set to true
   reactStrictMode: true,
   output: 'export',
-  trailingSlash: false,
+  trailingSlash: true,
   experimental: {
     appDir: true,
   },
