@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab } from '#/ui/tab';
 
 export const metadata = {
-  title: 'LEGAL & ETHICAL ASPECTS',
+  title: 'Legal & Ethical Aspects',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

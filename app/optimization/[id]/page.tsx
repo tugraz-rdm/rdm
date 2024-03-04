@@ -197,3 +197,9 @@ export default async function Page({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
+
+export function generateStaticParams() {
+  return [{ id: 'analysis' }, {id: 'assessment'}, {id: 'boarding'}, { id: 'datastructure' }, { id: 'support' }];
+}
+

@@ -1,5 +1,3 @@
-'use client'
-
 import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
 
 import AccordionFaq from '#/ui/accordion-faq';
@@ -153,16 +151,17 @@ const Page: FC<PageProps> = ({ params }) => {
         {params.id === 'manuals' && (
           <>
             <div className="md:flex">
-              <GuideTemplate pdfSources={{
-                 english: { 
-                  url: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf', 
-                  label: 'English - User Guide' 
-                },
-                englishAdmin: { 
-                  url: '/pdf/eLabFTW_Guide_TeamAdmin_en_v1.3.pdf', 
-                  label: 'English - Admin Guide' 
-                },
-              }} ></GuideTemplate>
+              <GuideTemplate
+                pdfSources={{
+                  english: {
+                    url: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf',
+                    label: 'English - User Guide',
+                  },
+                  englishAdmin: {
+                    url: '/pdf/eLabFTW_Guide_TeamAdmin_en_v1.3.pdf',
+                    label: 'English - Admin Guide',
+                  },
+                }}></GuideTemplate>
             </div>
           </>
         )}
@@ -185,3 +184,13 @@ const Page: FC<PageProps> = ({ params }) => {
 };
 
 export default Page;
+
+export function generateStaticParams() {
+  return [
+    { id: 'support' },
+    { id: 'faq' },
+    { id: 'manuals' },
+    { id: 'info' },
+    { id: 'api' },
+  ];
+}

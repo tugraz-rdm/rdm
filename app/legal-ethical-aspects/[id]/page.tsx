@@ -264,3 +264,8 @@ export default async function Page({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
+export function generateStaticParams() {
+  return [{ id: 'legalissues' }, { id: 'ethical' }, { id: 'support' }];
+}
+

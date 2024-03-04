@@ -89,3 +89,12 @@ const Page: FC<PageProps> = ({ params }) => {
 };
 
 export default Page;
+
+export const generateStaticParams = () => {
+  return [
+    { id: 'support' },
+    { id: 'licenses' },
+    { id: 'goal' },
+    { id: 'links' },
+  ];
+};

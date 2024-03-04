@@ -1,4 +1,3 @@
-'use client';
 
 import AccordionFaq from '#/ui/accordion-faq';
 import { FC } from 'react';
@@ -78,3 +77,11 @@ const Page: FC<PageProps> = ({ params }) => {
 };
 
 export default Page;
+
+export function generateStaticParams() {
+  return [
+    { id: 'support' },
+    { id: 'faq' },
+    { id: 'manuals' },
+  ];
+}
