@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobalNavItem } from './global-nav';
 import InformationalBanner from './informational-banner';
 import Link from 'next/link';
+import RdmDocumentSection from './rdm-documents-section';
+import { documents } from '#/lib/documents';
 import { useCombinedData } from '#/lib/services';
 import { useState } from 'react';
 
@@ -21,6 +23,7 @@ type EventsProps = {
 export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
   const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
+  const [isRDMDocOpen, setIsRDMDocOpen] = useState<boolean>(false);
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
   );
@@ -28,6 +31,10 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
 
   const handleMenuClick = () => {
     setIsMenuOpen(prev => !prev);
+  };
+
+  const handleRDMDocClick = () => {
+    setIsRDMDocOpen(prev => !prev);
   };
 
   const handleItemClick = (itemIdx: number) => {
@@ -67,14 +74,16 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           </h5>
           {/* <ButtonLANGroup /> */}
         </div>
+
         <DrawerSection
           title="DASHBOARD"
           icon={faList}
           onClick={handleMenuClick}
           isOpen={isMenuOpen}
         />
+
         <div className="overflow-y-auto py-2">
-          <ul className="space-y-2">
+          <ul>
             {isMenuOpen &&
               servicesData.map((section, sectionIdx) => (
                 <li key={sectionIdx} style={{ marginLeft: '17px' }}>
@@ -86,6 +95,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                       {section.name}
                     </span>
                   </button>
+
                   <ul
                     id={`dropdown-${sectionIdx}`}
                     className={`space-y-2 py-2 ${
@@ -106,6 +116,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                   </ul>
                 </li>
               ))}
+
             {/* 
              //!!! this is needed for later, please do not remove it
             <DrawerSection
@@ -160,6 +171,19 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                 </div>
               </ul>
             )} */}
+          </ul>
+        </div>
+        <DrawerSection
+          title="SITE POLICIES"
+          icon={faList}
+          onClick={handleRDMDocClick}
+          isOpen={isRDMDocOpen}
+        />
+        <div className="overflow-y-auto py-2">
+          <ul>
+            {isRDMDocOpen && (
+              <RdmDocumentSection isOpen={isRDMDocOpen} documents={documents} />
+            )}
           </ul>
         </div>
       </div>

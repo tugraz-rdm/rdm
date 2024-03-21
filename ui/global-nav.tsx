@@ -24,7 +24,7 @@ export const SimpleGlobalNav: React.FC<{
 
   return (
     <>
-      <div  className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
+      <div className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
         <div className="mt-5 lg:mt-0">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />
@@ -53,7 +53,7 @@ export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(true);
   const close = () => setIsOpen(false);
   const { servicesData, eventsData } = useCombinedData();
-  
+
   return (
     <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-700 bg-gray-700 lg:bottom-0 lg:z-auto lg:w-96 lg:border-b-0 lg:border-r lg:border-gray-700">
       <div>
