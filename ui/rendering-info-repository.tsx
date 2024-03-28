@@ -18,9 +18,9 @@ export function RenderingInfoRepository({
 
   return (
     <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
-      <a href="repositroy-support@tugraz.at">
+      <a href="mailto:repository-support@tugraz.at">
         <div className="flex justify-center text-sm font-thin text-white">
-          repositroy-support@tugraz.at
+          repository-support@tugraz.at
         </div>
       </a>
     </div>
