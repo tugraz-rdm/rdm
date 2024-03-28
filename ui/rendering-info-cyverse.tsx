@@ -19,7 +19,7 @@ export function RenderingInfoCyVerse({
   return (
     <>
       <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
-        <a href="cyverse-support@tugraz.at">
+        <a href="mailto:cyverse-support@tugraz.at">
           <div className="flex justify-center text-sm font-thin text-white">
             cyverse-support@tugraz.at
           </div>
