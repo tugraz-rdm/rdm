@@ -1,4 +1,3 @@
-
 type RenderingInfoCyVerseProps = {
   type: 'tu-graz-dmp-tool';
   showEmail?: boolean;
@@ -20,9 +19,9 @@ export function RenderingInfoCyVerse({
   return (
     <>
       <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
-        <a href="rdmteam@tugraz.at">
+        <a href="cyverse-support@tugraz.at">
           <div className="flex justify-center text-sm font-thin text-white">
-            rdmteam@tugraz.at
+            cyverse-support@tugraz.at
           </div>
         </a>
       </div>

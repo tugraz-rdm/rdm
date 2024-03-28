@@ -70,7 +70,7 @@ const Page: FC = () => {
         <ExternalLink href="https://de.cyverse.tugraz.at">
           CyVerse Austria Discovery Environment
         </ExternalLink>
-        <ExternalLink href="https://de.cyverse.tugraz.at">
+        <ExternalLink href="https://user.cyverse.tugraz.at">
           CyVerse Austria User Portal
         </ExternalLink>
       </div>
