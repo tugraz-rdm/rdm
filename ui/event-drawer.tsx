@@ -95,7 +95,6 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                       {section.name}
                     </span>
                   </button>
-
                   <ul
                     id={`dropdown-${sectionIdx}`}
                     className={`space-y-2 py-2 ${
@@ -226,11 +225,11 @@ export const ButtonDrawer: React.FC<{
             </svg>
           ) : (
             <svg
-              className="w-5 h-5 text-white dark:text-white mr-2"
+              className="w-5 h-5 text-white dark:text-white mr-2 -ml-2"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 17 14">
+              viewBox="0 0 12 14">
               <path
                 stroke="currentColor"
                 strokeLinecap="round"
@@ -240,10 +239,18 @@ export const ButtonDrawer: React.FC<{
               />
             </svg>
           )}
-          <Link href="/" className="flex gap-x-2" onClick={onToggle}>
+          <Link href="/" className="hidden sm:flex gap-x-2" onClick={onToggle}>
             <img
               src="/RDM-withTitle-rot-white.png"
+              alt="Desktop Icon"
               style={{ width: '20rem', height: 'auto' }}
+            />
+          </Link>
+          <Link href="/" className="flex sm:hidden gap-x-2" onClick={onToggle}>
+            <img
+              src="/RDM-icon-rot.png"
+              alt="Desktop Icon"
+              style={{ width: '4rem', height: 'auto' }}
             />
           </Link>
         </div>

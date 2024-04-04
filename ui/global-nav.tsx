@@ -24,7 +24,9 @@ export const SimpleGlobalNav: React.FC<{
 
   return (
     <>
-      <div className="fixed top-0 z-50 flex w-full flex-col bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
+      <div
+        style={{ height: '70px' }}
+        className="fixed top-0 z-50 flex w-full bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
         <div className="mt-5 lg:mt-0">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />
@@ -34,12 +36,13 @@ export const SimpleGlobalNav: React.FC<{
             className={`items-left group flex w-full transform gap-x-3 transition-transform lg:w-auto ${
               isOpen ? 'translate-x-[10vw]' : ''
             }`}
-            onClick={toggleDrawer}>
-            {/* Any content or components you want inside the Link */}
-          </a>
+            onClick={toggleDrawer}></a>
         </Link>
-        <div className="mr-5 flex items-center gap-10">
-          <div className="logo-wrapper m-5 mb-6 h-6 w-20">
+        <div
+          className={`mr-5 flex items-center gap-10 ${
+            isOpen ? 'hidden sm:flex' : 'flex'
+          }`}>
+          <div className="logo-wrapper h-6 w-20">
             <TULogo />
           </div>
         </div>
