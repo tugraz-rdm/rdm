@@ -40,7 +40,7 @@ const Page: FC = () => {
               'During the planning phase, researchers can use the TU Graz DMP tool to create data management plans (DMP) for future projects. Data stewards will individually help with DMPs through consultations, and moreover support also project consortia in optimizing planned RDM processes.';
           } else if (index === 1) {
             descriptionIntro =
-              'During the active state of research, you have access to and can make use of the institutional electronic laboratory notebook eLabFTW and the (meta)data management, as well as to the analysis platform CyVerse Austria. The RDM Team will support individual researchers and research groups to optimize their current RDM processes. DMPs can also be created for ongoing projects using the TU Graz DMP tool.';
+              'During the active state of research, you have access to and can make use of the institutional electronic laboratory notebook eLabFTW and the (meta)data management, as well as to the analysis platform CyVerse Austria. The RDM Team will support individual researchers and research groups to optimize their current RDM processes.';
           } else if (index === 2) {
             descriptionIntro =
               'During the state of research complete, results from research can be published using the TU Graz Repository, and the RDM Team can help you with the publication of any accompanying data. You can also find guidance on legal and ethical aspects of handling and publishing research data.';
