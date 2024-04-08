@@ -2,8 +2,8 @@
 on:
   workflow_run:
     workflows: ["build and push docker image"]
-    types:
-      - completed
+    types: [completed]
+    branches: [main]
 
 jobs:
   trigger_pipeline:
