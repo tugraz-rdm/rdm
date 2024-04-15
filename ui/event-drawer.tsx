@@ -248,8 +248,8 @@ export const ButtonDrawer: React.FC<{
           </Link>
           <Link href="/" className="flex sm:hidden gap-x-2" onClick={onToggle}>
             <img
-              src="/RDM-icon-rot.png"
-              alt="Desktop Icon"
+              src="/RDM-Icon-rot.png"
+              alt="Icon"
               style={{ width: '4rem', height: 'auto' }}
             />
           </Link>
