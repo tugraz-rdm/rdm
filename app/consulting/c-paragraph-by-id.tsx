@@ -1,10 +1,12 @@
 export const getContentConsultingAndTitleById = (id: string) => {
   const contentMap: Record<string, string> = {
+    canvas: '',
     licenses: '',
     support: '',
   };
 
   const titleMap: Record<string, string> = {
+    canvas: 'DMP Consulting - Canvas',
     licenses: 'DMP Consulting - Licenses',
     support: 'DMP Consulting - Contact',
     manuals: 'DMP Consulting - Manuals',
@@ -17,5 +19,10 @@ export const getContentConsultingAndTitleById = (id: string) => {
 };
 
 export const generateStaticParams = () => {
-  return [{ id: 'support' }, { id: 'licenses' }, { id: 'manuals' }];
+  return [
+    { id: 'canvas' },
+    { id: 'support' },
+    { id: 'licenses' },
+    { id: 'manuals' },
+  ];
 };

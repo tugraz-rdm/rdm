@@ -1,8 +1,8 @@
 import AccordionContent, { AccordionItem } from '#/ui/accordion-content';
 
 import AccordionFaq from '#/ui/accordion-faq';
+import ExternalLinkGuideTemplate from '#/ui/external-link-guide-template';
 import { FC } from 'react';
-import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoELab } from '#/ui/rendering-info-elab';
 import { getContentProposalAndTitleById } from '../random-post-tab';
 
@@ -14,6 +14,14 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentProposalAndTitleById(params.id);
+  const guideSourceUser = {
+    label: 'English User Guide',
+    url: 'https://repository.tugraz.at/doi/10.3217/28w3b-41q43',
+  };
+  const guideSourceAdmin = {
+    label: 'English Admin Guide',
+    url: 'https://repository.tugraz.at/doi/10.3217/vwrwm-y8972',
+  };
   const questionsAndAnswers = [
     {
       question: 'Who is allowed to use eLabFTW',
@@ -150,18 +158,9 @@ const Page: FC<PageProps> = ({ params }) => {
         )}
         {params.id === 'manuals' && (
           <>
-            <div className="md:flex">
-              <GuideTemplate
-                pdfSources={{
-                  english: {
-                    url: '/pdf/eLabFTW_Guide_User_en_v1.3.pdf',
-                    label: 'English - User Guide',
-                  },
-                  englishAdmin: {
-                    url: '/pdf/eLabFTW_Guide_TeamAdmin_en_v1.3.pdf',
-                    label: 'English - Admin Guide',
-                  },
-                }}></GuideTemplate>
+            <div className="md:flex gap-3">
+              <ExternalLinkGuideTemplate source={guideSourceUser} />
+              <ExternalLinkGuideTemplate source={guideSourceAdmin} />
             </div>
           </>
         )}

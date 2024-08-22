@@ -1,3 +1,4 @@
+import ExternalLinkGuideTemplate from '#/ui/external-link-guide-template';
 import { FC } from 'react';
 import LicensesForData from '../licences-for-data';
 import LicensesForPersonal from '../licenses-for-personal';
@@ -13,11 +14,14 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentConsultingAndTitleById(params.id);
-
+  const guideSource = {
+    label: 'TU Graz DMP Canvas',
+    url: 'https://repository.tugraz.at/doi/10.3217/w07zq-dgx56',
+  };
   return (
     <div className="grid grid-cols-6 gap-x-6 gap-y-3">
       <div className="col-span-full space-y-3 lg:col-span-6">
-      <h1 className="truncate text-2xl font-medium capitalize text-gray-200">
+        <h1 className="truncate text-2xl font-medium capitalize text-gray-200">
           {title}
         </h1>
         <p className="font-thin">{content}</p>
@@ -56,6 +60,11 @@ const Page: FC<PageProps> = ({ params }) => {
             type={'consulting'}
           />
         )}
+        {params.id === 'canvas' && (
+          <div className="md:inline-block">
+            <ExternalLinkGuideTemplate source={guideSource} />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -64,6 +73,10 @@ const Page: FC<PageProps> = ({ params }) => {
 export default Page;
 
 export const generateStaticParams = () => {
-  return [{ id: 'support' }, { id: 'licenses' }, { id: 'manuals' }];
+  return [
+    { id: 'support' },
+    { id: 'canvas' },
+    { id: 'licenses' },
+    { id: 'manuals' },
+  ];
 };
-
