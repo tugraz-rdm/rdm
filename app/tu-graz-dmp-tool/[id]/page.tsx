@@ -1,7 +1,6 @@
-
 import AccordionFaq from '#/ui/accordion-faq';
+import ExternalLinkGuideTemplate from '#/ui/external-link-guide-template';
 import { FC } from 'react';
-import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoTool } from '#/ui/rendering-info-tool';
 import { getContentAndTitleById } from '../paragraph-by-id';
 
@@ -13,6 +12,11 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentAndTitleById(params.id);
+  const guideSource = {
+    label: 'English Guide',
+    url: 'https://repository.tugraz.at/doi/10.3217/z5tzw-4e520',
+  };
+
   const questionsAndAnswers = [
     {
       question: 'What is allowed to create new DMPs in the TU Graz DMP Tool?',
@@ -64,12 +68,8 @@ const Page: FC<PageProps> = ({ params }) => {
         </div>
       )}
       {params.id === 'manuals' && (
-        <div className="md:flex">
-          <GuideTemplate
-            pdfSources={{ english: {
-              label: 'English Guide',
-              url: '/pdf/TUGraz_DMP_Tool_en_v1.0.pdf'} }}
-          />
+        <div className="col-span-full lg:col-span-2">
+          <ExternalLinkGuideTemplate source={guideSource} />
         </div>
       )}
     </div>
@@ -79,9 +79,5 @@ const Page: FC<PageProps> = ({ params }) => {
 export default Page;
 
 export function generateStaticParams() {
-  return [
-    { id: 'support' },
-    { id: 'faq' },
-    { id: 'manuals' },
-  ];
+  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }];
 }

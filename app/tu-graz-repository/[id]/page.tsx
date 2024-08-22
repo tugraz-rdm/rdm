@@ -1,6 +1,6 @@
 import AccordionFaq from '#/ui/accordion-faq';
+import ExternalLinkGuideTemplate from '#/ui/external-link-guide-template';
 import { FC } from 'react';
-import GuideTemplate from '#/ui/guide-template';
 import { RenderingInfoRepository } from '#/ui/rendering-info-repository';
 import { getContentAndTitleById } from '../parapraph-by-id';
 
@@ -12,6 +12,11 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ params }) => {
   const { content, title } = getContentAndTitleById(params.id);
+  const guideSource = {
+    label: 'English Guide',
+    url: 'https://repository.tugraz.at/doi/10.3217/dgpcz-td505',
+  };
+
   const questionsAndAnswers = [
     {
       question:
@@ -92,14 +97,7 @@ const Page: FC<PageProps> = ({ params }) => {
       {params.id === 'manuals' && (
         <div>
           <div className="md:flex">
-            <GuideTemplate
-              pdfSources={{
-                english: {
-                  url: '/pdf/TUGraz_Repository_Guide_en_v2.2.pdf',
-                  label: 'English Guide',
-                },
-              }}
-            />
+            <ExternalLinkGuideTemplate source={guideSource} />
           </div>
         </div>
       )}
@@ -112,4 +110,3 @@ export default Page;
 export function generateStaticParams() {
   return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }];
 }
-

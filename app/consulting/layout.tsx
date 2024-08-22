@@ -13,15 +13,10 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="space-y-9">
       <div className="flex flex-wrap items-center gap-2">
-        <Tab
-          path="/consulting"
-          item={{ text: 'DMP' }}
-        />
+        <Tab path="/consulting" item={{ text: 'DMP' }} />
+        <Tab path="/consulting" item={{ text: 'CANVAS', slug: 'canvas' }} />
         <Tab path="/consulting" item={{ text: 'LICENSES', slug: 'licenses' }} />
-        <Tab
-          path="/consulting"
-          item={{ text: 'CONTACT', slug: 'support' }}
-        />
+        <Tab path="/consulting" item={{ text: 'CONTACT', slug: 'support' }} />
       </div>
       <div>{children}</div>
     </div>
