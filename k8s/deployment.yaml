@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: rdm-dashboard
-          image: ghcr.io/tugraz-rdm/rdm:main
+          image: ghcr.io/tugraz-rdm/rdm:devel
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 ---
