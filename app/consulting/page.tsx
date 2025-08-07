@@ -66,7 +66,7 @@ const Page: FC = () => {
         <li>Fulfil all requirements of funding bodies with regard to DMPs</li>
         <li>DMPs are part of good scientific practice</li>
         <li>
-          Each research project, including master's and dissertation projects,
+          Each research project, including master&apos;s and dissertation projects,
           should have its own DMPs{' '}
         </li>
         <li>
