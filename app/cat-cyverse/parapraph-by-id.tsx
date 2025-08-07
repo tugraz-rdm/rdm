@@ -1,9 +1,10 @@
 export function getContentAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support:'If you would like to get to know CAT and also see how it works or have a demonstration, our Data Stewards will be pleased to help you:',    
+    support:
+      'If you would like to get to know CAT and also see how it works or have a demonstration, our Data Stewards will be pleased to help you:',
     faq: 'Frequently Asked Questions about incorporating RDM best practice',
     manual: '',
-    account: ''
+    account: '',
   };
 
   const titleMap: Record<string, string> = {

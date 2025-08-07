@@ -1,5 +1,3 @@
-
-
 import StepsComponent, { steps } from '#/ui/steps-component';
 
 import AccordionFaq from '#/ui/accordion-faq';
@@ -42,9 +40,7 @@ const Page: FC<PageProps> = ({ params }) => {
       answer: (
         <span>
           For detailed instructions, please visit the{' '}
-          <a
-            href="/cat-cyverse/account" 
-            className="text-gray-700">
+          <a href="/cat-cyverse/account" className="text-gray-700">
             New Account
           </a>{' '}
           section.
@@ -128,7 +124,7 @@ const Page: FC<PageProps> = ({ params }) => {
       )}
     </div>
   );
-}
+};
 
 export default Page;
 

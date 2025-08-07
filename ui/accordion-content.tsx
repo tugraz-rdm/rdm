@@ -70,7 +70,12 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
             id={`accordion-flush-body-${index}`}
             className={openIndex === index ? '' : 'hidden'}
             aria-labelledby={`accordion-flush-heading-${index}`}>
-            <div className={`py-5 ${item.ifBackup ? '' : 'border-b border-gray-200 dark:border-gray-700'}`}>
+            <div
+              className={`py-5 ${
+                item.ifBackup
+                  ? ''
+                  : 'border-b border-gray-200 dark:border-gray-700'
+              }`}>
               {typeof item.content === 'string' ? (
                 <p className="text-sm text-gray-500 dark:text-gray-400 font-thin mb-3">
                   {item.content}
@@ -82,7 +87,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
             {item.ifPermissionManagement && <OverviewPermissionsManagement />}
             {item.ifExportEntries && <ExportEntries />}
             {item.ifTip && <UserExit />}
-            {item.ifBackup && <>
+            {item.ifBackup && (
+              <>
                 <SectionText
                   title="Experiments"
                   content="You can select one or more entries via the web interface and
@@ -111,7 +117,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                   need before exporting the entry(s)"
                 />
               </>
-            }
+            )}
           </div>
         </div>
       ))}

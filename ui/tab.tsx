@@ -13,25 +13,17 @@ export const Tab = ({ path, item }: { path: string; item: Item }) => {
     segment === item.segment ||
     segment === item.slug;
 
-  const activeClasses =
-    'text-custom-blue-dark border-b-2 border-custom-blue-dark dark:text-blue-500 text-custom-blue-dark';
-  const inactiveClasses =
-    'text-gray-700 border-b-2 border-transparent hover:text-custom-blue-dark hover:border-custom-blue-dark dark:hover:text-custom-blue-dark';
-
   return (
-    <li className="mr-2 list-none overflow-hidden rounded-lg border shadow-md transition-transform duration-300 hover:scale-105 ">
-      <Link
-        href={href}
-        aria-current={isActive ? 'page' : undefined}
-        legacyBehavior>
-        <a
-          className={clsx(
-            'inline-block p-4',
-            isActive ? activeClasses : inactiveClasses
-          )}>
-          {item.text}
-        </a>
-      </Link>
-    </li>
+    <Link
+      href={href}
+      aria-current={isActive ? 'page' : undefined}
+      className={clsx(
+        'flex items-center space-x-2 px-4 py-2 rounded-md transition-colors',
+        isActive
+          ? 'bg-white text-custom-blue-dark shadow-sm'
+          : 'text-gray-600 hover:text-gray-900'
+      )}>
+      <span>{item.text}</span>
+    </Link>
   );
 };

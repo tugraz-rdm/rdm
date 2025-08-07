@@ -1,6 +1,7 @@
 export function getContentProposalAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support:'If you have any questions or requests regarding eLabFTW please contact us.',
+    support:
+      'If you have any questions or requests regarding eLabFTW please contact us.',
     faq: 'Frequently Asked Questions about incorporating RDM best practices',
     info: '',
     manuals: '',

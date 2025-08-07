@@ -1,6 +1,4 @@
-
 export function getContentAndTitleById(id: string) {
-  
   const contentMap: Record<string, string> = {
     support:
       'If you have any questions or requests regarding the DMP tool, please contact us.',
@@ -21,9 +19,5 @@ export function getContentAndTitleById(id: string) {
 }
 
 export function generateStaticParams() {
-  return [
-    { id: 'support' },
-    { id: 'faq' },
-    { id: 'manuals' },
-  ];
+  return [{ id: 'support' }, { id: 'faq' }, { id: 'manuals' }];
 }

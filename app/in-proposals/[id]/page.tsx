@@ -26,8 +26,6 @@ export default async function Page({ params }: { params: { id: string } }) {
   );
 }
 
-
 export function generateStaticParams() {
   return [{ id: 'support' }, { id: 'examples' }];
 }
-

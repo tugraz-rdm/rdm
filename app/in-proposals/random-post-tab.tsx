@@ -1,6 +1,6 @@
 export function getContentProposalAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support: ''     
+    support: '',
   };
 
   const titleMap: Record<string, string> = {

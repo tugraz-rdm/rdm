@@ -1,14 +1,14 @@
 # Only trigger, when the build workflow succeeded
 on:
   workflow_run:
-    workflows: ["build and push docker image"]
+    workflows: ['build and push docker image']
     types: [completed]
     branches: [main]
 
 jobs:
   trigger_pipeline:
     runs-on: ubuntu-latest
-          
+
     steps:
       - name: Trigger gitlab pipeline
         uses: mb-wali/gitlab-cd-trigger@main
