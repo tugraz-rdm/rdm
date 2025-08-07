@@ -14,7 +14,7 @@ export async function getCategories({ parent }: { parent?: string } = {}) {
     { name: 'MANUAL', slug: 'manuals', count: 10, parent: null },
     { name: 'API SUPPORT PAGE', slug: 'api-support', count: 4, parent: null },
   ];
-  
+
   const categories = data.filter(category =>
     parent ? category.parent === parent : category.parent === null
   );
@@ -34,7 +34,7 @@ export async function getCategory({ slug }: { slug: string }) {
     { name: 'MANUAL', slug: 'manuals', count: 10, parent: null },
     { name: 'API SUPPORT PAGE', slug: 'api-support', count: 4, parent: null },
   ];
-  
+
   const category = data.find(category => category.slug === slug);
 
   if (!category) {

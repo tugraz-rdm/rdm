@@ -1,8 +1,8 @@
 export function getContentOptimizationAndTitleById(id: string) {
   const contentMap: Record<string, string> = {
-    support:'',
+    support: '',
     datastructure: '',
-    checklist: ''
+    checklist: '',
   };
 
   const titleMap: Record<string, string> = {
@@ -20,5 +20,10 @@ export function getContentOptimizationAndTitleById(id: string) {
 }
 
 export function generateStaticParams() {
-  return [{ id: 'support' }, {id: 'analysis'}, {id: 'boarding'}, { id: 'datastructure' }];
+  return [
+    { id: 'support' },
+    { id: 'analysis' },
+    { id: 'boarding' },
+    { id: 'datastructure' },
+  ];
 }

@@ -37,3 +37,14 @@ export function InvenioLogo() {
     />
   );
 }
+
+export function DAMAPLogo() {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/damap_bgy_CLAIM SCREEN POS.png"
+      alt="DAMAP Logo"
+      style={{ width: '150px', height: 'auto' }}
+    />
+  );
+}

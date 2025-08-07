@@ -8,7 +8,7 @@ export const metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="space-y-9">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex space-x-1 mb-8 bg-gray-100 rounded-lg p-1">
         <Tab path="/tu-graz-dmp-tool" item={{ text: 'TU GRAZ DMP TOOL' }} />
         <Tab path="/tu-graz-dmp-tool" item={{ text: 'FAQ', slug: 'faq' }} />
         <Tab

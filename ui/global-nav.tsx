@@ -3,6 +3,11 @@
 import { ButtonDrawer, EventDrawer } from './event-drawer';
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/outline';
 import { ServiceItem, useCombinedData } from '#/lib/services';
+import {
+  faArrowUpRightFromSquare,
+  faCalendar,
+  faNewspaper,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { Disclosure } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +15,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { TULogo } from './tu-logo';
 import clsx from 'clsx';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { useState } from 'react';
 
@@ -27,7 +31,7 @@ export const SimpleGlobalNav: React.FC<{
       <div
         style={{ height: '70px' }}
         className="fixed top-0 z-50 flex w-full bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
-        <div className="mt-5 lg:mt-0">
+        <div className="mt-2 lg:mt-0 flex items-center justify-center flex-1">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />
         </div>
@@ -42,6 +46,32 @@ export const SimpleGlobalNav: React.FC<{
           className={`mr-5 flex items-center gap-10 ${
             isOpen ? 'hidden sm:flex' : 'flex'
           }`}>
+          {/* Quick Navigation Links */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              href="/news-events?tab=events"
+              className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
+              <FontAwesomeIcon icon={faCalendar} className="w-4 h-4" />
+              <span className="text-sm font-medium">Events</span>
+            </Link>
+            <Link
+              href="/news-events?tab=news"
+              className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
+              <FontAwesomeIcon icon={faNewspaper} className="w-4 h-4" />
+              <span className="text-sm font-medium">News</span>
+            </Link>
+            <a
+              href="https://www.tugraz.at/sites/rdm/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
+              <FontAwesomeIcon
+                icon={faArrowUpRightFromSquare}
+                className="w-4 h-4"
+              />
+              <span className="text-sm font-medium">RDM Portal</span>
+            </a>
+          </div>
           <div className="logo-wrapper h-6 w-20">
             <TULogo />
           </div>

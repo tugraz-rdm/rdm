@@ -49,11 +49,11 @@ export const useCombinedData = () => {
             name: i18.t('planning.itemName.dmpTool'),
             slug: 'tu-graz-dmp-tool',
             description: i18.t('planning.tuGrazDmpToolDescription'),
-            externalLink: 'https://dmp.tugraz.at/',
+            externalLink: 'https://github.com/sharedRDM/damap-instance',
             buttons: [
               {
                 text: i18.t('planning.readMore'),
-                link: '#',
+                link: '/tu-graz-dmp-tool',
                 iframeSrc: 'https://dmp.tugraz.at/',
               },
               {
@@ -67,11 +67,11 @@ export const useCombinedData = () => {
             name: i18.t('planning.itemName.dmpConsulting'),
             slug: 'consulting',
             description: i18.t('planning.dmpConsultingDescription'),
-            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            externalLink: 'https://repository.tugraz.at/records/fdzq1-maw86',
             buttons: [
               {
                 text: i18.t('planning.readMore'),
-                link: '#',
+                link: '/consulting',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],
@@ -80,11 +80,12 @@ export const useCombinedData = () => {
             name: i18.t('planning.itemName.rdmInProposals'),
             slug: 'in-proposals',
             description: i18.t('planning.rdmInProposalsDescription'),
-            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            externalLink:
+              'https://www.tugraz.at/fileadmin/user_upload/tugrazExternal/0c4b9c02-50a6-4a31-b5fd-24a0f93b69c5/General_RDM_Policy_TU_Graz.pdf',
             buttons: [
               {
                 text: i18.t('planning.readMore'),
-                link: '#',
+                link: '/in-proposals',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],
@@ -97,12 +98,12 @@ export const useCombinedData = () => {
           {
             name: i18.t('activeStateOfResearch.itemName.eLabFtwTool'),
             slug: 'elabftw',
-            externalLink: '',
+            externalLink: 'https://github.com/elabftw',
             description: i18.t('activeStateOfResearch.eLabFTWDescription'),
             buttons: [
               {
                 text: i18.t('activeStateOfResearch.readMore'),
-                link: '#',
+                link: '/elabftw',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
               {
@@ -118,11 +119,11 @@ export const useCombinedData = () => {
             description: i18.t(
               'activeStateOfResearch.cyVerseAustriaDescription'
             ),
-            externalLink: 'https://www.tugraz.at/sites/rdm/home',
+            externalLink: 'https://github.com/cyverse-austria',
             buttons: [
               {
                 text: i18.t('activeStateOfResearch.readMore'),
-                link: '#',
+                link: '/cat-cyverse',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
               {
@@ -142,7 +143,7 @@ export const useCombinedData = () => {
             buttons: [
               {
                 text: i18.t('activeStateOfResearch.readMore'),
-                link: '#',
+                link: '/optimization',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],
@@ -155,12 +156,13 @@ export const useCombinedData = () => {
           {
             name: i18.t('researchComplete.itemName.tuGrazRepository'),
             slug: 'tu-graz-repository',
-            externalLink: 'https://damap.org/',
+            externalLink:
+              'https://github.com/tu-graz-library/repository-tugraz',
             description: i18.t('researchComplete.tuGrazRepositoryDescription'),
             buttons: [
               {
                 text: i18.t('researchComplete.readMore'),
-                link: '#',
+                link: '/tu-graz-repository',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
               {
@@ -180,7 +182,7 @@ export const useCombinedData = () => {
             buttons: [
               {
                 text: i18.t('researchComplete.readMore'),
-                link: '#',
+                link: '/data-publication-consulting',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],
@@ -195,7 +197,7 @@ export const useCombinedData = () => {
             buttons: [
               {
                 text: i18.t('researchComplete.readMore'),
-                link: '#',
+                link: '/legal-ethical-aspects',
                 iframeSrc: 'https://www.tugraz.at/sites/rdm/home',
               },
             ],
@@ -231,7 +233,7 @@ export const useCombinedData = () => {
         urlImage: i18.t('events.event2.urlImage', {
           defaultValue: '/events/rdm-ilire.png',
         }),
-      }
+      },
     ];
 
     setCombinedData({ servicesData, eventsData });

@@ -18,7 +18,9 @@ export function RenderingInfoEthical({
 
   return (
     <>
-      <p className="font-thin text-gray-900 mb-2">General questions can be send to:</p>
+      <p className="font-thin text-gray-900 mb-2">
+        General questions can be send to:
+      </p>
       <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
         <a href="mailto:rdmteam@tugraz.at">
           <div className="flex justify-center text-sm font-thin text-white">
@@ -93,7 +95,7 @@ export function RenderingInfoEthical({
       <div className="inline-flex gap-x-2 rounded-lg bg-gray-900 p-2 px-4 py-2">
         <a href="mailto:ethikkommission@tugraz.at">
           <div className="flex justify-center text-sm font-thin text-white">
-          ethikkommission@tugraz.at
+            ethikkommission@tugraz.at
           </div>
         </a>
       </div>
