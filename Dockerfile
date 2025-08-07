@@ -16,6 +16,8 @@ COPY . .
 # Install application dependencies using pnpm
 RUN pnpm install && pnpm run build
 
+EXPOSE 3000
+
 # # Create a new user named "$USER"
 # RUN useradd -m $USER
 
