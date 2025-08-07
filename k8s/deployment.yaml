@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: rdm-dashboard
-          image:  ghcr.io/tugraz-rdm/rdm:main-copy
+          image: ghcr.io/tugraz-rdm/rdm:main
           ports:
             - containerPort: 3000
 ---
