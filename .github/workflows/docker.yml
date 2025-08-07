@@ -8,11 +8,12 @@ on:
   push:
     branches:
       - main # TODO: change based on tags created
+      - devel
   workflow_dispatch:
 
 jobs:
   container-build-publish:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       packages: write

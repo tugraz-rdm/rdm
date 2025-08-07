@@ -47,3 +47,7 @@ docker build -t rdm:latest .
 ```sh
 docker run -p 3000:3000 rdm:latest
 ```
+
+## Kubernetes
+
+In _k8s_ folder there is a deployment manifest. This repository can be used by a tool like ArgoCD to setup an automated kubernetes deployment in an already existing cluster.
