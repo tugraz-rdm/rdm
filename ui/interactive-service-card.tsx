@@ -29,6 +29,7 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
   isBookmarked = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const handleBookmark = () => {
     onBookmark?.(item);
@@ -81,6 +82,14 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
     }
   };
 
+  const handleInternalNavigation = (link: string) => {
+    setIsNavigating(true);
+    // reset the navigating state after a delay to show loading feedback
+    setTimeout(() => {
+      setIsNavigating(false);
+    }, 1500);
+  };
+
   const getPhaseColor = (phase: string) => {
     switch (phase.toLowerCase()) {
       case 'planning':
@@ -103,7 +112,12 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
       className="relative group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-custom-blue/30">
+      <div
+        className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-custom-blue/30 ${
+          isNavigating
+            ? 'transform scale-95 opacity-90'
+            : 'hover:transform hover:scale-[1.02]'
+        }`}>
         {/* Header with phase indicator */}
         <div className="p-4 border-b border-gray-100">
           <div className="flex items-center justify-between mb-2">
@@ -155,12 +169,19 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
                   <Link
                     key={index}
                     href={button.link}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    onClick={() => handleInternalNavigation(button.link)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                       button.text.toLowerCase().includes('launch')
-                        ? 'bg-custom-blue text-white hover:bg-custom-blue-dark'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        ? 'bg-custom-blue text-white hover:bg-custom-blue-dark hover:scale-105'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+                    } ${
+                      isNavigating
+                        ? 'opacity-70 cursor-wait'
+                        : 'active:scale-95'
                     }`}>
-                    {button.text.toLowerCase().includes('launch') ? (
+                    {isNavigating ? (
+                      <div className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                    ) : button.text.toLowerCase().includes('launch') ? (
                       <FontAwesomeIcon icon={faPlay} className="w-3 h-3" />
                     ) : (
                       <FontAwesomeIcon
@@ -168,7 +189,7 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
                         className="w-3 h-3"
                       />
                     )}
-                    <span>{button.text}</span>
+                    <span>{isNavigating ? 'Loading...' : button.text}</span>
                   </Link>
                 );
               } else {
@@ -176,11 +197,11 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
                   <button
                     key={index}
                     onClick={() => window.open(button.link, '_blank')}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                       button.text.toLowerCase().includes('launch')
-                        ? 'bg-custom-blue text-white hover:bg-custom-blue-dark'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}>
+                        ? 'bg-custom-blue text-white hover:bg-custom-blue-dark hover:scale-105'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+                    } active:scale-95`}>
                     {button.text.toLowerCase().includes('launch') ? (
                       <FontAwesomeIcon icon={faPlay} className="w-3 h-3" />
                     ) : (
