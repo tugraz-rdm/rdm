@@ -45,9 +45,9 @@ const Page: FC = () => {
             aware of the steps that need to be taken care of during planning.
           </li>
           <li>
-            The tool is connected to TU Graz&apos;s project database, thus allowing
-            the user to e.g. easily select projects and project members and
-            define their roles.
+            The tool is connected to TU Graz&apos;s project database, thus
+            allowing the user to e.g. easily select projects and project members
+            and define their roles.
           </li>
           <li>
             The resulting DMP can be exported in several formats matched to

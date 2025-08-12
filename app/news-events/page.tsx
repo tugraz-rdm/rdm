@@ -187,8 +187,8 @@ const NewsEventsPage: FC = () => {
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
           <p className="text-lg mb-6 opacity-90">
-            Don&apos;t miss out on important RDM updates and events. Subscribe to the
-            Shared RDM Newsletter.
+            Don&apos;t miss out on important RDM updates and events. Subscribe
+            to the Shared RDM Newsletter.
           </p>
           <a
             href="https://forschungsdaten.at/shared-rdm-newsletter/"

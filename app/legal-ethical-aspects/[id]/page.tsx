@@ -33,8 +33,8 @@ export default async function Page({ params }: { params: { id: string } }) {
                 </li>
                 <li>
                   Before publication or sharing, data should be anonymized.
-                  De-identification does not just mean removing people&apos;s names
-                  from a file. Techniques involve data masking, data
+                  De-identification does not just mean removing people&apos;s
+                  names from a file. Techniques involve data masking, data
                   pseudonymization, data swapping, generalization, or data
                   perturbation and synthetic data. (Manual data preocessing or
                   exemplary tools:
@@ -207,8 +207,8 @@ export default async function Page({ params }: { params: { id: string } }) {
               </li>
               <li>
                 Before publication or sharing, data should be anonymized.
-                De-identification does not just mean removing people&apos;s names
-                from a file. Tequniques involve data masking, data
+                De-identification does not just mean removing people&apos;s
+                names from a file. Tequniques involve data masking, data
                 pseudonymization, data swapping, generalization, up to data
                 perturbation and synthetic data. (Manual data preocessing or
                 exemplary tools: https://arx.deidentifier.org,
