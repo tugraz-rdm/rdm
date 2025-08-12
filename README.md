@@ -51,3 +51,5 @@ docker run -p 3000:3000 rdm:latest
 ## Kubernetes
 
 In _k8s_ folder there is a deployment manifest. This repository can be used by a tool like ArgoCD to setup an automated kubernetes deployment in an already existing cluster.
+
+For ArgoCD automatic redeployment, the Kubernetes deployment needs to be of Kustomize type, for argo to know what image parameter to override. Therefore, _kustomization.yaml_ was needed to point to the manifest and the image to search for.
