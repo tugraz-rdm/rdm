@@ -9,7 +9,7 @@ const Page: FC = () => {
       <p className="text-gray-700 text-base font-thin p-0">
         The TU Graz repository is based on the open-source solution InvenioRDM
         and has been co-developed by TU Graz together with CERN and TU Vienna.
-        This institutional repository is available to all members of TU Gra.
+        This institutional repository is available to all members of TU Graz.
         Digital objects that have been released in the repository can be found
         and accessed worldwide.
       </p>
