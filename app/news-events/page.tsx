@@ -28,8 +28,8 @@ const NewsEventsPage: FC = () => {
     setActiveTab(newTab);
   }, [tabParam]);
 
-  // Mock news data - in real implementation, this would come from an API
-  const newsData = [
+  // Mock news data - used as fallback if API fails
+  const mockNews = [
     {
       id: 1,
       date: '2024-01-15',
@@ -58,6 +58,44 @@ const NewsEventsPage: FC = () => {
       readMore: '#',
     },
   ];
+
+  const [newsData, setNewsData] = useState<any[]>(mockNews);
+  const [isLoadingNews, setIsLoadingNews] = useState<boolean>(false);
+
+  // Fetch live news from TU Graz homepage API
+  React.useEffect(() => {
+    if (activeTab !== 'news') return;
+    let isCancelled = false;
+    const fetchNews = async () => {
+      try {
+        setIsLoadingNews(true);
+        const res = await fetch('/api/news');
+        if (!res.ok) throw new Error('Failed to load news');
+        const apiItems: { title: string; url?: string; date?: string }[] = await res.json();
+        if (isCancelled) return;
+        const mapped = apiItems.map((item, idx) => ({
+          id: idx + 1,
+          date: item.date || '',
+          title: item.title,
+          excerpt: '',
+          category: 'News',
+          readMore: item.url || '#',
+        }));
+        if (mapped.length > 0) {
+          setNewsData(mapped);
+        }
+      } catch (e) {
+        // fall back silently to mockNews
+        setNewsData(mockNews);
+      } finally {
+        if (!isCancelled) setIsLoadingNews(false);
+      }
+    };
+    fetchNews();
+    return () => {
+      isCancelled = true;
+    };
+  }, [activeTab]);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -151,7 +189,10 @@ const NewsEventsPage: FC = () => {
       {activeTab === 'news' && (
         <div className="space-y-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {newsData.map(news => (
+            {isLoadingNews && (
+              <div className="col-span-full text-center text-gray-500">Loading news…</div>
+            )}
+            {!isLoadingNews && newsData.map(news => (
               <div
                 key={news.id}
                 className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
