@@ -7,6 +7,7 @@ import {
   faArrowUpRightFromSquare,
   faCalendar,
   faNewspaper,
+  faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Disclosure } from '@headlessui/react';
@@ -59,6 +60,12 @@ export const SimpleGlobalNav: React.FC<{
               className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
               <FontAwesomeIcon icon={faNewspaper} className="w-4 h-4" />
               <span className="text-sm font-medium">News</span>
+            </Link>
+            <Link
+              href="/demos"
+              className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
+              <FontAwesomeIcon icon={faPlay} className="w-4 h-4" />
+              <span className="text-sm font-medium">Demos</span>
             </Link>
             <a
               href="https://www.tugraz.at/sites/rdm/home"

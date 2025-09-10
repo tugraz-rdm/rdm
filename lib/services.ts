@@ -39,6 +39,7 @@ export const useCombinedData = () => {
     servicesData: [],
     eventsData: [],
   });
+  const [isLoadingEvents, setIsLoadingEvents] = useState(false);
 
   useEffect(() => {
     const servicesData: ServiceData[] = [
@@ -236,8 +237,31 @@ export const useCombinedData = () => {
       },
     ];
 
-    setCombinedData({ servicesData, eventsData });
+    // Fetch live events from TU Graz website
+    const fetchLiveEvents = async () => {
+      setIsLoadingEvents(true);
+      try {
+        const response = await fetch('/api/events');
+        if (response.ok) {
+          const liveEvents = await response.json();
+          if (liveEvents && liveEvents.length > 0) {
+            setCombinedData({ servicesData, eventsData: liveEvents });
+            return;
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch live events:', error);
+      } finally {
+        setIsLoadingEvents(false);
+      }
+      
+      // Fallback to static events if live fetch fails
+      setCombinedData({ servicesData, eventsData });
+    };
+
+    // Try to fetch live events, fallback to static if it fails
+    fetchLiveEvents();
   }, [t, i18n.language]);
 
-  return combinedData;
+  return { ...combinedData, isLoadingEvents };
 };
