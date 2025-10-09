@@ -1,17 +1,16 @@
 'use client';
 
 import React, { FC } from 'react';
-import {
-  faExternalLinkAlt,
-  faPlay,
-} from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const DemosPage: FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
+    <div
+      className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4"
+      style={{ margin: '-2.5rem' }}>
+      <div className="mb-6">
         <h1 className="text-3xl font-bold text-custom-blue-dark mb-4">
           Interactive Demos
         </h1>
@@ -21,7 +20,7 @@ const DemosPage: FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-1">
+      <div className="space-y-6">
         {/* InvenioRDM Demo */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 border-b border-gray-200">

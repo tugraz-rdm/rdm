@@ -88,7 +88,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           </h5>
         </div>
 
-        <div className="mb-6">
+        <div className={isMenuOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Services"
             icon={faCogs}
@@ -96,10 +96,10 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
             isOpen={isMenuOpen}
           />
 
-          <div className="overflow-y-auto py-2">
-            <ul>
-              {isMenuOpen &&
-                servicesData.map((section, sectionIdx) => (
+          {isMenuOpen && (
+            <div className="overflow-y-auto py-2">
+              <ul>
+                {servicesData.map((section, sectionIdx) => (
                   <li key={sectionIdx} style={{ marginLeft: '17px' }}>
                     <button
                       type="button"
@@ -139,11 +139,12 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     </ul>
                   </li>
                 ))}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          )}
         </div>
 
-        <div className="mb-6">
+        <div className={isEventsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Events & News"
             icon={faCalendar}
@@ -192,7 +193,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           )}
         </div>
 
-        <div className="mb-6">
+        <div className={isNewsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Quick Links"
             icon={faList}
@@ -240,7 +241,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           )}
         </div>
 
-        <div className="mb-6">
+        <div className={isRDMDocOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Site Policies"
             icon={faFileAlt}
@@ -343,7 +344,7 @@ export const DrawerSection: React.FC<{
   <div>
     <div className="flex items-center justify-between">
       <div className="flex items-center">
-        <FontAwesomeIcon className="text-base" icon={icon} color="#ffffff" />
+        <FontAwesomeIcon className="h-4 w-4" icon={icon} color="#ffffff" />
         <h5
           className="text-base font-bold ml-2 cursor-pointer text-white-smoke dark:text-white-smoke"
           onClick={onClick}>

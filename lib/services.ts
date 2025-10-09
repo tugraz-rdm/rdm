@@ -209,31 +209,88 @@ export const useCombinedData = () => {
 
     const eventsData: EventData[] = [
       {
-        date: i18.t('events.event5.date'),
-        name: i18.t('events.event5.name'),
-        url: i18.t('events.events.url'),
+        date: 'May 23, 2024',
+        name: 'Unlocking Knowledge: TU Graz Repository & Future Data Curation Innovations',
+        url: 'https://www.tugraz.at/news/tu-graz-events/eventdetails/article/unlocking-knowledge-tu-graz-repository-future-data-curation-innovations',
         urlImage: '',
       },
       {
-        date: i18.t('events.event4.date'),
-        name: i18.t('events.event4.name'),
-        url: i18.t('events.events.url'),
+        date: 'May 15, 2024',
+        name: 'Webinar How to: Aufbau eines institutionellen OER-Ökosystems',
+        url: 'https://forschungsdaten.at/sharedrdm/materialien/how-to-aufbaur-eines-institutionellen-oer-oekosystems/',
         urlImage: '',
       },
       {
-        date: i18.t('events.event1.date'),
-        name: i18.t('events.event1.name'),
-        url: i18.t('events.events.url'),
+        date: 'May 14, 2024',
+        name: 'Symposium "Cross-cutting Research Support Services" - Cluster Forschungsdaten Event',
+        url: 'https://www.tugraz.at/news/tu-graz-events/eventdetails/article/symposium-cross-cutting-research-support-services-cluster-forschungsdaten-event',
         urlImage: '',
       },
       {
-        date: i18.t('events.event2.date'),
-        name: i18.t('events.event2.name'),
-        moreInfo: i18.t('events.event2.moreInfo'),
-        url: i18.t('events.event2.url'),
-        urlImage: i18.t('events.event2.urlImage', {
-          defaultValue: '/events/rdm-ilire.png',
-        }),
+        date: 'Feb 7, 2024',
+        name: 'Webinar Reproducibility in Science',
+        url: 'https://forschungsdaten.at/en/reproducibility-in-science-invitation-to-the-webinar/',
+        urlImage: '',
+      },
+      {
+        date: 'Jan 9, 2024',
+        name: 'Webinar Data Management with LinkAhead',
+        url: 'https://forschungsdaten.at/en/joinus-for-webinar-data-management-with-linkahead/',
+        urlImage: '',
+      },
+      {
+        date: 'Jan 24, 2024',
+        name: 'National RDM Exchange',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/national-rdm-exchange',
+        urlImage: '',
+      },
+      {
+        date: 'Dec 7, 2023',
+        name: 'RDM Month Dec',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events',
+        urlImage: '',
+      },
+      {
+        date: 'Nov 29, 2023',
+        name: 'National RDM Exchange',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events/national-rdm-exchange',
+        urlImage: '',
+      },
+      {
+        date: 'Oct 12, 2023',
+        name: 'Data Champions Open Working Meeting',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events',
+        urlImage: '',
+      },
+      {
+        date: 'Sept 28, 2023',
+        name: 'RDM Month September',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events',
+        urlImage: '',
+      },
+      {
+        date: 'May 17, 2023',
+        name: 'RDM Month May',
+        url: 'https://www.tugraz.at/sites/rdm/networks-and-events/meetings-and-events',
+        urlImage: '',
+      },
+      {
+        date: 'Nov 7, 2022',
+        name: 'Second General Assembly of EOSC Support Office Austria',
+        url: 'https://eosc-austria.at/wrap-up-2nd-general-assembly-of-eosc-support-office-austria/',
+        urlImage: '',
+      },
+      {
+        date: 'May 23, 2022',
+        name: 'Symposium of the Cluster Research Data: "Future Research (Data) Management"',
+        url: 'https://forschungsdaten.at/cluster-forschungsdaten-symposium-2022-programm/',
+        urlImage: '',
+      },
+      {
+        date: 'Sept 28, 2021',
+        name: 'FAIR Data Austria Online-Event',
+        url: 'https://forschungsdaten.at/3-fair-data-austria-online-projektmeeting/',
+        urlImage: '',
       },
     ];
 
@@ -254,7 +311,7 @@ export const useCombinedData = () => {
       } finally {
         setIsLoadingEvents(false);
       }
-      
+
       // Fallback to static events if live fetch fails
       setCombinedData({ servicesData, eventsData });
     };

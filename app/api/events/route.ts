@@ -17,7 +17,8 @@ export async function GET() {
     const response = await fetch(TUGRAZ_CONFIG.RDM_EVENTS_URL, {
       headers: {
         'User-Agent': TUGRAZ_CONFIG.USER_AGENT,
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        Accept:
+          'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       },
       signal: AbortSignal.timeout(TUGRAZ_CONFIG.REQUEST_TIMEOUT_MS),
     });
@@ -27,9 +28,11 @@ export async function GET() {
     }
 
     const html = await response.text();
-    const events: RDMEvent[] = parseEventsFromHTML(html).slice(0, TUGRAZ_CONFIG.MAX_EVENTS);
+    const events: RDMEvent[] = parseEventsFromHTML(html).slice(
+      0,
+      TUGRAZ_CONFIG.MAX_EVENTS
+    );
     return NextResponse.json(events.length > 0 ? events : getFallbackEvents());
-
   } catch (error) {
     console.error('Error fetching events:', error);
     return NextResponse.json(getFallbackEvents());

@@ -6,8 +6,8 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
-  experimental: {
-    appDir: true,
+  images: {
+    unoptimized: true,
   },
   // i18n,
 };

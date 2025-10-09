@@ -19,7 +19,7 @@ class EventsCache {
 
   get(key: string): any[] | null {
     const cached = this.cache.get(key);
-    
+
     if (!cached) {
       return null;
     }
@@ -40,16 +40,15 @@ class EventsCache {
   has(key: string): boolean {
     const cached = this.cache.get(key);
     if (!cached) return false;
-    
+
     // Check if still valid
     if (Date.now() - cached.timestamp > cached.ttl) {
       this.cache.delete(key);
       return false;
     }
-    
+
     return true;
   }
 }
 
 export const eventsCache = new EventsCache();
-

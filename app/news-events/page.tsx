@@ -32,75 +32,41 @@ const NewsEventsPage: FC = () => {
   const mockNews = [
     {
       id: 1,
-      date: '2024-01-15',
-      title: 'New RDM Guidelines Released',
+      date: '2025-10-23',
+      title: 'TU Graz Data Stories',
       excerpt:
-        'TU Graz has released updated guidelines for research data management practices...',
-      category: 'Policy',
-      readMore: '#',
+        'Join us for an inspiring and hands-on event that brings real research data stories to life and gives you a first look at the latest infrastructure developments supporting reproducible research and Open Science at TU Graz.',
+      category: 'Event',
+      readMore: 'https://indico.tugraz.at/event/117/',
     },
     {
       id: 2,
-      date: '2024-01-10',
-      title: 'eLabFTW Training Workshop',
+      date: '2024-12-15',
+      title: 'eLabFTW Update Info Version 5.2',
       excerpt:
-        'Join our upcoming workshop to learn how to effectively use eLabFTW for your research...',
-      category: 'Training',
-      readMore: '#',
-    },
-    {
-      id: 3,
-      date: '2024-01-05',
-      title: 'Repository Integration Success',
-      excerpt:
-        'Successfully integrated new features into TU Graz Repository for better data management...',
-      category: 'Technology',
-      readMore: '#',
+        'New version 5.2.8 of eLabFTW is now available for registered users. This update includes improved functionality and enhanced features for electronic laboratory notebook management.',
+      category: 'Update',
+      readMore: 'https://elabftw.tugraz.at/login.php',
     },
   ];
 
   const [newsData, setNewsData] = useState<any[]>(mockNews);
   const [isLoadingNews, setIsLoadingNews] = useState<boolean>(false);
 
-  // Fetch live news from TU Graz homepage API
+  // Use hardcoded news data - no API fetching
   React.useEffect(() => {
-    if (activeTab !== 'news') return;
-    let isCancelled = false;
-    const fetchNews = async () => {
-      try {
-        setIsLoadingNews(true);
-        const res = await fetch('/api/news');
-        if (!res.ok) throw new Error('Failed to load news');
-        const apiItems: { title: string; url?: string; date?: string }[] = await res.json();
-        if (isCancelled) return;
-        const mapped = apiItems.map((item, idx) => ({
-          id: idx + 1,
-          date: item.date || '',
-          title: item.title,
-          excerpt: '',
-          category: 'News',
-          readMore: item.url || '#',
-        }));
-        if (mapped.length > 0) {
-          setNewsData(mapped);
-        }
-      } catch (e) {
-        // fall back silently to mockNews
-        setNewsData(mockNews);
-      } finally {
-        if (!isCancelled) setIsLoadingNews(false);
-      }
-    };
-    fetchNews();
-    return () => {
-      isCancelled = true;
-    };
+    if (activeTab === 'news') {
+      setNewsData(mockNews);
+      setIsLoadingNews(false);
+    }
   }, [activeTab]);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div
+      className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-4"
+      style={{ margin: '-2.5rem' }}>
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-6">
         <h1 className="text-3xl font-bold text-custom-blue-dark mb-4">
           News & Events
         </h1>
@@ -111,7 +77,9 @@ const NewsEventsPage: FC = () => {
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex space-x-1 mb-8 bg-gray-100 rounded-lg p-1">
+      <div
+        className="flex space-x-1 mb-2 bg-gray-100 rounded-lg p-1"
+        style={{ marginBottom: '8px' }}>
         <Link
           href="/news-events?tab=events"
           className={`flex items-center space-x-2 px-4 py-2 rounded-md transition-colors ${
@@ -136,8 +104,8 @@ const NewsEventsPage: FC = () => {
 
       {/* Content */}
       {activeTab === 'events' && (
-        <div className="space-y-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-2" style={{ marginTop: '4px' }}>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
             {eventsData.map((event, index) => (
               <div
                 key={index}
@@ -187,38 +155,41 @@ const NewsEventsPage: FC = () => {
       )}
 
       {activeTab === 'news' && (
-        <div className="space-y-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-2" style={{ marginTop: '4px' }}>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
             {isLoadingNews && (
-              <div className="col-span-full text-center text-gray-500">Loading news…</div>
-            )}
-            {!isLoadingNews && newsData.map(news => (
-              <div
-                key={news.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-custom-blue-dark bg-blue-50 px-2 py-1 rounded">
-                    {news.category}
-                  </span>
-                  <span className="text-xs text-gray-500">{news.date}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {news.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {news.excerpt}
-                </p>
-                <Link
-                  href={news.readMore}
-                  className="inline-flex items-center text-custom-blue-dark hover:text-custom-blue-dark/80 transition-colors text-sm font-medium">
-                  Read More
-                  <FontAwesomeIcon
-                    icon={faExternalLinkAlt}
-                    className="ml-1 w-3 h-3"
-                  />
-                </Link>
+              <div className="col-span-full text-center text-gray-500">
+                Loading news…
               </div>
-            ))}
+            )}
+            {!isLoadingNews &&
+              newsData.map(news => (
+                <div
+                  key={news.id}
+                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-medium text-custom-blue-dark bg-blue-50 px-2 py-1 rounded">
+                      {news.category}
+                    </span>
+                    <span className="text-xs text-gray-500">{news.date}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {news.excerpt}
+                  </p>
+                  <Link
+                    href={news.readMore}
+                    className="inline-flex items-center text-custom-blue-dark hover:text-custom-blue-dark/80 transition-colors text-sm font-medium">
+                    Read More
+                    <FontAwesomeIcon
+                      icon={faExternalLinkAlt}
+                      className="ml-1 w-3 h-3"
+                    />
+                  </Link>
+                </div>
+              ))}
           </div>
         </div>
       )}
