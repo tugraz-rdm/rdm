@@ -144,7 +144,8 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           )}
         </div>
 
-        <div className={isEventsOpen ? 'mb-8' : 'mb-4'}>
+        {/* Temporarily deactivated - Events & News section */}
+        {/* <div className={isEventsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Events & News"
             icon={faCalendar}
@@ -191,7 +192,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
               </ul>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className={isNewsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
@@ -217,14 +218,15 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     <span className="text-sm font-medium">RDM Support</span>
                   </a>
                 </li>
-                <li className="ml-5 pl-2 p-1">
+                {/* Temporarily deactivated - Latest News link */}
+                {/* <li className="ml-5 pl-2 p-1">
                   <Link
                     href="/news-events"
                     className="flex items-center space-x-2 text-white-smoke hover:text-gray-300 transition-colors">
                     <FontAwesomeIcon icon={faNewspaper} className="w-4 h-4" />
                     <span className="text-sm font-medium">Latest News</span>
                   </Link>
-                </li>
+                </li> */}
                 <li className="ml-5 pl-2 p-1">
                   <a
                     href="mailto:rdmteam@tugraz.at"

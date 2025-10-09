@@ -49,7 +49,8 @@ export const SimpleGlobalNav: React.FC<{
           }`}>
           {/* Quick Navigation Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link
+            {/* Temporarily deactivated - Events & News links */}
+            {/* <Link
               href="/news-events?tab=events"
               className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
               <FontAwesomeIcon icon={faCalendar} className="w-4 h-4" />
@@ -60,7 +61,7 @@ export const SimpleGlobalNav: React.FC<{
               className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
               <FontAwesomeIcon icon={faNewspaper} className="w-4 h-4" />
               <span className="text-sm font-medium">News</span>
-            </Link>
+            </Link> */}
             <Link
               href="/demos"
               className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors">
@@ -76,7 +77,7 @@ export const SimpleGlobalNav: React.FC<{
                 icon={faArrowUpRightFromSquare}
                 className="w-4 h-4"
               />
-              <span className="text-sm font-medium">RDM Portal</span>
+              <span className="text-sm font-medium">RDM Team Portal</span>
             </a>
           </div>
           <div className="logo-wrapper h-6 w-20">

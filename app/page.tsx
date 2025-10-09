@@ -120,7 +120,8 @@ const Page: FC = () => {
 
           {!isDrawerOpen && (
             <div className="xl:col-span-1 space-y-3">
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
+              {/* Temporarily deactivated - Latest News & Events section */}
+              {/* <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-base font-bold text-custom-blue-dark">
                     Latest News & Events
@@ -138,7 +139,7 @@ const Page: FC = () => {
 
                 <div className="space-y-3">
                   {/* Events Preview */}
-                  <div className="bg-white rounded-lg p-3">
+              {/* <div className="bg-white rounded-lg p-3">
                     <div className="flex items-center mb-2">
                       <FontAwesomeIcon
                         icon={faCalendar}
@@ -190,7 +191,7 @@ const Page: FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3">
                 <h3 className="text-base font-bold text-custom-blue-dark mb-3">
