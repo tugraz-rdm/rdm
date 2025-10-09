@@ -144,7 +144,8 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
           )}
         </div>
 
-        <div className={isEventsOpen ? 'mb-8' : 'mb-4'}>
+        {/* Temporarily deactivated - Events & News section */}
+        {/* <div className={isEventsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
             title="Events & News"
             icon={faCalendar}
@@ -191,7 +192,7 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
               </ul>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className={isNewsOpen ? 'mb-8' : 'mb-4'}>
           <DrawerSection
