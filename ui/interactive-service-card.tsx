@@ -2,11 +2,9 @@
 
 import { FC, useState } from 'react';
 import {
-  faBookmark,
   faExternalLinkAlt,
   faInfoCircle,
   faPlay,
-  faShare,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,71 +14,14 @@ import { ServiceItem } from '#/lib/services';
 interface InteractiveServiceCardProps {
   item: ServiceItem;
   phase: string;
-  onBookmark?: (item: ServiceItem) => void;
-  onShare?: (item: ServiceItem) => void;
-  isBookmarked?: boolean;
 }
 
 const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
   item,
   phase,
-  onBookmark,
-  onShare,
-  isBookmarked = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
-
-  const handleBookmark = () => {
-    onBookmark?.(item);
-  };
-
-  const handleShare = () => {
-    onShare?.(item);
-
-    // Determine what to share
-    const shareUrl = item.externalLink || window.location.origin + '/';
-    const shareText = `${item.name} - ${
-      item.description || 'RDM Service at TU Graz'
-    }`;
-
-    if (navigator.share) {
-      // Use native share API
-      navigator
-        .share({
-          title: item.name,
-          text: shareText,
-          url: shareUrl,
-        })
-        .catch(error => {
-          console.log('Share failed:', error);
-          // Fallback to clipboard
-          copyToClipboard(shareUrl);
-        });
-    } else {
-      // Fallback: copy to clipboard
-      copyToClipboard(shareUrl);
-    }
-  };
-
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      // Show a brief visual feedback
-      const shareButton = document.querySelector(
-        '[title="Share"]'
-      ) as HTMLElement;
-      if (shareButton) {
-        const originalColor = shareButton.style.color;
-        shareButton.style.color = '#374151';
-        setTimeout(() => {
-          shareButton.style.color = originalColor;
-        }, 1000);
-      }
-    } catch (err) {
-      console.error('Failed to copy to clipboard:', err);
-    }
-  };
 
   const handleInternalNavigation = (link: string) => {
     setIsNavigating(true);
@@ -127,24 +68,6 @@ const InteractiveServiceCard: FC<InteractiveServiceCardProps> = ({
               )}`}>
               {phase}
             </span>
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={handleBookmark}
-                className={`p-1 rounded-full transition-colors ${
-                  isBookmarked
-                    ? 'text-yellow-500 hover:text-yellow-600'
-                    : 'text-gray-400 hover:text-gray-600'
-                }`}
-                title={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}>
-                <FontAwesomeIcon icon={faBookmark} className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleShare}
-                className="p-1 rounded-full text-gray-400 hover:text-gray-600 transition-colors"
-                title="Share">
-                <FontAwesomeIcon icon={faShare} className="w-4 h-4" />
-              </button>
-            </div>
           </div>
 
           <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-custom-blue-dark transition-colors">

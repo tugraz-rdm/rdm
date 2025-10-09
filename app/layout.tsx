@@ -2,20 +2,13 @@
 
 import '#/styles/globals.css';
 
+import { MenuProvider, useMenu } from '#/lib/menu-context';
+
 import { ScrollToTop } from '#/ui/scroll-to-top';
 import { SimpleGlobalNav } from '#/ui/global-nav';
-import { useState } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    setIsDrawerOpen(prev => !prev);
-  };
+function LayoutContent({ children }: { children: React.ReactNode }) {
+  const { isDrawerOpen, toggleDrawer } = useMenu();
 
   return (
     <html lang="en" className="[color-scheme:light]">
@@ -45,5 +38,17 @@ export default function RootLayout({
         </div>
       </body>
     </html>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <MenuProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </MenuProvider>
   );
 }
