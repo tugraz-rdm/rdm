@@ -19,14 +19,14 @@ RUN pnpm install && pnpm run build
 # Expose the port on which the app runs
 EXPOSE 3000
 
-# # Create a new user named "$USER"
-# RUN useradd -m $USER
+# Create a new user named "$USER"
+RUN useradd -m $USER
 
-# # Set the ownership of the /app directory to the "$USER" user
-# RUN chown -R $USER:$USER $WDIR
+# Set the ownership of the /app directory to the "$USER" user
+RUN chown -R $USER:$USER $WDIR
 
-# Switch to the "$USER" user for running the application
-# USER $USER
+Switch to the "$USER" user for running the application
+USER $USER
 
 # Define the command to start your application
 CMD [ "pnpm", "dev" ]
