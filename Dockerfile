@@ -1,32 +1,25 @@
-# Use an official Node.js image with version 16.14
 FROM node:18.17.0
 
-ENV USER=dmp
-ENV WDIR=/usr/src/rdm
+ARG USER=dmp
 
-# Install pnpm globally using npm
+WORKDIR /usr/src/rdm
+
+# Install pnpm
 RUN npm install -g pnpm
 
-# Set the working directory for your application
-WORKDIR $WDIR
+# Create user
+RUN useradd -m ${USER}
 
-# Copy your application code into the container
-COPY . .
+# Set permissions
+RUN chown -R ${USER}:${USER} /usr/src/rdm
+RUN chmod -R 755 /usr/src/rdm
 
-# Install application dependencies using pnpm
+# Switch to user
+USER ${USER}
+
+# Copy and build
+COPY --chown=${USER}:${USER} . .
 RUN pnpm install && pnpm run build
 
-# Expose the port on which the app runs
 EXPOSE 3000
-
-# Create a new user named "$USER"
-RUN useradd -m $USER
-
-# Set the ownership of the /app directory to the "$USER" user
-RUN chown -R $USER:$USER $WDIR
-
-# Switch to the "$USER" user for running the application
-USER $USER
-
-# Define the command to start your application
 CMD [ "pnpm", "dev" ]
