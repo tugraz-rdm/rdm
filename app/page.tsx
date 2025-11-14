@@ -205,11 +205,12 @@ const Page: FC = () => {
                     className="block border border-gray-300 bg-white text-custom-blue-dark px-3 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center text-sm">
                     Contact RDM Team
                   </a>
-                  <Link
+                  {/* Temporarily deactivated - View All Events link */}
+                  {/* <Link
                     href="/news-events"
                     className="block border border-gray-300 bg-white text-gray-700 px-3 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center text-sm">
                     View All Events
-                  </Link>
+                  </Link> */}
                   <a
                     href="mailto:rdmteam@tugraz.at"
                     className="block bg-custom-blue text-white px-3 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center text-sm">
@@ -237,11 +238,12 @@ const Page: FC = () => {
               className="bg-white text-custom-blue-dark px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
               Contact RDM Team
             </a>
-            <Link
+            {/* Temporarily deactivated - View Events button */}
+            {/* <Link
               href="/news-events"
               className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-custom-blue-dark transition-colors">
               View Events
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

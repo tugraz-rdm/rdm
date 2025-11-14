@@ -1,6 +1,13 @@
 'use client';
 
-import { FC, ReactNode, createContext, useContext, useState } from 'react';
+import {
+  FC,
+  ReactNode,
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from 'react';
 
 interface MenuContextType {
   isDrawerOpen: boolean;
@@ -10,7 +17,15 @@ interface MenuContextType {
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
 
 export const MenuProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true); // Menu open by default
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    setIsDrawerOpen(window.innerWidth >= 1024);
+  }, []);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(prev => !prev);

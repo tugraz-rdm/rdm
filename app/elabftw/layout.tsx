@@ -1,24 +1,23 @@
 import React from 'react';
-import { Tab } from '#/ui/tab';
+import { TabContainer } from '#/ui/tab-container';
 
 export const metadata = {
   title: 'eLabFTW',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const tabs = [
+    { text: 'eLabFTW' },
+    { text: 'FAQ', slug: 'faq' },
+    { text: 'MANUAL', slug: 'manuals' },
+    { text: 'TOPICS OF INTEREST', slug: 'info' },
+    { text: 'CONTACT', slug: 'support' },
+    // { text: 'API SUPPORT PAGE', slug: 'api' },
+  ];
+
   return (
     <div className="space-y-9">
-      <div className="flex space-x-1 mb-8 bg-gray-100 rounded-lg p-1">
-        <Tab path="/elabftw" item={{ text: 'eLabFTW' }} />
-        <Tab path="/elabftw" item={{ text: 'FAQ', slug: 'faq' }} />
-        <Tab path="/elabftw" item={{ text: 'MANUAL', slug: 'manuals' }} />
-        <Tab
-          path="/elabftw"
-          item={{ text: 'TOPICS OF INTEREST', slug: 'info' }}
-        />
-        <Tab path="/elabftw" item={{ text: 'CONTACT', slug: 'support' }} />
-        {/* <Tab path="/elabftw" item={{ text: 'API SUPPORT PAGE', slug: 'api' }} /> */}
-      </div>
+      <TabContainer path="/elabftw" items={tabs} />
       <div>{children}</div>
     </div>
   );

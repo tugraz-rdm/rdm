@@ -59,19 +59,10 @@ const Page: FC = () => {
           integration of own resources. Users can access the system (only by the
           TU Graz intranet), store data, share it with others, and evaluate it.
         </li>
-        <li>
-          If you are new to the system check out how to register at{' '}
-          <a className="text-gray-700" href="/cat-cyverse/account">
-            new account
-          </a>
-        </li>
       </ul>
       <div className="flex gap-2 ">
         <ExternalLink href="https://de.cyverse.tugraz.at">
           CyVerse Austria Discovery Environment
-        </ExternalLink>
-        <ExternalLink href="https://user.cyverse.tugraz.at">
-          CyVerse Austria User Portal
         </ExternalLink>
       </div>
     </div>

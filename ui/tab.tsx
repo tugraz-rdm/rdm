@@ -18,10 +18,10 @@ export const Tab = ({ path, item }: { path: string; item: Item }) => {
       href={href}
       aria-current={isActive ? 'page' : undefined}
       className={clsx(
-        'flex items-center space-x-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out',
+        'flex items-center space-x-2 px-2 py-1 md:px-4 md:py-2 rounded-md transition-all duration-300 ease-in-out',
         isActive
-          ? 'bg-white text-custom-blue-dark shadow-sm transform scale-105'
-          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-102 active:scale-98'
+          ? 'bg-white text-custom-blue-dark shadow-sm transform scale-100 md:scale-105'
+          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-100 md:hover:scale-102 active:scale-98'
       )}>
       <span>{item.text}</span>
     </Link>

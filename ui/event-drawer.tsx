@@ -16,16 +16,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobalNavItem } from './global-nav';
 import Link from 'next/link';
 import RdmDocumentSection from './rdm-documents-section';
+import clsx from 'clsx';
 import { documents } from '#/lib/documents';
 import { useCombinedData } from '#/lib/services';
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
 type EventsProps = {
   isOpen: boolean;
   onToggle: () => void;
 };
 
-export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
+export const EventDrawer: React.FC<EventsProps> = ({ isOpen, onToggle }) => {
   const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
   const [isRDMDocOpen, setIsRDMDocOpen] = useState<boolean>(false);
@@ -64,6 +66,13 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
     setOpenSectionIndex(null);
   };
 
+  const handleNavigation = () => {
+    // Only close drawer on mobile (screen width < 1024px)
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      onToggle();
+    }
+  };
+
   const hideScrollbarStyle: React.CSSProperties = {
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
@@ -71,21 +80,47 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
 
   return (
     <div>
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/40 backdrop-blur-sm lg:hidden"
+          onClick={onToggle}
+          aria-hidden="true"
+        />
+      )}
       <div
         style={hideScrollbarStyle}
-        className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform ${
+        className={`fixed left-0 top-0 z-40 h-screen overflow-y-auto p-4 pt-8 shadow-2xl transition-transform rounded-r-2xl ${
           isOpen ? '' : '-translate-x-full'
         } bg-custom-blue dark:bg-white-smoke w-72 sm:w-72`}
         tabIndex={-1}
         aria-labelledby="drawer-left-label">
         <div
-          className="flex justify-between mb-10 -mt-3"
+          className="flex justify-between items-center mb-10 -mt-4 lg:justify-start"
           style={{ height: '35px' }}>
           <h5
             id="drawer-body-scrolling-label"
-            className="text-base font-bold mb-10 text-white-smoke light:white-smoke">
+            className="hidden lg:block text-base font-bold text-white-smoke light:white-smoke">
             Menu
           </h5>
+          <button
+            onClick={onToggle}
+            className="lg:hidden ml-auto flex items-center justify-center w-8 h-8 rounded-lg text-white-smoke hover:bg-white-smoke/20 focus:outline focus:outline-2 focus:outline-white-smoke focus:outline-offset-2 transition-colors"
+            aria-label="Close menu">
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
 
         <div className={isMenuOpen ? 'mb-8' : 'mb-4'}>
@@ -121,21 +156,33 @@ export const EventDrawer: React.FC<EventsProps> = ({ isOpen }) => {
                     </button>
                     <ul
                       id={`dropdown-${sectionIdx}`}
-                      className={`space-y-2 py-2 ${
+                      className={`ml-4 ${
                         openSectionIndex === sectionIdx ? 'block' : 'hidden'
                       }`}>
-                      {section.items.map((item, itemIdx) => (
-                        <li
-                          key={itemIdx}
-                          className={` ml-5 pl-2 p-1 text-xs font-medium group flex items-center rounded-lg transition duration-75 ${
-                            selectedItemIndex === itemIdx
-                              ? 'bg-white-smoke text-gray-700'
-                              : 'hover:border-white-smoke hover:text-gray-700 hover:bg-white-smoke text-white-smoke dark:text-white-smoke dark:hover:bg-gray-700'
-                          }`}
-                          onClick={() => handleItemClick(itemIdx)}>
-                          <GlobalNavItem item={item} close={handleClose} />
-                        </li>
-                      ))}
+                      {section.items.map((item, itemIdx) => {
+                        const isSelectedItem = selectedItemIndex === itemIdx;
+                        const navItemClassName = clsx(
+                          'w-full text-left focus:outline-none font-bold ml-2 leading-none',
+                          {
+                            'text-white-smoke dark:text-white-smoke hover:text-custom-blue-dark':
+                              true,
+                          }
+                        );
+
+                        return (
+                          <li
+                            key={itemIdx}
+                            className="hover:bg-white-smoke group flex w-full items-center rounded-lg text-xs text-white-smoke transition duration-75 dark:text-white-smoke dark:hover:bg-white-smoke"
+                            onClick={() => handleItemClick(itemIdx)}>
+                            <GlobalNavItem
+                              item={item}
+                              close={handleNavigation}
+                              onSelect={() => handleItemClick(itemIdx)}
+                              className={navItemClassName}
+                            />
+                          </li>
+                        );
+                      })}
                     </ul>
                   </li>
                 ))}
@@ -270,8 +317,26 @@ export const ButtonDrawer: React.FC<{
   isOpen: boolean;
   onToggle: () => void;
 }> = ({ isOpen, onToggle }) => {
+  const router = useRouter();
+
   const toggleDrawer = () => {
     onToggle();
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      e.preventDefault();
+      if (isOpen) {
+        onToggle();
+        setTimeout(() => {
+          router.push('/');
+        }, 150);
+      } else {
+        router.push('/');
+      }
+    }
   };
 
   return (
@@ -281,43 +346,31 @@ export const ButtonDrawer: React.FC<{
       }`}>
       <div className="ring-4-gray-700 mr-2 rounded-lg ml-5 flex items-center gap-4">
         <button
-          className="flex items-center justify-center w-10 h-10 bg-white/10 rounded-lg text-white"
-          onClick={toggleDrawer}
+          className={`flex items-center justify-center w-10 h-10 bg-white/10 rounded-lg text-white lg:flex ${
+            isOpen ? 'hidden' : 'flex'
+          }`}
+          onClick={e => {
+            e.stopPropagation();
+            toggleDrawer();
+          }}
           aria-label="Open navigation menu">
-          {isOpen ? (
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 8 14">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 12 14">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          )}
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 12 14">
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
         </button>
 
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" onClick={handleLogoClick}>
           <img
             src="/RDM-withTitle-rot-white.png"
             alt="RDM Research Data Management"

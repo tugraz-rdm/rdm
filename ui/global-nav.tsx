@@ -16,8 +16,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { TULogo } from './tu-logo';
 import clsx from 'clsx';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
+import { useState, type MouseEvent } from 'react';
 
 export const SimpleGlobalNav: React.FC<{
   isOpen: boolean;
@@ -31,14 +31,14 @@ export const SimpleGlobalNav: React.FC<{
     <>
       <div
         style={{ height: '70px' }}
-        className="fixed top-0 z-50 flex w-full bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-lg transition-opacity lg:flex-row lg:items-center lg:justify-between">
+        className="fixed top-0 z-50 flex w-full bg-gray-700 bg-gradient-to-r bg-no-repeat shadow-xl transition-opacity lg:flex-row lg:items-center lg:justify-between">
         <div className="mt-2 lg:mt-0 flex items-center justify-center flex-1">
           <ButtonDrawer isOpen={isOpen} onToggle={toggleDrawer} />
           <EventDrawer isOpen={isOpen} onToggle={toggleDrawer} />
         </div>
         <Link href="/" legacyBehavior>
           <a
-            className={`items-left group flex w-full transform gap-x-3 transition-transform lg:w-auto ${
+            className={`items-left group hidden lg:flex w-full transform gap-x-3 transition-transform lg:w-auto ${
               isOpen ? 'translate-x-[10vw]' : ''
             }`}
             onClick={toggleDrawer}></a>
@@ -143,7 +143,8 @@ export function GlobalNav() {
         {content === 'nav' ? (
           <div
             className={clsx('overflow-y-auto lg:static lg:block', {
-              'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen,
+              'fixed inset-x-0 bottom-0 top-14 mt-px bg-black/60 backdrop-blur-sm':
+                isOpen,
               hidden: !isOpen,
             })}>
             <nav className="space-y-6 px-2 py-3 lg:space-x-0 lg:space-y-4">
@@ -223,23 +224,38 @@ export function GlobalNav() {
 export function GlobalNavItem({
   item,
   close,
+  onSelect,
+  className,
 }: {
   item: ServiceItem;
   close: () => false | void;
+  onSelect?: () => void;
+  className?: string;
 }) {
+  const router = useRouter();
   const segment = useSelectedLayoutSegment();
   const isActive = item.slug === segment;
+  const handleClick = async (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onSelect?.();
+    await router.push(`/${item.slug}`);
+    close();
+  };
 
   return (
-    <Link
-      href={`/${item.slug}`}
-      legacyBehavior
-      onClick={close}
-      className={clsx('ml-6 block rounded-md  py-2 text-sm font-thin ', {
-        'text-gray-700 hover:border-2 hover:text-gray-700': !isActive,
-        'text-gray-700 hover:border-2 ': isActive,
-      })}>
-      {item.name}
+    <Link href={`/${item.slug}`} legacyBehavior>
+      <a
+        onClick={handleClick}
+        className={clsx(
+          'ml-6 block rounded-md py-2 text-sm font-thin text-left',
+          {
+            'text-gray-700 hover:text-gray-700': !isActive,
+            'text-gray-700': isActive,
+          },
+          className
+        )}>
+        {item.name}
+      </a>
     </Link>
   );
 }
